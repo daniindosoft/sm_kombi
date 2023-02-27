@@ -1,0 +1,199 @@
+#big projek member sistem
+sistem memberarea full akses untuk yg memiliki komunitas, tim, drosphip, reseller dll
+
+##tujuan
+- memanage data pembeli, komunitas dll
+- sekalian jualan
+
+##target
+- penjual online
+- dropship
+- list building
+
+##fitur
+- posting post, tretdh, diskusi
+- crud ecourse
+- fitur berlangganan
+- fitur berlangganan untuk user
+- kelola user/member
+- grafik data user
+- affiliate (terapkan cookies atau tidak) /* affilaite produk, affiliate join, dropship produk
+- crud asset gambar
+- crud asset video
+- fitur selling jualan di member area
+- fitur promosi untuk user, member bisa buka promosi untuk user yg ada disitu
+- info bisnis (nama bisnis anda, website, kontak, sosmed, kategori bisnis)
+- admin bisa hapus komen,
+
+
+
+USER
+- admin
+- member
+
+HAK AKSES/MENU
+- ADMIN
+	- CRUD KOMUNITI (setiap menu dibawah berdasarkan komuniti, jadi 1 akun bisa membuat banyak komunitas)
+	- crud ecourse
+	- affiliate
+		- set komisi untuk affiliate
+	- produk
+		- merchandise
+		- produk
+	- crud asset
+		- gambar
+		- video
+	- posting/threed
+		- post
+			- approve/hapus postingna, komenntar
+		- promosi
+	- membership
+		- lihat member
+	- report
+		- report user
+		- income
+	- setting
+		- profile bisnis
+		- disable/enable cookies x
+
+- USER
+	- threed/post
+		- lihat post, komen, like dll
+		- buat post
+		- news
+	- affiliate
+	- produk
+		- merdise
+		- produk
+			- buat affliate
+	- ecourse
+
+TABLE
+- user
+	- id
+	- username
+	- nama lengkap
+	- tgl lahir
+	- domisili
+	- email
+	- tgl daftar
+	- kode affiliate
+	- no wa
+	- type user (user & admin)
+	- id komunitas (nama lead group, ini nyambung ke nama admin siapa)
+
+- komunitas
+	- id
+	- id user
+	- nama komunitas
+	- tgl dibuat
+
+- ecourse kategori
+	- id
+	- id user
+	- nama kategori ecousre
+
+- ecourse
+	- id
+	- id user
+	- judul
+	- link
+	- deskripsi
+	- tgl dibuat
+
+- produk
+	- id
+	- id user
+	- type (merch & produk)
+	- nama produk
+	- deskripsi
+	- harga
+	- stok
+	- komisi affiliate
+
+
+- asset
+	- id
+	- id user
+	- type (img, vid, file)
+	- judul
+	- deskripsi
+	- url
+
+- post
+	- id
+	- id user
+	- judul
+	- text
+	- tgl dibuat
+
+- kategori post
+	- id
+	- id user
+	- nama kategori
+	- jumlah like
+	- jumlah komen
+
+- like post
+	- id
+	- id user
+	- id post
+
+- komen post
+	- id
+	- id user
+	- id post
+	- komentar
+
+- profile bisnis
+	- id
+	- id user
+	- nama bisnis
+	- domisili
+	- no kontak
+	- website
+	- ig
+	- tiktok
+	- komisi affiliate join
+
+
+#HAK AKSES/FITUR TAMBAHAN SIMPLE
+- ADMIN BISA HAPUS KOMENTAR,
+- ADMIN BISA LIHAT ATAU SEMBUNYIKAN MENU MEMBERSHIP 
+- BUAT SISTEM SEPERTI PRESIDEN DIGITAL, BANYAK LINK DARI BANYAK PRODUK, CONTOH, LINK FORM IG ADS, LINK FORM TIKTOK ADS, LINK FB ADS, INI FORM SEMUA TANPA LP, JIKA ADA YG ORDER BY LINK AFFILIATE MAKA MASUK KE ADMIN + MASUK KE KOMISI AFFILIATE,
+- JADI LINK JOIN KOMUNITAS BISNIS, DAN LINK ORDER PRODUK DI KOMUNITAS BISNIS ITU,
+- CONTOH KOMUNITAS BISNIS A, AFFILIATE JOIN DAPAT 10K, DIDALAM KOMUNITAS BISNIS A ADA PRODUK, ORNG BELI LEWAT INI DAPAT KOMISI,
+- FORM ORDER ADA 2, FORM ORDER BELI FISIK, FORM ORDER MASUKAN EMAIL
+
+#WAJIB DI PERDIKSA TERUS
+- VALIDASI JIKA KOSONG JANGAN BISA DI SAVE
+- MENU KANAN ATAS YG / SS/ HOME /E ECOURSE/ EDIT
+- CRUDD
+
+#NOTE ERROR
+- disable enable share post
+- SESUDAH KOMEN, PERGI KE SINGLE POST YG DI LIKE
+- FITUR2 HILANKAN FITUR APP, DROSPHIP DLL
+- FITUR CHECK POSTINGAN, atau tdak
+- fitur enabled disable cookies
+- note di bisnis komunitas, untuk muncul di link affiliate
+- RESPONSIVE TABLE & SELECT
+- SQL INJECTION ATAU HTML IN INPUT TYPE
+- jika sudah logout sessino hilang cookies ada, nah bisnis aktifnya hilang karena ini
+
+DAFTAR 
+- DAFTAR JADI ADMIN, USER
+	- STATIC, FORM DARI REBI
+
+- DAFTAR PRODUK
+	- DINAMIC
+
+FORM
+- FORM DAFTAR USER .
+- FORM DAFTAR ADMIN 
+- FORM ORDER PRODUK
+
+- LOGIN FORM DAFTAR USER
+	- JIKA LENGKAP = TF KE OWNER BISNIS + ADD KOMISI KE USER
+	- JIKA TDK ADA AFF = TF KE OWNER BISNIS
+	- JIKA TDK ADA 2 NYA = LINK TDK VALID

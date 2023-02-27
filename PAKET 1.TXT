@@ -1,0 +1,125 @@
+PAKET 1
+	durasi : bulanan
+	Gabung : 149.000
+	harga bulanan selanjutnya : 49.000
+	harga bulanan jika bayar >= 3 bulan langsung : 45.000
+	fitur
+		max komunitas : 30
+		max member : unlimited
+		affiliate produk : yes
+		report & grafik : yes
+		dropship/reseller : yes
+
+
+PAKET 2
+	durasi : bulanan
+	Gabung : 279.000
+	harga bulanan selanjutnya : 199.000
+	harga bulanan jika bayar >= 3 bulan langsung : 195.000
+	fitur
+		max komunitas bisnis : 37
+		max member : unlimited
+		affiliate produk : yes
+		report & grafik : yes
+		dropship/reseller : yes
+
+PAKET 3
+	durasi : bulanan
+	Gabung : 499.000
+	harga bulanan selanjutnya : 249.000
+	harga bulanan jika bayar >= 3 bulan langsung : 230.000
+	fitur
+		max komunitas bisnis : unlimited
+		max member : unlimited
+		affiliate produk : yes
+		report & grafik : yes
+		dropship/reseller : yes
+
+	
+
+nb : bayar langsung >= 3 bulan dapat diskon
+
+
+harga bulanan selanjutnya = harga join rebi
+
+sistem rebinya
+	- daftar
+	- tf ke member/rebi
+	- member tf ke admiin rebi
+	- rebi cek
+	- rebi aktifkan
+	- rebi infokan ke member
+	- member infokan ke pendaftar
+
+
+
+ALUR PESANAN DROP/RESLER
+- MEMBER ORDER
+- MEMBER DAPAT INVOICE
+- MEMBER CHAT/TF KE ADMIN
+- ADMIN PROSES PESANAN
+- DATA BISA DI LIHAT
+- ADMIN KIRIM BARANG
+- ADMIN INPUT RESI
+- MEMBER DAPAT RESI NOTIF
+- MEMBER INFOKAN KE PEMBELINYA
+
+ALUR PESANAN AFF
+- MEMBER GET LINK DAN SHARE
+- ADA YG ORDER
+- NOTIF KE MEMBER DAN KE ADMIN
+- PEMBELI CHAT/TF KE ADMIN
+- ADMIN PROSES
+- DATA TERLIHAT
+- KOMISI DI TERUSKAN KE MEMBER
+- (DIGITAL) ADMIN PROSES PESANAN (KIRIM BARANG/KIRIM LINK JIKA PRODUK DIGITAL) DISINI ADA 3 PILIHAN, KIRIM PRODUK LEWAT WA, EMAIL YG DIA DAFTAR, ATAU LEWAT REBI KIRIM EMAIL LINK
+- (FISIK) ADMIN PROSES PESANAN (INPUT RESI)
+
+
+delete plugin
+	dropzone
+	ekko - lightbox
+	bootstrap-colorpicker
+	codemirror
+	inputmask
+	popper
+	moment
+	fullcalendar
+	sparklines
+	datatables-autofill
+	JQVMap
+	datatables-colreorder
+	datatables-searchbuilder
+	filterizr
+	jquery-validation
+	jszip
+	pdfmake
+	flot
+	pace-progress
+	jquery-mapael
+	jsgrid
+	raphael
+	fastclick
+	bs-custom-file-input
+	bootstrap4-duallistbox
+	datatables-fixedheader
+	datatables-fixedcolumns
+	datatables-keytable
+	datatables-rowgroup
+	datatables-rowreorder
+	datatables-searchpanes
+	jquery-mousewheel
+	bs-stepper
+	flag-icon-css
+	sweetalert2
+	sweetalert2-theme-bootstrap-4
+	daterangepicker
+	ion-rangeslider
+	datatables-scroller
+	datatables-select
+	bootstrap-slider
+	bootstrap-switch
+
+
+
+https://preview.colorlib.com/theme/bootstrap/login-form-05/

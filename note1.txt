@@ -1,0 +1,14 @@
+YG BELUM
+
+pengaturan
+	- datatable
+	- update profile user
+	- edit komunitas
+
+ecourse
+	- edit hapus semua data
+	- validasi, jika kategori ecourse tdk ada tombol simpan di ecourse tidak boleh muncul
+
+
+atur produk
+	- validate input
