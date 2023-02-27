@@ -238,7 +238,7 @@
 							'nama="'.$_POST['oldvarian'][$i].'"'
 						),
 						array('id'),
-						array($_POST['idvarian'][$i]),
+						array($_POST['idvarian'][$i])
 					);
 				}
 			}
