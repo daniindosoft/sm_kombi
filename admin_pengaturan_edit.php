@@ -185,19 +185,19 @@
 			                  			<div class="col-md-4">
 			                  				<b>Header Komunitas</b>
 			                  				<p><small>Ketika Member membuka/mengunjungi memberarea komunitasmu</small></p>
-			                  				<textarea class="form-control" name="header" placeholder="insert header"><?php echo $getData['header'] ?></textarea>
+			                  				<textarea class="form-control" name="header" placeholder="insert header"><?php echo base64_decode($getData['header']) ?></textarea>
 			                  				<br>
 			                  			</div>
 			                  			<div class="col-md-4">
 			                  				<b>Header Register Form</b>
 			                  				<p><small>Ketika Form Pendaftaran Dikunjungi oleh pendaftar maka Code dibawah ini akan terpanggil</small></p>
-			                  				<textarea class="form-control" name="header_form" placeholder="insert header"><?php echo $getData['header_form'] ?></textarea>
+			                  				<textarea class="form-control" name="header_form" placeholder="insert header"><?php echo base64_decode($getData['header_form']) ?></textarea>
 			                  				<br>
 			                  			</div>
 			                  			<div class="col-md-4">
 			                  				<b>Header Invoice</b>
 			                  				<p><small>Setelah seseorang daftar ke komunitasmu/masuk ke haaman invoice, maka Code dibawah ini akan terpanggil atau ter-trigger</small></p>
-			                  				<textarea class="form-control" name="header_invoice" placeholder="insert header"><?php echo $getData['header_invoice'] ?></textarea>
+			                  				<textarea class="form-control" name="header_invoice" placeholder="insert header"><?php echo base64_decode($getData['header_invoice']) ?></textarea>
 			                  				<br>
 			                  			</div>
 					                  </div>

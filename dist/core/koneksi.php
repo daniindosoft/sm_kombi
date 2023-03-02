@@ -1,6 +1,10 @@
 <?php
 
 class koneksi{
+	public $host = host;
+	public $dbname = dbname;
+	public $user = user;
+	public $pass = pass;
 
 	public function hubungkan(){
 
@@ -8,7 +12,7 @@ class koneksi{
 
 		try{
 
-			$this->kon=new pdo('mysql:host=localhost;dbname=rebikom;','root','');			
+			$this->kon=new pdo('mysql:host='.$this->host.';dbname='.$this->dbname.';',''.$this->user.'',''.$this->pass.'');			
 
 		}catch(PDOExeption $o){
 

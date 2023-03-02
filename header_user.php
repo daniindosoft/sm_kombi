@@ -46,7 +46,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="<?php echo $myDp ?>">
 
-  <title>KOMBI</title>
+  <title>Login ke KOMBI | Solusi Membuat Kolam Uang</title>
+
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LogIn KOMBI | Cari Komunitas Terbai dan Hasilkan Uang">
+  <meta property="og:description" content="Gabung komunitas terbaik dan dapatkan cuan">
+  <meta name="description" content="Gabung komunitas terbaik dan dapatkan cuan"/>
+  <meta property="description" content="Gabung komunitas terbaik dan dapatkan cuan">
+  <meta property="og:url" content="https://www.kombi.remotebisnis.com/">
+  <meta property="og:image" name="og:image" content="https://duniaundercover.files.wordpress.com/2023/02/ci.png">
+  <meta property="og:site_name" content="Kombi.RemoteBisnis.com - Buat Kolam Uangmu Sekarang !">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -155,26 +165,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </li>
+       
 
       <?php
         // $onMy->debug = true;
@@ -198,6 +189,8 @@
                 $textn = '<p class="text-sm">Ada Postingan baru di komunitas, lihat sekarang.. </p>';
                 $rightIcon = 'fa fa-file';
                 $url = $onMy->primaryLocal.'/';
+                $title = 'Postingan Baru Komunitas';
+
 
               elseif($notifAdmin['type'] == 'papan'): 
                 $textn = '<p class="text-sm">Admin telah memperbarui <b>Papan Informasi</b>, cek dan ketahui sekarang</p>';

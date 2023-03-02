@@ -44,6 +44,16 @@
   <title>KOMBI</title>
   <!-- <title>COMBI - Comunity Bisnis by RemoteBisnis.com</title> -->
 
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LogIn KOMBI | Solusi Membuat Kolam Uang by Remotebisnis.com">
+  <meta property="og:description" content="Sekarang sudah saatnya bisnis tidak bergantung pada iklan terus, buat kolam uangmu sendiri dan biarkan itu bekerja untukmu.">
+  <meta name="description" content="Sekarang sudah saatnya bisnis tidak bergantung pada iklan terus, buat kolam uangmu sendiri dan biarkan itu bekerja untukmu."/>
+  <meta property="description" content="Sekarang sudah saatnya bisnis tidak bergantung pada iklan terus, buat kolam uangmu sendiri dan biarkan itu bekerja untukmu.">
+  <meta property="og:url" content="https://www.kombi.remotebisnis.com/">
+  <meta property="og:image" name="og:image" content="https://duniaundercover.files.wordpress.com/2023/02/ci.png">
+  <meta property="og:site_name" content="Kombi.RemoteBisnis.com - Buat Kolam Uangmu Sekarang !">
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -142,26 +152,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
-      <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-          <i class="fas fa-search"></i>
-        </a>
-        <div class="navbar-search-block">
-          <form class="form-inline">
-            <div class="input-group input-group-sm">
-              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                  <i class="fas fa-times"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </li>
+       
       <?php
         if ($profile['type_user'] != 'user') {
           $onMy->notifStatus = true;

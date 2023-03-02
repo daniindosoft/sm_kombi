@@ -4,8 +4,8 @@
   $dataDropship = $onMy->getDataAffiliate($_COOKIE['id_akun_combi'], $_SESSION['bisnis_kategori_combi'], 'data_dropship');
 
   $orderToday = $onMy->singleByUserByCommunity("pesanan", $_COOKIE['id_akun_combi'], $_SESSION['bisnis_kategori_combi'], "single", " and created_at like '%".date('Y-m-d')."%'")['total'];
-
-  $valueTransactionToday = $onMy->eksekusiShow( 'SELECT sum(qty*harga) as total FROM `pesanan` as p join pesanan_line as pl on pl.id_pesanan = p.id WHERE p.id_user='.$_COOKIE['id_akun_combi'].' and p.id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'].'' );
+  
+  $valueTransactionToday = $onMy->eksekusiShow( 'SELECT sum(qty*harga) as total FROM `pesanan` as p join pesanan_line as pl on pl.id_pesanan = p.id WHERE p.id_user='.$_COOKIE['id_akun_combi'].' and p.id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'].' and p.created_at like "%'.date('Y-m-d').'%"' );
 ?>
 <div class="content-wrapper" style="min-height: 1172.56px;">
   <!-- Content Header (Page header) -->
@@ -248,56 +248,58 @@
                   </div>
                 </div>
                 <hr>
-                <table class="table table-striped">
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Invoice</th>
-                      <th>Info Pesanan</th>
-                      <th>Tanggal</th>
-                    </tr>
-                  </thead>
-                  <tbody id="resultBodyOrder">
-                    <?php
-                      // $onMy->debug = true;
-                      $sql = $onMy->tampil_manual('select * from pesanan where id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'].' and id_user='.$_COOKIE['id_akun_combi'].' order by id desc'); 
-                      $no=1; foreach ($sql as $d): 
-                        
-
-                      ?>
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
                       <tr>
-                        <td><?php echo $no++ ?></td>
-                        <td>
-                          <?php if ($d['status'] == '1'): ?>
-                            <small><i class="fa fa-circle text-warning"></i> Belum di proses</small>
-                          <?php elseif ($d['status'] == '2'): ?>
-                            <small><i class="fa fa-circle text-danger"></i> Ditolak</small>
-                          <?php elseif ($d['status'] == '3'): ?>
-                            <small><i class="fa fa-circle text-success"></i> Diterima</small>
-                          <?php endif ?><br>
-                            <?php if ($d['resi']): ?>
-                              RESI : <b><?php echo $d['resi'] ?></b><br>
-                            <?php endif ?>
-                            <div class="btn-group dropup">
-                              <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-                                <span class="sr-only"></span> <?php echo $d['invoice'] ?>
-                              </button>
-                              <div class="dropdown-menu" role="menu" style="">
-                                <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>user/invoice?id=<?php echo $d['id'] ?>" target="_blank"><i class="fa fa-eye"></i> Detail Pesanan</a>
-                              </div>
-                            </div>
-                        </td>
-                        <td>
-                          <b>Penerima : <?php echo $d['nama_lengkap'] ?></b><br>
-                          No Hp : <?php echo $d['nowa'] ?><br>
-                          <?php echo $d['provinsi'].', '.$d['alamat'] ?><br>
-                        </td>
-
-                        <td><?php echo $onMy->time_elapsed_string($d['created_at']) ?></td>
+                        <th>#</th>
+                        <th>Invoice</th>
+                        <th>Info Pesanan</th>
+                        <th>Tanggal</th>
                       </tr>
-                    <?php endforeach ?>
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody id="resultBodyOrder">
+                      <?php
+                        // $onMy->debug = true;
+                        $sql = $onMy->tampil_manual('select * from pesanan where id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'].' and id_user='.$_COOKIE['id_akun_combi'].' order by id desc'); 
+                        $no=1; foreach ($sql as $d): 
+                          
+
+                        ?>
+                        <tr>
+                          <td><?php echo $no++ ?></td>
+                          <td>
+                            <?php if ($d['status'] == '1'): ?>
+                              <small><i class="fa fa-circle text-warning"></i> Belum di proses</small>
+                            <?php elseif ($d['status'] == '2'): ?>
+                              <small><i class="fa fa-circle text-danger"></i> Ditolak</small>
+                            <?php elseif ($d['status'] == '3'): ?>
+                              <small><i class="fa fa-circle text-success"></i> Diterima</small>
+                            <?php endif ?><br>
+                              <?php if ($d['resi']): ?>
+                                RESI : <b><?php echo $d['resi'] ?></b><br>
+                              <?php endif ?>
+                              <div class="btn-group dropup">
+                                <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                  <span class="sr-only"></span> <?php echo $d['invoice'] ?>
+                                </button>
+                                <div class="dropdown-menu" role="menu" style="">
+                                  <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>user/invoice?id=<?php echo $d['id'] ?>" target="_blank"><i class="fa fa-eye"></i> Detail Pesanan</a>
+                                </div>
+                              </div>
+                          </td>
+                          <td>
+                            <b>Penerima : <?php echo $d['nama_lengkap'] ?></b><br>
+                            No Hp : <?php echo $d['nowa'] ?><br>
+                            <?php echo $d['provinsi'].', '.$d['alamat'] ?><br>
+                          </td>
+
+                          <td><?php echo $onMy->time_elapsed_string($d['created_at']) ?></td>
+                        </tr>
+                      <?php endforeach ?>
+                    </tbody>
+                  </table>
+                </div>
                 <div id="resultBodyOrderPage"></div>
               </div>
          

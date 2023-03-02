@@ -245,44 +245,46 @@
                                 </div>
                               </div>
                             </div>
-                             <table class="table table-bordered table-hover dataTable dtr-inline">
-                              <thead>
-                                <tr>
-                                  <th>#</th>
-                                  <th>Nama</th>
-                                  <th>Kontak</th>
-                                  <th>Info</th>
-                                </tr>
-                              </thead>
-                              <tbody id="resultBodyUser">
-                                <?php 
-                                  $no=1; 
-                                  foreach ($showDataLead as $value): 
-                                    $komisi = $onMy->getSpesificLead('komisi', $value['idu'], $_SESSION['bisnis_kategori_combi'])['komisi'];
-                                ?>
+                            <div class="table-responsive">
+                               <table class="table table-bordered table-hover dataTable dtr-inline">
+                                <thead>
                                   <tr>
-                                    <td><?php echo $no++; ?></td>
-                                    <td>
-                                      <?php echo $value['nama_lengkap'] ?>
-                                    </td>
-                                    <td>
-                                      <span data-toggle="tooltip" data-placement="top" title="Untuk keamanan dan privasi data, member yang bergabung lewat link affilaite anda kami tutupi"><i class="fa fa-info-circle"></i></span>
-                                      <?php 
-                                        echo substr($value['email'], 0, 3).'******@**.com';
-                                      ?> <br>
-                                      <?php 
-                                        echo substr($value['nowa'], 0, 5).'******';
-                                      ?>
-                                    </td>
-                                    <td>
-                                      Transfer Senilai : <b class="btn btn-default font-weight-bold">Rp <?php echo $onMy->nf($value['price']) ?></b>  <br><br>
-                                      Waktu Daftar : <b><?php echo $onMy->time_elapsed_string($value['created_at']) ?><br><br></b>
-                                      Status Akun : <span class="badge badge-danger" data-toggle="tooltip" data-placement="top" title="Belum di Aktivasi oleh Admin Komunitas">Belum Aktif <i class="fa fa-info-circle"></i></span>
-                                    </td>
+                                    <th>#</th>
+                                    <th>Nama</th>
+                                    <th>Kontak</th>
+                                    <th>Info</th>
                                   </tr>
-                                <?php endforeach ?>
-                              </tbody>
-                            </table>
+                                </thead>
+                                <tbody id="resultBodyUser">
+                                  <?php 
+                                    $no=1; 
+                                    foreach ($showDataLead as $value): 
+                                      $komisi = $onMy->getSpesificLead('komisi', $value['idu'], $_SESSION['bisnis_kategori_combi'])['komisi'];
+                                  ?>
+                                    <tr>
+                                      <td><?php echo $no++; ?></td>
+                                      <td>
+                                        <?php echo $value['nama_lengkap'] ?>
+                                      </td>
+                                      <td>
+                                        <span data-toggle="tooltip" data-placement="top" title="Untuk keamanan dan privasi data, member yang bergabung lewat link affilaite anda kami tutupi"><i class="fa fa-info-circle"></i></span>
+                                        <?php 
+                                          echo substr($value['email'], 0, 3).'******@**.com';
+                                        ?> <br>
+                                        <?php 
+                                          echo substr($value['nowa'], 0, 5).'******';
+                                        ?>
+                                      </td>
+                                      <td>
+                                        Transfer Senilai : <b class="btn btn-default font-weight-bold">Rp <?php echo $onMy->nf($value['price']) ?></b>  <br><br>
+                                        Waktu Daftar : <b><?php echo $onMy->time_elapsed_string($value['created_at']) ?><br><br></b>
+                                        Status Akun : <span class="badge badge-danger" data-toggle="tooltip" data-placement="top" title="Belum di Aktivasi oleh Admin Komunitas">Belum Aktif <i class="fa fa-info-circle"></i></span>
+                                      </td>
+                                    </tr>
+                                  <?php endforeach ?>
+                                </tbody>
+                              </table>
+                            </div>
                             <div id="resultBodyUserPage">
                               <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
@@ -310,57 +312,59 @@
                                 </div>
                               </div>
                             </div>
-                            <table class="table table-bordered table-hover dataTable dtr-inline">
-                              <thead>
-                                <tr>
-                                  <th>#</th>
-                                  <th>Nama</th>
-                                  <th>Kontak</th>
-                                  <th>Produk</th>
-                                  <th>Info</th>
-                                </tr>
-                              </thead>
-                              <tbody id="resultBodyProduk"> 
-                                <?php 
-                                  $no=1; 
-                                  // echo 'select * order_produk where id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'];
-
-                                  foreach ($onMy->tampil_manual('select * from order_produk where id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'].' and id_aff='.$_COOKIE['id_akun_combi'].' and status = 1 order by id desc limit 10') as $value): 
-                                    $komisi = $onMy->getSpesificLead('komisi', $value['idu'], $_SESSION['bisnis_kategori_combi'])['komisi'];
-
-                                    $usercek = $onMy->single('users', $value['id_aff']);
-                                    $aff = "Anda";
-                                    $email = substr($value['email'], 0, 3).'******@**.com <br>';
-                                    $nowa = substr($value['nowa'], 0, 3).'*******';
-                                    
-                                ?>
+                            <div class="table-responsive">
+                              <table class="table table-bordered table-hover dataTable dtr-inline">
+                                <thead>
                                   <tr>
-                                    <td><?php echo $no++; ?></td>
-                                    <td>
-                                      <?php echo $value['nama'] ?>
-                                      
-                                    </td>
-                                    <td>
-                                      <?php
-                                        echo $email;
-                                        echo $nowa;
-                                      ?>
-                                    </td>
-                                    <td><?php echo $onMy->selectSingleOne('affiliate_produk', 'id', $value['id_produk'])['judul'] ?></td>
-                                    <td>
-                                      Transfer Senilai : <b class="btn btn-default font-weight-bold">Rp <?php echo $onMy->nf($value['harga']) ?></b>  <br><br>
-                                      <small>Waktu Daftar : <b><?php echo $onMy->time_elapsed_string($value['created_at']) ?><br><br></b>
-
-                                      Affilaite : 
-                                      <?php 
-                                        echo $aff;
-                                      ?>
-                                      </small>
-                                    </td>
+                                    <th>#</th>
+                                    <th>Nama</th>
+                                    <th>Kontak</th>
+                                    <th>Produk</th>
+                                    <th>Info</th>
                                   </tr>
-                                <?php endforeach ?>
-                              </tbody>
-                            </table>
+                                </thead>
+                                <tbody id="resultBodyProduk"> 
+                                  <?php 
+                                    $no=1; 
+                                    // echo 'select * order_produk where id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'];
+
+                                    foreach ($onMy->tampil_manual('select * from order_produk where id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'].' and id_aff='.$_COOKIE['id_akun_combi'].' and status = 1 order by id desc limit 10') as $value): 
+                                      $komisi = $onMy->getSpesificLead('komisi', $value['idu'], $_SESSION['bisnis_kategori_combi'])['komisi'];
+
+                                      $usercek = $onMy->single('users', $value['id_aff']);
+                                      $aff = "Anda";
+                                      $email = substr($value['email'], 0, 3).'******@**.com <br>';
+                                      $nowa = substr($value['nowa'], 0, 3).'*******';
+                                      
+                                  ?>
+                                    <tr>
+                                      <td><?php echo $no++; ?></td>
+                                      <td>
+                                        <?php echo $value['nama'] ?>
+                                        
+                                      </td>
+                                      <td>
+                                        <?php
+                                          echo $email;
+                                          echo $nowa;
+                                        ?>
+                                      </td>
+                                      <td><?php echo $onMy->selectSingleOne('affiliate_produk', 'id', $value['id_produk'])['judul'] ?></td>
+                                      <td>
+                                        Transfer Senilai : <b class="btn btn-default font-weight-bold">Rp <?php echo $onMy->nf($value['harga']) ?></b>  <br><br>
+                                        <small>Waktu Daftar : <b><?php echo $onMy->time_elapsed_string($value['created_at']) ?><br><br></b>
+
+                                        Affilaite : 
+                                        <?php 
+                                          echo $aff;
+                                        ?>
+                                        </small>
+                                      </td>
+                                    </tr>
+                                  <?php endforeach ?>
+                                </tbody>
+                              </table>
+                            </div>
                             <div id="resultBodyProdukPage">
                               <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
@@ -406,58 +410,58 @@
                     </div>
                     <hr>
                     <b>Affiliate Produk</b>
-                    <table class="table table-striped table-bordered table-hover dt">
-                      <thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Detail</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php 
-                          $no=1; 
-                          foreach ($onMy->selectWithBussiness('affiliate_produk', $_SESSION['bisnis_kategori_combi']) as $val): 
-                            if ($val['is_private'] != 1) {
-                        ?>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-bordered table-hover dt">
+                        <thead>
                           <tr>
-                            <td><?php echo $no++ ?></td>
-                            <td>
-                              <div class="border border-warning p-1 text-dark text-sm p-3">
-                                <b>Nama Produk <?php echo $val['judul'] ?></b><br>
-                                Produk <?php if ($val['type'] == 'non'): ?>
-                                  <span class="badge badge-info">Digital</span>
-                                <?php else: ?>
-                                  <span class="badge badge-success">Fisik</span>
-                                <?php endif ?><br>
-                                <?php echo 'Note : '.$val['note'] ?><br>
-                                <?php if ($val['nilai'] == 'gratis'): ?>
-                                  <small><b>Komisi : Lead Magnet(Gratis)</b></small>
-                                <?php else: ?>
-                                  <small><b>Komisi : Rp<?php echo number_format($val['komisi']) ?></b></small>
-                                <?php endif; ?>
-
-                                <div class="input-group dropup mb-3">
-                                  <div class="input-group-prepend dropup ">
-                                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                      Action
-                                    </button>
-                                    <div class="dropdown-menu dropup " style="">
-                                      <a class="dropdown-item" href="<?php echo $urlAff = $onMy->primaryLocal.'produk/buy?cd='.$val['kode_affiliate_produk'].'&aff='.$profile['kode_affiliate'] ?>" target="_blank">Buka Link</a>
-                                      <a class="dropdown-item" href="#textsss" onclick="return copyText('text<?php echo $no ?>')">Copy Link</a>
-                                    </div>
-                                  </div>
-                                  <!-- /btn-group -->
-                                  <input required type="text" class="form-control" value="<?php echo $urlAff ?>" id="text<?php echo $no; ?>">
-                                </div>
-
-                              </div>
-                            </td>
+                            <th>No</th>
+                            <th>Detail</th>
                           </tr>
-                        <?php } endforeach; ?>
-                      </tbody>
-                    </table>
-                    
-                      
+                        </thead>
+                        <tbody>
+                          <?php 
+                            $no=1; 
+                            foreach ($onMy->selectWithBussiness('affiliate_produk', $_SESSION['bisnis_kategori_combi']) as $val): 
+                              if ($val['is_private'] != 1) {
+                          ?>
+                            <tr>
+                              <td><?php echo $no++ ?></td>
+                              <td>
+                                <div class="border border-warning p-1 text-dark text-sm p-3">
+                                  <b>Nama Produk <?php echo $val['judul'] ?></b><br>
+                                  Produk <?php if ($val['type'] == 'non'): ?>
+                                    <span class="badge badge-info">Digital</span>
+                                  <?php else: ?>
+                                    <span class="badge badge-success">Fisik</span>
+                                  <?php endif ?><br>
+                                  <?php echo 'Note : '.$val['note'] ?><br>
+                                  <?php if ($val['nilai'] == 'gratis'): ?>
+                                    <small><b>Komisi : Lead Magnet(Gratis)</b></small>
+                                  <?php else: ?>
+                                    <small><b>Komisi : Rp<?php echo number_format($val['komisi']) ?></b></small>
+                                  <?php endif; ?>
+
+                                  <div class="input-group dropup mb-3">
+                                    <div class="input-group-prepend dropup ">
+                                      <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        Action
+                                      </button>
+                                      <div class="dropdown-menu dropup " style="">
+                                        <a class="dropdown-item" href="<?php echo $urlAff = $onMy->primaryLocal.'produk/buy?cd='.$val['kode_affiliate_produk'].'&aff='.$profile['kode_affiliate'] ?>" target="_blank">Buka Link</a>
+                                        <a class="dropdown-item" href="#textsss" onclick="return copyText('text<?php echo $no ?>')">Copy Link</a>
+                                      </div>
+                                    </div>
+                                    <!-- /btn-group -->
+                                    <input required type="text" class="form-control" value="<?php echo $urlAff ?>" id="text<?php echo $no; ?>">
+                                  </div>
+
+                                </div>
+                              </td>
+                            </tr>
+                          <?php } endforeach; ?>
+                        </tbody>
+                      </table>
+                    </div>                    
 
                     <br>
                      
