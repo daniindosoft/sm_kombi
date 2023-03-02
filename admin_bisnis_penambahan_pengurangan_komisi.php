@@ -55,6 +55,7 @@
                 	<li>Deposit Saldo</li>
                 </ul>
               </div>
+              <div class="table-responsive">
  								<table class="table table-striped table-bordered dt">
 				      		<thead>
 				      			<tr> 
@@ -132,9 +133,8 @@
 				      			<?php endforeach ?>
 				      		</tbody>
 				      	</table>
-             
+	            </div>
             </div>
-       
             <!-- /.card-footer -->
           </div>
           <!-- /.card -->

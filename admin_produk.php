@@ -161,49 +161,51 @@ link gambar 2
                           </form>
 				                  <br>
 				                  <br>
-				                  <table class="table table-striped dt">
-					                  <thead>
-					                    <tr>
-					                      <th style="width: 10px">#</th>
-					                      <th>Nama Produk</th>
-                                <th>Type</th>
- 
-					                      <th></th>
-					                    </tr>
-					                  </thead>
-					                  <tbody>
-                              <?php $no=1; foreach ($onMy->selectWithBussiness('produk', $_SESSION['bisnis_kategori_combi']) as $value): ?>
+                          <div class="table-responsive">
+  				                  <table class="table table-striped dt">
+  					                  <thead>
   					                    <tr>
-  					                      <td><?php echo $no++; ?></td>
-                                  <td><?php echo $value['nama_produk'] ?></td>
-                                  <td>
-                                    <?php
-                                      if($value['type'] == 'prd'){
-                                        echo 'Produk';
-                                      }else{
-                                        echo 'Merchandise';
-                                      }
-                                    ?>  
-                                  </td>                              
-  					                      <td>
-  					                      	<div class="btn-group btn-sm">
-  								                    <button type="button" class="btn btn-warning">Action</button>
-  								                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-  								                      <span class="sr-only">Toggle Dropdown</span>
-  								                    </button>
-  								                    <div class="dropdown-menu" role="menu" style="">
-                                        <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>admin/produk/edit?id=<?php echo $value['id'] ?>">Edit</a>
-  								                      <div class="dropdown-divider"></div>
-  								                      <a class="dropdown-item" onclick="return confirm('Yakin menghapus produk ini ?')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('produk') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
-  								                    </div>
-  								                  </div>
-  					                      </td>
+  					                      <th style="width: 10px">#</th>
+  					                      <th>Nama Produk</th>
+                                  <th>Type</th>
+   
+  					                      <th></th>
   					                    </tr>
-                              <?php endforeach ?>
-					                     
-					                  </tbody>
-					                </table>
-			                  </div>
+  					                  </thead>
+  					                  <tbody>
+                                <?php $no=1; foreach ($onMy->selectWithBussiness('produk', $_SESSION['bisnis_kategori_combi']) as $value): ?>
+    					                    <tr>
+    					                      <td><?php echo $no++; ?></td>
+                                    <td><?php echo $value['nama_produk'] ?></td>
+                                    <td>
+                                      <?php
+                                        if($value['type'] == 'prd'){
+                                          echo 'Produk';
+                                        }else{
+                                          echo 'Merchandise';
+                                        }
+                                      ?>  
+                                    </td>                              
+    					                      <td>
+    					                      	<div class="btn-group btn-sm">
+    								                    <button type="button" class="btn btn-warning">Action</button>
+    								                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+    								                      <span class="sr-only">Toggle Dropdown</span>
+    								                    </button>
+    								                    <div class="dropdown-menu" role="menu" style="">
+                                          <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>admin/produk/edit?id=<?php echo $value['id'] ?>">Edit</a>
+    								                      <div class="dropdown-divider"></div>
+    								                      <a class="dropdown-item" onclick="return confirm('Yakin menghapus produk ini ?')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('produk') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
+    								                    </div>
+    								                  </div>
+    					                      </td>
+    					                    </tr>
+                                <?php endforeach ?>
+  					                     
+  					                  </tbody>
+  					                </table>
+  			                  </div>
+                        </div>
 			                   
 			                </div>
 			              </div>

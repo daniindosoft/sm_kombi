@@ -255,62 +255,64 @@
                           </div>
                         </div>
                       </div>
-                      <table class="table table-bordered table-hover dataTable dtr-inline">
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Nama</th>
-                            <th>Kontak</th>
-                            <th>Info</th>
-                          </tr>
-                        </thead>
-                        <tbody id="resultBodyUser"> 
-                          <?php 
-                            $no=1; 
-                            foreach ($showDataLead as $value): 
-                              $komisi = $onMy->getSpesificLead('komisi', $value['idu'], $_SESSION['bisnis_kategori_combi'])['komisi'];
-
-                                $usercek = $onMy->single('users', $value['id_affiliate']);
-                                if ($usercek['id'] == $_COOKIE['id_akun_combi']) {
-                                  $aff = "Anda";
-                                  $email = $value['email'].'<br>';
-                                  $nowa = $value['nowa'];
-                                }else{
-                                  $aff = $usercek['nama_lengkap'];
-                                  $email = substr($value['email'], 0, 3).'******@**.com <br>';
-                                  $nowa = substr($value['nowa'], 0, 3).'*******';
-
-                                }
-                          ?>
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-hover dataTable dtr-inline">
+                          <thead>
                             <tr>
-                              <td><?php echo $no++; ?></td>
-                              <td>
-                                <div class="btn-group">
-                                  <button type="button" class="btn btn-warning"><?php echo $value['nama_lengkap'] ?></button>
-                                  <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                                    <span class="sr-only"></span>
-                                  </button>
-                                  <div class="dropdown-menu" role="menu">
-                                    <a class="dropdown-item" onclick="return msg('Akun ini akan menjadi member dari komunitas ini, yakin untuk menyetujuinya ?')" href="<?php echo $onMy->primaryLocal ?>admin/approve/user?id_user=<?php echo $value['idu'] ?>&id_komunitas=<?php echo $_SESSION['bisnis_kategori_combi'] ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH) ?>&price=<?php echo $value['price'] ?>&komisi=<?php echo $komisi ?>&aff=<?php echo $value['id_affiliate'] ?>&owner=<?php echo $_COOKIE['id_akun_combi'] ?>">Setujui</a>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <?php echo $email ?> <br>
-                                <?php echo $nowa ?>
-                              </td>
-                              <td>
-                                Transfer Senilai : <b class="btn btn-default font-weight-bold">Rp <?php echo $onMy->nf($value['price']) ?></b>  <br><br>
-                                Waktu Daftar : <b><?php echo $onMy->time_elapsed_string($value['created_at']) ?><br><br></b>
-                                Affilaite : 
-                                <?php 
-                                  echo $aff;
-                                ?>
-                              </td>
+                              <th>#</th>
+                              <th>Nama</th>
+                              <th>Kontak</th>
+                              <th>Info</th>
                             </tr>
-                          <?php endforeach ?>
-                        </tbody>
-                      </table>
+                          </thead>
+                          <tbody id="resultBodyUser"> 
+                            <?php 
+                              $no=1; 
+                              foreach ($showDataLead as $value): 
+                                $komisi = $onMy->getSpesificLead('komisi', $value['idu'], $_SESSION['bisnis_kategori_combi'])['komisi'];
+
+                                  $usercek = $onMy->single('users', $value['id_affiliate']);
+                                  if ($usercek['id'] == $_COOKIE['id_akun_combi']) {
+                                    $aff = "Anda";
+                                    $email = $value['email'].'<br>';
+                                    $nowa = $value['nowa'];
+                                  }else{
+                                    $aff = $usercek['nama_lengkap'];
+                                    $email = substr($value['email'], 0, 3).'******@**.com <br>';
+                                    $nowa = substr($value['nowa'], 0, 3).'*******';
+
+                                  }
+                            ?>
+                              <tr>
+                                <td><?php echo $no++; ?></td>
+                                <td>
+                                  <div class="btn-group">
+                                    <button type="button" class="btn btn-warning"><?php echo $value['nama_lengkap'] ?></button>
+                                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                                      <span class="sr-only"></span>
+                                    </button>
+                                    <div class="dropdown-menu" role="menu">
+                                      <a class="dropdown-item" onclick="return msg('Akun ini akan menjadi member dari komunitas ini, yakin untuk menyetujuinya ?')" href="<?php echo $onMy->primaryLocal ?>admin/approve/user?id_user=<?php echo $value['idu'] ?>&id_komunitas=<?php echo $_SESSION['bisnis_kategori_combi'] ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH) ?>&price=<?php echo $value['price'] ?>&komisi=<?php echo $komisi ?>&aff=<?php echo $value['id_affiliate'] ?>&owner=<?php echo $_COOKIE['id_akun_combi'] ?>">Setujui</a>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <?php echo $email ?> <br>
+                                  <?php echo $nowa ?>
+                                </td>
+                                <td>
+                                  Transfer Senilai : <b class="btn btn-default font-weight-bold">Rp <?php echo $onMy->nf($value['price']) ?></b>  <br><br>
+                                  Waktu Daftar : <b><?php echo $onMy->time_elapsed_string($value['created_at']) ?><br><br></b>
+                                  Affilaite : 
+                                  <?php 
+                                    echo $aff;
+                                  ?>
+                                </td>
+                              </tr>
+                            <?php endforeach ?>
+                          </tbody>
+                        </table>
+                      </div>
                       <hr>
                       <div id="resultBodyUserPage">
                         
@@ -354,111 +356,113 @@
                           </div>
                         </div>
                       </div>
-                      <table class="table table-bordered table-hover dataTable dtr-inline">
-                        <thead>
-                          <tr>
-                            <th>#</th>
-                            <th>Nama</th>
-                            <th>Kontak</th>
-                            <th>Produk</th>
-                            <th>Info</th>
-                          </tr>
-                        </thead>
-                        <tbody id="resultBodyProduk"> 
-                          <?php 
-                            $no=1; 
-                            // echo 'select * order_produk where id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'];
-
-                            foreach ($onMy->tampil_manual('select * from order_produk where id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'].' and status !=2 order by id desc limit 10') as $value): 
-                              $komisi = $onMy->getSpesificLead('komisi', $value['idu'], $_SESSION['bisnis_kategori_combi'])['komisi'];
-
-                              $usercek = $onMy->single('users', $value['id_aff']);
-                              if ($value['id_aff'] == $_COOKIE['id_akun_combi']) {
-                                $aff = "Anda";
-                                $email = $value['email'].'<br>';
-                                $nowa = $value['nowa'];
-                              }else{
-                                $aff = $usercek['nama_lengkap'];
-                                $email = substr($value['email'], 0, 3).'******@**.com <br>';
-                                $nowa = substr($value['nowa'], 0, 3).'*******';
-
-                              }
-
-                              if ($value['status'] == 3) {
-                                $email = $value['email'].'<br>';
-                                $nowa = $value['nowa'];
-                              }
-                          ?>
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-hover dataTable dtr-inline">
+                          <thead>
                             <tr>
-                              <td><?php echo $no++; ?></td>
-                              <td>
-                                <?php
-                                  $noption = '';
-                                  $produkIni = $onMy->selectSingleOne('affiliate_produk', 'id', $value['id_produk']);
-                                  if ($value['status'] == '1') {
-                                    echo "<span class='badge badge-info'>Belum di proses</span>";
-                                  }elseif($value['status'] == '3'){
-                                    if ($produkIni['type'] == 'fisik') {
-                                      $noption = '';
-                                      if (empty($value['resi']) || $value['resi'] == null || $value['resi'] == '') {
-                                        $noption = '
-                                          <a class="dropdown-item" href="#" onclick="return formResiAff('.$value['id'].')"><i class="fa fa-barcode"></i> Input Resi</a>
-                                        ';
-                                      }
-                                    }
-                                    echo "<span class='badge badge-warning'>Sudah di proses</span>";
-                                  }
-                                ?>
-                                
-                                <?php echo ($value['resi']) ? '<br>RESI : <b>'.$value['resi'].'</b>' : ''; ?>
-                                <br>
-
-                                <div class="btn-group">
-                                  <button type="button" class="btn btn-warning"><?php echo $value['nama']
-                                  ?></button>
-                                  <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                                    <span class="sr-only"></span>
-                                  </button>
-                                  <div class="dropdown-menu" role="menu">
-                                    <a class="dropdown-item" target="_blank" href="<?php echo $onMy->primaryLocal ?>admin/view/produkaff?id=<?php echo $value['id'] ?>">Lihat Detail</a>
-                                    <?php echo $noption; ?>
-                                    <?php if ($value['status'] == 1): ?>
-                                      <a class="dropdown-item" onclick="return msg('Yakin memproses pesanan ini ?, komisi akan di tambahkan ke affiliate(jika pembeli ini datang dari affiliate)')" href="<?php echo $onMy->primaryLocal ?>admin/approve/produkaff?id=<?php echo $value['id'] ?>&id_komunitas=<?php echo $_SESSION['bisnis_kategori_combi'] ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH) ?>&price=<?php echo $value['harga'] ?>&status=3&komisi=<?php echo $value['komisi'] ?>&aff=<?php echo $value['id_aff'] ?>">Setujui/Proses</a>
-                                      
-                                      <a class="dropdown-item" onclick="return msg('Yakin menolak pesanan ini ?')" href="<?php echo $onMy->primaryLocal ?>admin/approve/produkaff?id=<?php echo $value['id'] ?>&id_komunitas=<?php echo $_SESSION['bisnis_kategori_combi'] ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH) ?>&price=<?php echo $value['harga'] ?>&status=2&komisi=<?php echo $value['komisi'] ?>&aff=<?php echo $value['id_aff'] ?>">Tolak</a>
-                                    <?php endif ?>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <?php
-                                  echo $email;
-                                  echo $nowa;
-                                ?>
-                              </td>
-                              <td>
-                                <?php 
-                                  if($produkIni['type'] == 'non'){
-                                    echo "<span class='badge badge-warning'>Produk Digital</span>";
-                                  }else{
-                                    echo "<span class='badge badge-info'>Produk Fisik</span>";
-                                  }
-                                  echo $type.'<br>'.$produkIni['judul'];
-                                ?>
-                              </td>
-                              <td>
-                                Transfer Senilai : <b class="btn btn-default font-weight-bold">Rp <?php echo $onMy->nf($value['harga']) ?></b>  <br><br>
-                                <small>Waktu Daftar : <b><?php echo $onMy->time_elapsed_string($value['created_at']) ?><br><br></b>
-                                Affilaite : 
-                                <?php 
-                                  echo $aff;
-                                ?>
-                                </small>
-                              </td>
+                              <th>#</th>
+                              <th>Nama</th>
+                              <th>Kontak</th>
+                              <th>Produk</th>
+                              <th>Info</th>
                             </tr>
-                          <?php endforeach ?>
-                        </tbody>
-                      </table>
+                          </thead>
+                          <tbody id="resultBodyProduk"> 
+                            <?php 
+                              $no=1; 
+                              // echo 'select * order_produk where id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'];
+
+                              foreach ($onMy->tampil_manual('select * from order_produk where id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'].' and status !=2 order by id desc limit 10') as $value): 
+                                $komisi = $onMy->getSpesificLead('komisi', $value['idu'], $_SESSION['bisnis_kategori_combi'])['komisi'];
+
+                                $usercek = $onMy->single('users', $value['id_aff']);
+                                if ($value['id_aff'] == $_COOKIE['id_akun_combi']) {
+                                  $aff = "Anda";
+                                  $email = $value['email'].'<br>';
+                                  $nowa = $value['nowa'];
+                                }else{
+                                  $aff = $usercek['nama_lengkap'];
+                                  $email = substr($value['email'], 0, 3).'******@**.com <br>';
+                                  $nowa = substr($value['nowa'], 0, 3).'*******';
+
+                                }
+
+                                if ($value['status'] == 3) {
+                                  $email = $value['email'].'<br>';
+                                  $nowa = $value['nowa'];
+                                }
+                            ?>
+                              <tr>
+                                <td><?php echo $no++; ?></td>
+                                <td>
+                                  <?php
+                                    $noption = '';
+                                    $produkIni = $onMy->selectSingleOne('affiliate_produk', 'id', $value['id_produk']);
+                                    if ($value['status'] == '1') {
+                                      echo "<span class='badge badge-info'>Belum di proses</span>";
+                                    }elseif($value['status'] == '3'){
+                                      if ($produkIni['type'] == 'fisik') {
+                                        $noption = '';
+                                        if (empty($value['resi']) || $value['resi'] == null || $value['resi'] == '') {
+                                          $noption = '
+                                            <a class="dropdown-item" href="#" onclick="return formResiAff('.$value['id'].')"><i class="fa fa-barcode"></i> Input Resi</a>
+                                          ';
+                                        }
+                                      }
+                                      echo "<span class='badge badge-warning'>Sudah di proses</span>";
+                                    }
+                                  ?>
+                                  
+                                  <?php echo ($value['resi']) ? '<br>RESI : <b>'.$value['resi'].'</b>' : ''; ?>
+                                  <br>
+
+                                  <div class="btn-group">
+                                    <button type="button" class="btn btn-warning"><?php echo $value['nama']
+                                    ?></button>
+                                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown">
+                                      <span class="sr-only"></span>
+                                    </button>
+                                    <div class="dropdown-menu" role="menu">
+                                      <a class="dropdown-item" target="_blank" href="<?php echo $onMy->primaryLocal ?>admin/view/produkaff?id=<?php echo $value['id'] ?>">Lihat Detail</a>
+                                      <?php echo $noption; ?>
+                                      <?php if ($value['status'] == 1): ?>
+                                        <a class="dropdown-item" onclick="return msg('Yakin memproses pesanan ini ?, komisi akan di tambahkan ke affiliate(jika pembeli ini datang dari affiliate)')" href="<?php echo $onMy->primaryLocal ?>admin/approve/produkaff?id=<?php echo $value['id'] ?>&id_komunitas=<?php echo $_SESSION['bisnis_kategori_combi'] ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH) ?>&price=<?php echo $value['harga'] ?>&status=3&komisi=<?php echo $value['komisi'] ?>&aff=<?php echo $value['id_aff'] ?>">Setujui/Proses</a>
+                                        
+                                        <a class="dropdown-item" onclick="return msg('Yakin menolak pesanan ini ?')" href="<?php echo $onMy->primaryLocal ?>admin/approve/produkaff?id=<?php echo $value['id'] ?>&id_komunitas=<?php echo $_SESSION['bisnis_kategori_combi'] ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH) ?>&price=<?php echo $value['harga'] ?>&status=2&komisi=<?php echo $value['komisi'] ?>&aff=<?php echo $value['id_aff'] ?>">Tolak</a>
+                                      <?php endif ?>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <?php
+                                    echo $email;
+                                    echo $nowa;
+                                  ?>
+                                </td>
+                                <td>
+                                  <?php 
+                                    if($produkIni['type'] == 'non'){
+                                      echo "<span class='badge badge-warning'>Produk Digital</span>";
+                                    }else{
+                                      echo "<span class='badge badge-info'>Produk Fisik</span>";
+                                    }
+                                    echo $type.'<br>'.$produkIni['judul'];
+                                  ?>
+                                </td>
+                                <td>
+                                  Transfer Senilai : <b class="btn btn-default font-weight-bold">Rp <?php echo $onMy->nf($value['harga']) ?></b>  <br><br>
+                                  <small>Waktu Daftar : <b><?php echo $onMy->time_elapsed_string($value['created_at']) ?><br><br></b>
+                                  Affilaite : 
+                                  <?php 
+                                    echo $aff;
+                                  ?>
+                                  </small>
+                                </td>
+                              </tr>
+                            <?php endforeach ?>
+                          </tbody>
+                        </table>
+                      </div>
                       <div id="resultBodyProdukPage">
                         <nav aria-label="Page navigation example">
                           <ul class="pagination justify-content-center">
@@ -570,6 +574,13 @@
                               <input type="checkbox" class="custom-control-input" id="cprivate" name="cprivate">
                               <label class="custom-control-label" for="cprivate">Jika diaktifkan produk ini tidak bisa di affiliatekan oleh member komunitas Anda</label>
                             </div>
+                          </div> 
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Header</label>
+                              <textarea name="header" class="form-control" placeholder="..."></textarea>
+                              <small>Ketika Member membuka/mengunjungi memberarea komunitasmu, kode/pixel ini akan tertrigger</small>
+                            </div>
                           </div>
 
                           <div class="col-md-12">
@@ -577,40 +588,42 @@
                           </div>
                           <div class="col-md-12">
                             <hr>
-                            <table class="table table-striped table-bordered dt">
-                              <thead>
-                                <tr>
-                                  <th>No</th>
-                                  <th>Judul</th>
-                                  <th>Type Produk</th>
-                                  <th>Harga</th>
-                                  <th>Komisi</th>
-                                  <th></th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <?php $no=1; $affiliateProduk = $onMy->selectWithBussiness('affiliate_produk', $_SESSION['bisnis_kategori_combi']); foreach($affiliateProduk as $value): ?>
+                            <div class="table-responsive">
+                              <table class="table table-striped table-bordered dt">
+                                <thead>
                                   <tr>
-                                    <td><?php echo $no++; ?></td>
-                                    <td><?php echo $value['judul']; ?></td>
-                                    <td><?php echo ($value['type'] == 'fisik') ? 'Fisik' : 'Non-Fisik'; ?></td>
-                                    <td>Rp<?php echo ($value['nilai'] == 'berbayar') ? $onMy->nf($value['harga']) : 'Gratis' ; ?></td>
-                                    <td>Rp<?php echo ($value['nilai'] == 'berbayar') ? $onMy->nf($value['komisi']) : '-' ; ?></td>
-                                    <td>
-                                      <div class="btn-group">
-                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown">Action
-                                          <span class="sr-only"></span>
-                                        </button>
-                                        <div class="dropdown-menu" role="menu">
-                                          <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>admin/bisnis/affiliate/edit?id=<?php echo $value['id'] ?>" target="_blank"><i class="fa fa-edit"></i> Edit</a>
-                                          <a class="dropdown-item" onclick="return confirm('Yakin menghapus produk ini ?, semua data yang berkaitan dengan ini akan hilang juga !')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('affiliate_produk') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>"><i class="fa fa-trash"></i> Hapus</a>
-                                        </div>
-                                      </div>
-                                    </td>
+                                    <th>No</th>
+                                    <th>Judul</th>
+                                    <th>Type Produk</th>
+                                    <th>Harga</th>
+                                    <th>Komisi</th>
+                                    <th></th>
                                   </tr>
-                                <?php endforeach; ?>
-                              </tbody>
-                            </table>
+                                </thead>
+                                <tbody>
+                                  <?php $no=1; $affiliateProduk = $onMy->selectWithBussiness('affiliate_produk', $_SESSION['bisnis_kategori_combi']); foreach($affiliateProduk as $value): ?>
+                                    <tr>
+                                      <td><?php echo $no++; ?></td>
+                                      <td><?php echo $value['judul']; ?></td>
+                                      <td><?php echo ($value['type'] == 'fisik') ? 'Fisik' : 'Non-Fisik'; ?></td>
+                                      <td>Rp<?php echo ($value['nilai'] == 'berbayar') ? $onMy->nf($value['harga']) : 'Gratis' ; ?></td>
+                                      <td>Rp<?php echo ($value['nilai'] == 'berbayar') ? $onMy->nf($value['komisi']) : '-' ; ?></td>
+                                      <td>
+                                        <div class="btn-group">
+                                          <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown">Action
+                                            <span class="sr-only"></span>
+                                          </button>
+                                          <div class="dropdown-menu" role="menu">
+                                            <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>admin/bisnis/affiliate/edit?id=<?php echo $value['id'] ?>" target="_blank"><i class="fa fa-edit"></i> Edit</a>
+                                            <a class="dropdown-item" onclick="return confirm('Yakin menghapus produk ini ?, semua data yang berkaitan dengan ini akan hilang juga !')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('affiliate_produk') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>"><i class="fa fa-trash"></i> Hapus</a>
+                                          </div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  <?php endforeach; ?>
+                                </tbody>
+                              </table>
+                            </div>
                           </div>
                         </div>
                       </form>

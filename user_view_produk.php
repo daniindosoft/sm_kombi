@@ -66,10 +66,11 @@
               <h3 class="d-inline-block d-sm-none"><?php echo $produk['nama_produk'] ?></h3>
               <div class="col-12">
                 <img src="<?php echo $gambar[0] ?>" class="product-image" alt="Product Image">
+                <small id="resultOfSource"></small>
               </div>
               <div class="col-12 product-image-thumbs">
               	<?php $n=0; foreach ($gambar as $value): $n++;  ?>
-	                <div class="product-image-thumb <?php echo ($n == 1) ? 'active':'' ?>"><img src="<?php echo $value ?>" alt="Product Image"></div>
+	                <div class="product-image-thumb <?php echo ($n == 1) ? 'active':'' ?>"><img src="<?php echo $value ?>" data-source="<?php echo parse_url($value)['host'] ?>" alt="Product Image"></div>
               	<?php endforeach ?>
               </div>
             </div>

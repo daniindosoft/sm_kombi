@@ -134,6 +134,13 @@
                               <label class="custom-control-label" for="cprivate">Jika diaktifkan produk ini tidak bisa di affiliatekan oleh member komunitas Anda</label>
                             </div>
                           </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label>Header</label>
+                              <textarea name="header" class="form-control" placeholder="..."><?php echo base64_decode($data['header']) ?></textarea>
+                              <small>Ketika Member membuka/mengunjungi memberarea komunitasmu, kode/pixel ini akan tertrigger</small>
+                            </div>
+                          </div>
 
                           <div class="col-md-12">
                             <button type="submit" name="updateBisnisAffiliate" class="btn btn-warning btn-block">Simpan Perubahan</button>

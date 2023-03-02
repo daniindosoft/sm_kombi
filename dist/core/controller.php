@@ -60,7 +60,10 @@
 				$verif,
 				$_POST['harga'],
 				$_POST['text'],
-				$_POST['wa_template'],$ds,$aff, $_POST['header'], $_POST['header_form'], $_POST['header_invoice']
+				$_POST['wa_template'],$ds,$aff, 
+				base64_encode($_POST['header']), 
+				base64_encode($_POST['header_form']), 
+				base64_encode($_POST['header_invoice'])
 			);
 			$col=array('email', 'nama_komunitas','nowa','website','ig','tiktok','komisi_affiliate_join', 'code_komunitas', 'id_user', 'id_kategori_bisnis', 'member_show', 'verifikasi_post', 'harga', 'note', 'wa_template', 'is_dropship', 'is_affiliate', 'header', 'header_form', 'header_invoice');
 			// $sistem->debug = true;
@@ -125,9 +128,9 @@
 			"is_affiliate ='".$is_affiliate."'",
 			"email ='".$_POST['email']."'",
 			"harga ='".$_POST['harga']."'",
-			"header='".$_POST['header']."'",
-			"header_form='".$_POST['header_form']."'",
-			"header_invoice='".$_POST['header_invoice']."'"
+			"header='". base64_encode($_POST['header'])."'",
+			"header_form='". base64_encode($_POST['header_form'])."'",
+			"header_invoice='". base64_encode($_POST['header_invoice'])."'"
 		);
 		$sistem->registerFlash('s', 'Data berhasil di update');
 		$sistem->rubah_data($tbl,$ubah,$data,$key);
@@ -916,6 +919,7 @@
 			}
 
 			$data=array(
+				base64_encode($_POST['header']),
 				strip_tags($_POST['judul']),
 				strip_tags($_POST['note']),
 				strip_tags($harga),
@@ -932,9 +936,9 @@
 			);
 			// $sistem->debug = true;
 			$sistem->registerFlash('s', 'Produk Affiliate "'.$_POST['judul'].'" telah di tambahkan');
-			$col=array('judul', 'note', 'harga', 'komisi', 'url', 'type', 'id_komunitas_bisnis', 'id_user', 'fields', 'nilai', 'kode_affiliate_produk', 'is_private');
+			$col=array('header','judul', 'note', 'harga', 'komisi', 'url', 'type', 'id_komunitas_bisnis', 'id_user', 'fields', 'nilai', 'kode_affiliate_produk', 'is_private');
 			$sistem->postNotifikasi( $_COOKIE['id_akun_combi'], 0, 'new_prod', 'Produk Affilaite Baru', 'Admin menambahkan produk Affiliate baru nih <b>('.$_POST['judul'].')</b>, cek sekarang !', $_SESSION['bisnis_kategori_combi'] );
-
+			// $sistem->debug = true;	
 			$sistem->masukan_data($tbl,$col,$data);
 			break;
 
@@ -966,6 +970,7 @@
 			}
 
 			$data=array(
+				'header ="'.base64_encode($_POST['header']).'"',
 				'judul ="'.strip_tags($_POST['judul']).'"',
 				'note ="'.strip_tags($_POST['note']).'"',
 				'harga ="'.strip_tags($harga).'"',

@@ -38,66 +38,67 @@
         </div>
 				
         <div class="card-body" style="">
-
-        	 <table class="table table-striped table-hover dt">
-						<thead>
-							<tr>
-								<th>No</th>
-								<th>Admin mengajukan</th>
-								<th>Nilai</th>
-								<th>Tanggal</th>
-								<th>Status/Action</th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php $no=1; foreach ($sistem->tampil_manual('select * from manage_komisi where id_user='.$_COOKIE['id_akun_combi'].' and id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'].' order by id desc limit 100') as $value): 
-									if ($value['status'] == '1') {
-										$stt = "<span class='badge badge-info'>Belum di proses</span>";
-									}elseif ($value['status'] == '2') {
-										$stt = "<span class='badge badge-danger'>Anda Menolak ini</span>";
-									}elseif ($value['status'] == '3') {
-										$stt = "<span class='badge badge-warning'>Komisi telah ditambahkan</span>";
-									}
-
-
-							?>
+					<div class="table-responsive">
+	        	<table class="table table-striped table-hover dt">
+							<thead>
 								<tr>
-									<td><?php echo $no++ ?></td>
-									<td>
-										<?php
-											if ($value['operator'] == '+') {
-												echo "Penambahan Komisi";
-												$nilai = '<label class="text-success"><i class="fa fa-plus "></i> Rp'.$onMy->nf($value['nilai']).'<label>';
-											}else{
-												echo "Pengurangan Komisi";
-												$nilai = '<label class="text-danger"><i class="fa fa-minus "></i> Rp'.$onMy->nf($value['nilai']).'<label>';
-											}
-										?>
-									</td>
-									<td><?php echo $nilai ?></td>
-									<td><?php echo $onMy->time_elapsed_string($value['created_at']) ?></td>
-									<td>
-										<?php
-											echo $stt;
-										?>
-										<?php if ($value['status'] == 1): ?>
-											<div class="btn-group btn-sm">
-		                    <button type="button" class="btn btn-warning">Action</button>
-		                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-		                      <span class="sr-only">Toggle Dropdown</span>
-		                    </button>
-		                    <div class="dropdown-menu" role="menu" style="">
-		                      <a class="dropdown-item" onclick="return confirm('Yakin menyetujui ini ?')" href="<?php echo $sistem->primaryLocal ?>user/acc/komisi?id=<?php echo $value['id'] ?>&status=3">Setuju	</a>
-		                      <a class="dropdown-item" onclick="return confirm('Yakin menolak ini ?')" href="<?php echo $sistem->primaryLocal ?>user/acc/komisi?id=<?php echo $value['id'] ?>&status=2">Tolak</a>
-		                    </div>
-		                  </div>
-										<?php endif ?>
-									</td>
-							 
+									<th>No</th>
+									<th>Admin mengajukan</th>
+									<th>Nilai</th>
+									<th>Tanggal</th>
+									<th>Status/Action</th>
 								</tr>
-							<?php endforeach ?>
-						</tbody>
-					</table>
+							</thead>
+							<tbody>
+								<?php $no=1; foreach ($sistem->tampil_manual('select * from manage_komisi where id_user='.$_COOKIE['id_akun_combi'].' and id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'].' order by id desc limit 100') as $value): 
+										if ($value['status'] == '1') {
+											$stt = "<span class='badge badge-info'>Belum di proses</span>";
+										}elseif ($value['status'] == '2') {
+											$stt = "<span class='badge badge-danger'>Anda Menolak ini</span>";
+										}elseif ($value['status'] == '3') {
+											$stt = "<span class='badge badge-warning'>Komisi telah ditambahkan</span>";
+										}
+
+
+								?>
+									<tr>
+										<td><?php echo $no++ ?></td>
+										<td>
+											<?php
+												if ($value['operator'] == '+') {
+													echo "Penambahan Komisi";
+													$nilai = '<label class="text-success"><i class="fa fa-plus "></i> Rp'.$onMy->nf($value['nilai']).'<label>';
+												}else{
+													echo "Pengurangan Komisi";
+													$nilai = '<label class="text-danger"><i class="fa fa-minus "></i> Rp'.$onMy->nf($value['nilai']).'<label>';
+												}
+											?>
+										</td>
+										<td><?php echo $nilai ?></td>
+										<td><?php echo $onMy->time_elapsed_string($value['created_at']) ?></td>
+										<td>
+											<?php
+												echo $stt;
+											?>
+											<?php if ($value['status'] == 1): ?>
+												<div class="btn-group btn-sm">
+			                    <button type="button" class="btn btn-warning">Action</button>
+			                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+			                      <span class="sr-only">Toggle Dropdown</span>
+			                    </button>
+			                    <div class="dropdown-menu" role="menu" style="">
+			                      <a class="dropdown-item" onclick="return confirm('Yakin menyetujui ini ?')" href="<?php echo $sistem->primaryLocal ?>user/acc/komisi?id=<?php echo $value['id'] ?>&status=3">Setuju	</a>
+			                      <a class="dropdown-item" onclick="return confirm('Yakin menolak ini ?')" href="<?php echo $sistem->primaryLocal ?>user/acc/komisi?id=<?php echo $value['id'] ?>&status=2">Tolak</a>
+			                    </div>
+			                  </div>
+											<?php endif ?>
+										</td>
+								 
+									</tr>
+								<?php endforeach ?>
+							</tbody>
+						</table>
+	        </div>
         </div>
       </div>
 		</div>

@@ -137,15 +137,20 @@
       <ul class="nav nav-treeview">
         <li class="nav-item">
           <a href="<?php echo $onMy->primaryLocal ?>admin/report/income" class="nav-link" id="income">
-            <i class="fa fa-bookmark nav-icon"></i>
+            <p>Info Update</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo $onMy->primaryLocal ?>admin/report/income" class="nav-link" id="income">
+             
             <p>Panduan COMBI</p>
           </a>
         </li>
         <li class="nav-item">
           <a href="<?php echo $onMy->primaryLocal ?>admin/combi" class="nav-link" id="faq">
-            <i class="nav-icon fa fa-info-circle"></i>
+            
             <p>
-              COMBI (Term & FAQ)
+              Term & FAQ Komunitas
             </p>
           </a>
         </li>

@@ -65,39 +65,41 @@
 			                  	</form>
 				                  <br>
 				                  <br>
-				                  <table class="table table-striped dt">
-					                  <thead>
-					                    <tr>
-					                      <th style="width: 10px">#</th>
-					                      <th>Nama Kategori</th>
-					                      <th></th>
-					                    </tr>
-					                  </thead>
-					                  <tbody>
-					                  	<?php 
-					                  		$no=1; 
-					                  		$ecourseKategori = $onMy->selectWithBussiness('kategori_tulisan', $_SESSION['bisnis_kategori_combi']);
-					                  		foreach ($ecourseKategori as $value): $no++; 
-					                  	?>
+				                  <div class="table-responsive">
+					                  <table class="table table-striped dt">
+						                  <thead>
 						                    <tr>
-						                      <td><?php echo $no++ ?></td>
-						                      <td><?php echo $value['nama'] ?></td>
-						                      <td>
-						                      	<div class="btn-group btn-sm">
-									                    <button type="button" class="btn btn-warning">Action</button>
-									                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-									                      <span class="sr-only">Toggle Dropdown</span>
-									                    </button>
-									                    <div class="dropdown-menu" role="menu" style="">
-									                      <a class="dropdown-item" onclick="return confirm('Yakin menghapus kategori ini ?, semua data yang berhubungan dengan ini akan hilang juga !')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('kategori_tulisan') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
-									                    </div>
-									                  </div>
-						                      </td>
+						                      <th style="width: 10px">#</th>
+						                      <th>Nama Kategori</th>
+						                      <th></th>
 						                    </tr>
-					                  	<?php endforeach ?>
-					                   
-					                  </tbody>
-					                </table>
+						                  </thead>
+						                  <tbody>
+						                  	<?php 
+						                  		$no=1; 
+						                  		$ecourseKategori = $onMy->selectWithBussiness('kategori_tulisan', $_SESSION['bisnis_kategori_combi']);
+						                  		foreach ($ecourseKategori as $value): $no++; 
+						                  	?>
+							                    <tr>
+							                      <td><?php echo $no++ ?></td>
+							                      <td><?php echo $value['nama'] ?></td>
+							                      <td>
+							                      	<div class="btn-group btn-sm">
+										                    <button type="button" class="btn btn-warning">Action</button>
+										                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+										                      <span class="sr-only">Toggle Dropdown</span>
+										                    </button>
+										                    <div class="dropdown-menu" role="menu" style="">
+										                      <a class="dropdown-item" onclick="return confirm('Yakin menghapus kategori ini ?, semua data yang berhubungan dengan ini akan hilang juga !')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('kategori_tulisan') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
+										                    </div>
+										                  </div>
+							                      </td>
+							                    </tr>
+						                  	<?php endforeach ?>
+						                   
+						                  </tbody>
+						                </table>
+				                  </div>
 			                  </div>
 			                  <div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
 			                  	<form action="" method="post">

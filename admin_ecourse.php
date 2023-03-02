@@ -66,41 +66,43 @@
 			                  	</form>
 				                  <br>
 				                  <br>
-				                  <table class="table table-striped">
-					                  <thead>
-					                    <tr>
-					                      <th style="width: 10px">#</th>
-					                      <th>Nama Kategori</th>
-					                      <th></th>
-					                    </tr>
-					                  </thead>
-					                  <tbody>
-					                  	<?php 
-					                  		$no=1; 
-					                  		$ecourseKategori = $onMy->selectWithBussiness('ecourse_kategori', $_SESSION['bisnis_kategori_combi']);
-					                  		foreach ($ecourseKategori as $value): $no++; 
-					                  	?>
+				                  <div class="table-responsive">
+					                  <table class="table table-striped dt">
+						                  <thead>
 						                    <tr>
-						                      <td><?php echo $no++ ?></td>
-						                      <td><?php echo $value['nama_kategori'] ?></td>
-						                      <td>
-						                      	<div class="btn-group btn-sm">
-									                    <button type="button" class="btn btn-warning">Action</button>
-									                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-									                      <span class="sr-only">Toggle Dropdown</span>
-									                    </button>
-									                    <div class="dropdown-menu" role="menu" style="">
-									                      <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>admin/ecourse/edit/kategori?id=<?php echo $value['id'] ?>">Edit</a>
-									                      <div class="dropdown-divider"></div>
-									                      <a class="dropdown-item" onclick="return confirm('Yakin menghapus kategori ini ?, semua data yang berhubungan dengan ini akan hilang juga !')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('ecourse_kategori') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
-									                    </div>
-									                  </div>
-						                      </td>
+						                      <th style="width: 10px">#</th>
+						                      <th>Nama Kategori</th>
+						                      <th></th>
 						                    </tr>
-					                  	<?php endforeach ?>
-					                   
-					                  </tbody>
-					                </table>
+						                  </thead>
+						                  <tbody>
+						                  	<?php 
+						                  		$no=1; 
+						                  		$ecourseKategori = $onMy->selectWithBussiness('ecourse_kategori', $_SESSION['bisnis_kategori_combi']);
+						                  		foreach ($ecourseKategori as $value): $no++; 
+						                  	?>
+							                    <tr>
+							                      <td><?php echo $no++ ?></td>
+							                      <td><?php echo $value['nama_kategori'] ?></td>
+							                      <td>
+							                      	<div class="btn-group btn-sm">
+										                    <button type="button" class="btn btn-warning">Action</button>
+										                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+										                      <span class="sr-only">Toggle Dropdown</span>
+										                    </button>
+										                    <div class="dropdown-menu" role="menu" style="">
+										                      <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>admin/ecourse/edit/kategori?id=<?php echo $value['id'] ?>">Edit</a>
+										                      <div class="dropdown-divider"></div>
+										                      <a class="dropdown-item" onclick="return confirm('Yakin menghapus kategori ini ?, semua data yang berhubungan dengan ini akan hilang juga !')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('ecourse_kategori') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
+										                    </div>
+										                  </div>
+							                      </td>
+							                    </tr>
+						                  	<?php endforeach ?>
+						                   
+						                  </tbody>
+						                </table>
+					                </div>
 			                  </div>
 			                  <div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
 			                  	<form action="" method="post">
@@ -163,42 +165,44 @@
 	              </div>
 	              <!-- /.card-header -->
 	              <div class="card-body">
-									<table class="table table-striped">
-	                  <thead>
-	                    <tr>
-	                      <th style="width: 10px">#</th>
-	                      <th>Judul</th>
-	                      <th>Kategori</th>
-	                      <th>Deskripsi</th>
-	                      <th>URL</th>
-	                      <th></th>
-	                    </tr>
-	                  </thead>
-	                  <tbody>
-	                  	<?php $no=1; foreach ($onMy->selectWithBussiness('ecourse', $_SESSION['bisnis_kategori_combi']) as $value): ?>
+                  <div class="table-responsive">
+										<table class="table table-striped">
+		                  <thead>
 		                    <tr>
-		                      <td><?php echo $no++; ?></td>
-		                      <td><?php echo $value['judul'] ?></td>
-		                      <td><?php echo $onMy->single('ecourse_kategori',$value['id_kategori'])['nama_kategori'] ?></td>
-		                      <td><?php echo substr($value['deskripsi'], 0, 30); ?>...</td>
-		                      <td><a href="<?php echo $value['link'] ?>" target="_blank"><?php echo $value['link'] ?></a></td>
-		                      <td>
-		                      	<div class="btn-group btn-sm dropup">
-					                    <button type="button" class="btn btn-warning">Action</button>
-					                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-					                      <span class="sr-only">Toggle Dropdown</span>
-					                    </button>
-					                    <div class="dropdown-menu" role="menu" style="">
-					                      <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>admin/ecourse/edit?id=<?php echo $value['id'] ?>">Edit</a>
-					                      <div class="dropdown-divider"></div>
-					                      <a class="dropdown-item" onclick="return confirm('Yakin menghapus E-Course Bisnis ini ?, semua yang berhubungan dengan ini akan hilang juga')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('ecourse') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
-					                    </div>
-					                  </div>
-		                      </td>Data E
+		                      <th style="width: 10px">#</th>
+		                      <th>Judul</th>
+		                      <th>Kategori</th>
+		                      <th>Deskripsi</th>
+		                      <th>URL</th>
+		                      <th></th>
 		                    </tr>
-	                    <?php endforeach ?> 
-	                  </tbody>
-	                </table>
+		                  </thead>
+		                  <tbody>
+		                  	<?php $no=1; foreach ($onMy->selectWithBussiness('ecourse', $_SESSION['bisnis_kategori_combi']) as $value): ?>
+			                    <tr>
+			                      <td><?php echo $no++; ?></td>
+			                      <td><?php echo $value['judul'] ?></td>
+			                      <td><?php echo $onMy->single('ecourse_kategori',$value['id_kategori'])['nama_kategori'] ?></td>
+			                      <td><?php echo substr($value['deskripsi'], 0, 30); ?>...</td>
+			                      <td><a href="<?php echo $value['link'] ?>" target="_blank"><?php echo $value['link'] ?></a></td>
+			                      <td>
+			                      	<div class="btn-group btn-sm dropup">
+						                    <button type="button" class="btn btn-warning">Action</button>
+						                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+						                      <span class="sr-only">Toggle Dropdown</span>
+						                    </button>
+						                    <div class="dropdown-menu" role="menu" style="">
+						                      <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>admin/ecourse/edit?id=<?php echo $value['id'] ?>">Edit</a>
+						                      <div class="dropdown-divider"></div>
+						                      <a class="dropdown-item" onclick="return confirm('Yakin menghapus E-Course Bisnis ini ?, semua yang berhubungan dengan ini akan hilang juga')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('ecourse') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
+						                    </div>
+						                  </div>
+			                      </td>Data E
+			                    </tr>
+		                    <?php endforeach ?> 
+		                  </tbody>
+		                </table>
+		              </div>
 	              </div>
 	              <!-- /.card-body -->
 	            </div>

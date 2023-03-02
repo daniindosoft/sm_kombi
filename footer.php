@@ -256,6 +256,7 @@
       $('.product-image-thumb').on('click', function () {
         var $image_element = $(this).find('img')
         $('.product-image').prop('src', $image_element.attr('src'))
+        $('#resultOfSource').text('source : '+$image_element.attr('data-source'))
         $('.product-image-thumb.active').removeClass('active')
         $(this).addClass('active')
       })

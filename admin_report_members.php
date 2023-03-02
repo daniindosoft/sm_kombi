@@ -95,30 +95,32 @@
                       </div>
                     </div>
                     <div class="card-body">
-                      <table class="table table-bordered">
-			                  <thead>
-			                    <tr>
-			                      <th style="width: 10px">#</th>
-			                      <th>Usia</th>
-			                      <th>Persentase</th>
-			                      <th style="width: 40px">Jumlah</th>
-			                    </tr>
-			                  </thead>
-			                  <tbody>
-			                  	<?php $no=1; foreach ($usia as $age): ?>
-				                  	<tr>
-				                  		<td><?php echo $no++ ?></td>
-				                  		<td><?php echo $age['age'] ?></td>
-				                  		<td>
-				                        <div class="progress progress-lg">
-				                          <div class="progress-bar progress-bar-danger" style="width: <?php echo $x=$onMy->cal_percentage($age['total'], $totalMember) ?>%"><?php echo $x ?>%</div>
-				                        </div>
-				                      </td>
-				                  		<td><?php echo $age['total'] ?></td>
-				                  	</tr>
-			                  	<?php endforeach ?>
-			                  </tbody>
-			                </table>
+                    	<div class="table-responsive">
+	                      <table class="table table-bordered">
+				                  <thead>
+				                    <tr>
+				                      <th style="width: 10px">#</th>
+				                      <th>Usia</th>
+				                      <th>Persentase</th>
+				                      <th style="width: 40px">Jumlah</th>
+				                    </tr>
+				                  </thead>
+				                  <tbody>
+				                  	<?php $no=1; foreach ($usia as $age): ?>
+					                  	<tr>
+					                  		<td><?php echo $no++ ?></td>
+					                  		<td><?php echo $age['age'] ?></td>
+					                  		<td>
+					                        <div class="progress progress-lg">
+					                          <div class="progress-bar progress-bar-danger" style="width: <?php echo $x=$onMy->cal_percentage($age['total'], $totalMember) ?>%"><?php echo $x ?>%</div>
+					                        </div>
+					                      </td>
+					                  		<td><?php echo $age['total'] ?></td>
+					                  	</tr>
+				                  	<?php endforeach ?>
+				                  </tbody>
+				                </table>
+	                    </div>
                     </div>
                     <!-- /.card-body -->
                   </div>
@@ -134,69 +136,70 @@
                       </div>
                     </div>
                     <div class="card-body">
-                    	<table class="table table-bordered">
-			                  <thead>
-			                    <tr>
-			                      <th style="width: 10px">#</th>
-			                      <th>Perangkat/Platform</th>
-			                      <th>Persentase</th>
-			                      <th style="width: 40px">Jumlah</th>
-			                    </tr>
-			                  </thead>
-			                  <tbody>
-			                    <tr>
-			                      <td>1.</td>
-			                      <td>Tablet</td>
-			                      <td>
-			                        <div class="progress progress-lg">
-			                          <div class="progress-bar bg-warning" style="width: <?php echo $x=$onMy->cal_percentage($tablet, $totalPerangkat) ?>%"><?php echo $x ?>%</div>
-			                        </div>
-			                      </td>
-			                      <td><span class="badge bg-warning"><?php echo $tablet ?></span></td>
-			                    </tr>
-			                    <tr>
-			                      <td>2.</td>
-			                      <td>Desktop</td>
-			                      <td>
-			                        <div class="progress progress-lg">
-			                          <div class="progress-bar bg-warning" style="width: <?php echo $x=$onMy->cal_percentage($desktop, $totalPerangkat) ?>%"><?php echo $x ?>%</div>
-			                        </div>
-			                      </td>
-			                      <td><span class="badge bg-warning"><?php echo $desktop ?></span></td>
-			                    </tr>
-			                    <tr>
-			                      <td>3.</td>
-			                      <td>IOS OS</td>
-			                      <td>
-			                        <div class="progress progress-lg progress-striped active">
-			                          <div class="progress-bar bg-warning" style="width: <?php echo $x=$onMy->cal_percentage($ios, $totalPerangkat) ?>%"><?php echo $x ?>%</div>
-			                        </div>
-			                      </td>
-			                      <td><span class="badge bg-warning"><?php echo $ios ?></span></td>
-			                    </tr>
-			                    <tr>
-			                      <td>4.</td>
-			                      <td>ANDROID OS</td>
-			                      <td>
-			                        <div class="progress progress-lg progress-striped active">
-			                          <div class="progress-bar bg-warning" style="width: <?php echo $x=$onMy->cal_percentage($android, $totalPerangkat) ?>%"><?php echo $x ?>%</div>
-			                        </div>
-			                      </td>
-			                      <td><span class="badge bg-warning"><?php echo $android ?></span></td>
-			                    </tr>
-			                    <tr>
-			                      <td>5.</td>
-			                      <td>Mobile</td>
-			                      <td>
-			                        <div class="progress progress-lg progress-striped active">
-			                          <div class="progress-bar bg-warning" style="width: <?php echo $x=$onMy->cal_percentage($mobile, $totalPerangkat) ?>%"><?php echo $x ?>%</div>
-			                        </div>
-			                      </td>
-			                      <td><span class="badge bg-warning"><?php echo $mobile ?></span></td>
-			                    </tr>
-			                  </tbody>
-			                </table>
-                 
+                    	<div class="table-responsive">
+	                    	<table class="table table-bordered">
+				                  <thead>
+				                    <tr>
+				                      <th style="width: 10px">#</th>
+				                      <th>Perangkat/Platform</th>
+				                      <th>Persentase</th>
+				                      <th style="width: 40px">Jumlah</th>
+				                    </tr>
+				                  </thead>
+				                  <tbody>
+				                    <tr>
+				                      <td>1.</td>
+				                      <td>Tablet</td>
+				                      <td>
+				                        <div class="progress progress-lg">
+				                          <div class="progress-bar bg-warning" style="width: <?php echo $x=$onMy->cal_percentage($tablet, $totalPerangkat) ?>%"><?php echo $x ?>%</div>
+				                        </div>
+				                      </td>
+				                      <td><span class="badge bg-warning"><?php echo $tablet ?></span></td>
+				                    </tr>
+				                    <tr>
+				                      <td>2.</td>
+				                      <td>Desktop</td>
+				                      <td>
+				                        <div class="progress progress-lg">
+				                          <div class="progress-bar bg-warning" style="width: <?php echo $x=$onMy->cal_percentage($desktop, $totalPerangkat) ?>%"><?php echo $x ?>%</div>
+				                        </div>
+				                      </td>
+				                      <td><span class="badge bg-warning"><?php echo $desktop ?></span></td>
+				                    </tr>
+				                    <tr>
+				                      <td>3.</td>
+				                      <td>IOS OS</td>
+				                      <td>
+				                        <div class="progress progress-lg progress-striped active">
+				                          <div class="progress-bar bg-warning" style="width: <?php echo $x=$onMy->cal_percentage($ios, $totalPerangkat) ?>%"><?php echo $x ?>%</div>
+				                        </div>
+				                      </td>
+				                      <td><span class="badge bg-warning"><?php echo $ios ?></span></td>
+				                    </tr>
+				                    <tr>
+				                      <td>4.</td>
+				                      <td>ANDROID OS</td>
+				                      <td>
+				                        <div class="progress progress-lg progress-striped active">
+				                          <div class="progress-bar bg-warning" style="width: <?php echo $x=$onMy->cal_percentage($android, $totalPerangkat) ?>%"><?php echo $x ?>%</div>
+				                        </div>
+				                      </td>
+				                      <td><span class="badge bg-warning"><?php echo $android ?></span></td>
+				                    </tr>
+				                    <tr>
+				                      <td>5.</td>
+				                      <td>Mobile</td>
+				                      <td>
+				                        <div class="progress progress-lg progress-striped active">
+				                          <div class="progress-bar bg-warning" style="width: <?php echo $x=$onMy->cal_percentage($mobile, $totalPerangkat) ?>%"><?php echo $x ?>%</div>
+				                        </div>
+				                      </td>
+				                      <td><span class="badge bg-warning"><?php echo $mobile ?></span></td>
+				                    </tr>
+				                  </tbody>
+				                </table>
+	                    </div>
                     </div>
                     <!-- /.card-body -->
                   </div>
@@ -212,30 +215,32 @@
                       </div>
                     </div>
                     <div class="card-body">
-                      <table class="table table-bordered dt">
-			                  <thead>
-			                    <tr>
-			                      <th style="width: 10px">#</th>
-			                      <th>Usia</th>
-			                      <th>Persentase</th>
-			                      <th style="width: 40px">Jumlah</th>
-			                    </tr>
-			                  </thead>
-			                  <tbody>
-			                  	<?php $no=1; foreach ($domisili as $domisili): ?>
-				                  	<tr>
-				                  		<td><?php echo $no++ ?></td>
-				                  		<td><?php echo $domisili['domisili'] ?></td>
-				                  		<td>
-				                        <div class="progress progress-lg">
-				                          <div class="progress-bar progress-bar-danger" style="width: <?php echo $x=$onMy->cal_percentage($domisili['total'], $totalDomisili) ?>%"><?php echo $x ?>%</div>
-				                        </div>
-				                      </td>
-				                  		<td><?php echo $domisili['total'] ?></td>
-				                  	</tr>
-			                  	<?php endforeach ?>
-			                  </tbody>
-			                </table>
+                    	<div class="table-responsive">
+	                      <table class="table table-bordered dt">
+				                  <thead>
+				                    <tr>
+				                      <th style="width: 10px">#</th>
+				                      <th>Usia</th>
+				                      <th>Persentase</th>
+				                      <th style="width: 40px">Jumlah</th>
+				                    </tr>
+				                  </thead>
+				                  <tbody>
+				                  	<?php $no=1; foreach ($domisili as $domisili): ?>
+					                  	<tr>
+					                  		<td><?php echo $no++ ?></td>
+					                  		<td><?php echo $domisili['domisili'] ?></td>
+					                  		<td>
+					                        <div class="progress progress-lg">
+					                          <div class="progress-bar progress-bar-danger" style="width: <?php echo $x=$onMy->cal_percentage($domisili['total'], $totalDomisili) ?>%"><?php echo $x ?>%</div>
+					                        </div>
+					                      </td>
+					                  		<td><?php echo $domisili['total'] ?></td>
+					                  	</tr>
+				                  	<?php endforeach ?>
+				                  </tbody>
+				                </table>
+	                    </div>
                     </div>
                     <!-- /.card-body -->
                   </div>

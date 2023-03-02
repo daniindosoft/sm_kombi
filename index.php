@@ -5,13 +5,12 @@
     error_reporting(0);
     
     session_start();
-    // Define your location project directory in htdocs (EX THE FULL PATH: D:\xampp\htdocs\x-kang\simple-routing-with-php)
+
     include_once('env.php');
     $project_location = project_location;
     $me = $project_location;
 
-    // For get URL PATH
-    // $request = $_SERVER['REQUEST_URI'];
+    // get url now
     $request = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 
     include_once('dist/core/koneksi.php');
@@ -345,7 +344,7 @@
             setcookie('id_akun_combi', '', 0, '/');
             setcookie('username_akun_combi', '', 0, '/');
             session_destroy();
-            header("Location: ".$me);
+            header("Location: ".$onMy->primaryLocal);
             break;
 
         case $me.'/e404' :
