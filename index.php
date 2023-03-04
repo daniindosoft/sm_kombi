@@ -22,6 +22,10 @@
 
     switch ($request) {
 
+        case $me.'/lp' :
+            require "landing_page.php";
+            break;
+
         case $me.'/' :
             require "masuk.php";
             break;
