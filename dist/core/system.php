@@ -1,5 +1,6 @@
 <?php
 // error_reporting(0);
+
 date_default_timezone_set('Asia/Jakarta');
 
 class kontrols{ 
@@ -17,6 +18,9 @@ class kontrols{
 	public $flashMessage = '';
 	public $flashType = '';
 	public $ago = false;
+	public $status = 3;
+	public $downloadReport = false;
+	public $mark = '<i class="f-xm float-right text-warning fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Bagian/fitur ini tidak dipengaruhi oleh komunitas yang dipilih di navbar"></i>';
 
 	public function __construct($db){
 
@@ -330,7 +334,7 @@ class kontrols{
   	}
 
 	function time_elapsed_string($datetime, $full = false) {
-		if( self::dateDiffInDays($datetime, date('Y-m-d')) >13 ){
+		if( self::dateDiffInDays($datetime, date('Y-m-d')) > 6 ){
 			return self::convertDate('d F Y H:i', $datetime);
 		}
 
@@ -361,8 +365,9 @@ class kontrols{
 	    if (!$full) $string = array_slice($string, 0, 1);
 	    if ($this->ago == true) {
 		    return $string ? implode(', ', $string) . ' lagi' : '';
+	    }else{
+		    return $string ? implode(', ', $string) . ' yang lalu' : 'Baru saja';
 	    }
-	    return $string ? implode(', ', $string) . ' yang lalu' : 'Baru saja';
 	}
  
 
@@ -396,7 +401,11 @@ class kontrols{
 
 	}
 	function single($tbl, $id){
-		return self::eksekusiShow('select * from '.$tbl.' where id = '.self::removeSpecialChar($id) );
+		$sql = 'select * from '.$tbl.' where id = '.self::removeSpecialChar($id);
+		if ($this->debug == true) {
+			return $sql;
+		}
+		return self::eksekusiShow($sql);
 	}
 	function updateJoinUserToCommunity($id_user, $id_komunitas, $price, $komisi, $aff, $owner, $url = false){
 		$tbl="users";
@@ -1312,6 +1321,123 @@ class kontrols{
 	        echo "Opps, terdapat kesalahan, mohon hubungi admain !";
 	        // echo "Mailer Error: " . $mail->ErrorInfo;
 	    }
+	}
+	function trafficComunity($id_komunitas){
+		$sql = "SELECT t.nama as traffic, count(*) as total from users as u join komunitas as k on k.id_user = u.id join tahu as t on t.id = u.tahu WHERE k.id_komunitas=".$id_komunitas." group by u.tahu;";
+
+		$data = self::tampil_manual($sql);
+		$totalall = 0;
+		foreach ($data as $key => $value) {
+			$totalall += $value['total'];
+		}
+
+		return array($data, $totalall);
+	}
+	public function getDateRange($mulai, $akhir){
+		$startDate = new \DateTime($mulai);
+		$endDate = new \DateTime($akhir);
+
+		$data = array();
+		$no=1;
+		for($date = $startDate; $date <= $endDate; $date->modify('+1 day')){
+			$no++;
+			if ($no <= 30) {
+			    array_push($data, $date->format('Y-m-d'));
+			}else{
+				break;
+			}
+		}
+		return $data;
+	}
+	public function reportOrdersAffiliate($date, $id_komunitas){
+		$this->status = 1;
+
+		self::reportOrders($date, 'komunitas', $id_komunitas, 'id_komunitas');
+	}
+
+	public function reportOrdersProdukAffiliate($date, $id_komunitas){
+		
+		self::reportOrders($date, 'order_produk', $id_komunitas);
+	}
+
+	public function reportOrdersDropship($date, $id_komunitas){
+		
+		self::reportOrders($date, 'pesanan', $id_komunitas);
+	}
+	public function reportOrders($date, $tbl, $id_komunitas, $clm_id_komunitas = 'id_komunitas_bisnis'){
+		$dates = str_replace(' ', '', $date);
+		$date = explode('-', $dates);
+		$cdate = self::convertDate("Y-m-d", $date[0]);
+		$cdate2 = self::convertDate("Y-m-d", $date[1]);
+		if ($this->downloadReport == true) {
+			// download report
+
+			header("Content-Disposition: attachment; filename=\"$filename\"");
+			header("Content-Type: application/vnd.ms-excel");
+			if ($tbl == 'komunitas') {
+				$header = array('Nama Lengkap', 'E-Mail', 'Jenis Kelamin', 'No HP', 'domisili', 'Perangkat', 'Status (1 = konversi, 0 = Lead)' , 'Tanggal', 'Tahu dari');
+				if ($cdate2 == $cdate) {
+					$where = " and k.created_at like '%".$cdate."%' ";
+				}else{
+					$where = " and k.created_at BETWEEN '".$cdate."' and '".$cdate2."'";
+				}
+				
+				$sql = 'select u.nama_lengkap, u.email, u.jk, u.nowa, u.domisili, u.perangkat, k.status, k.created_at, t.nama from komunitas as k join users as u on u.id = k.id_user left join tahu as t on t.id = u.tahu where k.'.$clm_id_komunitas.'='.$id_komunitas.' '.$where;
+			}elseif($tbl == 'pesanan'){
+				if ($cdate2 == $cdate) {
+					$where = " and u.created_at like '%".$cdate."%' ";
+				}else{
+					$where = " and u.created_at BETWEEN '".$cdate."' and '".$cdate2."'";
+				}
+				
+				$sql = 'select u.invoice, u.nama_lengkap, u.email, u.nowa, u.provinsi, u.kecamatan, u.alamat, u.status, u.created_at from pesanan as u where u.'.$clm_id_komunitas.'='.$id_komunitas.' '.$where;
+				$header = array('Nama Lengkap', 'E-Mail', 'Jenis Kelamin', 'No HP', 'domisili', 'Perangkat', 'Status (1 = diajukan, 2 = ditolak, 3 = diproses/selesai)' , 'Tanggal', 'Tahu dari');
+			}elseif($tbl == 'order_produk'){
+				if ($cdate2 == $cdate) {
+					$where = " and u.created_at like '%".$cdate."%' ";
+				}else{
+					$where = " and u.created_at BETWEEN '".$cdate."' and '".$cdate2."'";
+				}
+				
+				$header = array('Nama Lengkap', 'E-Mail', 'Jenis Kelamin', 'No HP', 'domisili', 'alamat', 'Perangkat', 'Status (1 = diajukan, 2 = ditolak, 3 = diproses/selesai)' , 'Tanggal');
+				
+				$sql = 'select u.nama, u.email, u.jk, u.nowa, u.domisili, u.alamat, u.perangkat, u.status, u.created_at from order_produk as u where u.'.$clm_id_komunitas.'='.$id_komunitas.' '.$where;
+			}
+
+			$result = self::tampil_manual($sql);
+
+			$file = fopen('php://output', 'w');
+
+
+			fputcsv($file, $header);
+
+			foreach ($result as $key=>$line){
+				fputcsv($file,$line);
+			}
+
+			fclose($file);
+			exit;
+
+		}else{
+			// report umum biasa
+ 
+			$val = '';
+			$col = '';
+			$closing = '';
+		 
+			$tanggal = self::getDateRange($cdate, $cdate2);
+			$dataConv = '';
+			$dataAll = '';
+			foreach ($tanggal as $tgl) {
+				$valConv = self::eksekusiShow('select count(*) as total from '.$tbl.' where '.$clm_id_komunitas.'='.$id_komunitas.' and status='.$this->status.' and created_at like "%'.$tgl.'%" ');
+				$valSemua = self::eksekusiShow('select count(*) as total from '.$tbl.' where '.$clm_id_komunitas.'='.$id_komunitas.' and created_at like "%'.$tgl.'%" ');
+				$dataConv .= $valConv['total'].',';
+				$dataAll .= $valSemua['total'].',';
+				$tgltext .= self::convertDate('d F Y', $tgl).','; 
+			}
+			// buat fitur rang tgl sampai 30 aja
+			echo json_encode( array('tgl' => $tgltext, 'conv' => $dataConv, 'all' => $dataAll ) );
+		}
 	}
 
 }

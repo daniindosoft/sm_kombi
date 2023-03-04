@@ -1,5 +1,7 @@
 <?php 
 	error_reporting(0);
+  include_once('env.php');
+
 	include_once('dist/core/koneksi.php');
 
 	function single($db, $sql, $type = 'single'){
@@ -91,7 +93,7 @@
 						<td><?php echo $value['email'] ?></td>
 						<td>
 							<?php 
-								if (new DateTime($value['expire']) < new DateTime()) {
+								if (cw($value['expire']) <= 0) {
 									echo '<span class="badge badge-danger">Expire</span><br>';
 								}else{
 									echo 'Masa Aktif HINGGA : '.convertDate('d M Y', $value['expire']);

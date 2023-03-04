@@ -1,8 +1,8 @@
 <?php
-    // ini_set('display_errors', 1);
-    // ini_set('display_startup_errors', 1);
-    // error_reporting(E_ALL);
-    error_reporting(0);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    // error_reporting(0);
     
     session_start();
 
@@ -28,6 +28,14 @@
 
         case $me.'/view/user' :
             require "view_user.php";
+            break;
+
+        case $me.'/admin/combi/info' :
+            require "info_admin.php";
+            break;
+
+        case $me.'/admin/report/orders' :
+            require "admin_report_orders.php";
             break;
             
         case $me.'/admin/register' :
@@ -69,6 +77,10 @@
         case $me.'/admin/bisnis/addmin' :
             require "admin_bisnis_penambahan_pengurangan_komisi.php";
             break;
+        
+        case $me.'/admin/bisnis/customer_list/edit' :
+            require "admin_bisnis_customer_edit.php";
+            break;
 
         case $me.'/admin/bisnis/affiliate/edit' :
             require "admin_bisnis_affiliate_edit.php";
@@ -76,6 +88,10 @@
         
         case $me.'/admin/bisnis/dropship' :
             require "admin_bisnis_dropship.php";
+            break;
+
+        case $me.'/admin/bisnis/customer_list' :
+            require "admin_bisnis_customer_list.php";
             break;
 
         case $me.'/admin/bisnis/pengajuan_komisi' :
@@ -113,6 +129,10 @@
 
         case $me.'/admin/materi_tulisan' :
             require "admin_materi_tulisan.php";
+            break;
+
+        case $me.'/admin/bisnis/materi_tulisan/edit' :
+            require "admin_materi_tulisan_edit.php";
             break;
 
         case $me.'/admin/post/edit' :

@@ -44,6 +44,15 @@
 	</div>
 <script type="text/javascript">
     document.title = "COMBI FAQ & TERM <?php echo $namaKomunitas ?>";
+    
+    var menuaddclass = document.getElementById("combi");
+    menuaddclass.classList.add("active");
+
+        var menuaddclassx = document.getElementById("faq");
+    menuaddclassx.classList.add("active");
+
+        var menuaddclass3 = document.getElementById("combi-open");
+    menuaddclass3.classList.add("menu-open");
 </script>
 <?php
 	include_once('footer.php');

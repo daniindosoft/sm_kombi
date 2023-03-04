@@ -196,6 +196,61 @@
 
 			break;
 		
+		case isset($_POST['submitCustomerList']):
+			$sistem->redirect = $_POST['redirect'].'?id='.$_POST['id'];
+			$ubah = array(
+				'id_kategori_customer_list ="'.htmlspecialchars($_POST['kategori']).'"',
+				'nama ="'.htmlspecialchars($_POST['nama_lengkap']).'"',
+				'jk ="'.htmlspecialchars($_POST['jk']).'"',
+				'email ="'.htmlspecialchars($_POST['email']).'"',
+				'phone ="'.htmlspecialchars($_POST['nowa']).'"',
+				'source ="'.htmlspecialchars($_POST['sumber']).'"',
+				'nilai_konversi ="'.htmlspecialchars($_POST['nilai_konversi']).'"',
+				'id_komunitas_bisnis ="'.htmlspecialchars($_POST['id_komunitas_bisnis']).'"',
+				'alamat ="'.htmlspecialchars($_POST['alamat']).'"',
+			);
+			$sistem->registerFlash('i', 'Customer list "'.$_POST['nama_lengkap'].'" berhasil di ubah');
+			// $sistem->debug = true;
+			$sistem->rubah_data('customer_list',$ubah,array('id'),array($_POST['id']));
+
+			break;
+
+		case isset($_POST['submitCustomerList']):
+				$sistem->redirect = $_POST['redirect'];
+				$tbl="customer_list";
+				$data=array(
+					htmlspecialchars($_POST['kategori']),
+					htmlspecialchars($_POST['nama_lengkap']),
+					htmlspecialchars($_POST['jk']),
+					htmlspecialchars($_POST['email']),
+					htmlspecialchars($_POST['nowa']),
+					htmlspecialchars($_POST['sumber']),
+					htmlspecialchars($_POST['nilai_konversi']),
+					htmlspecialchars($_POST['id_komunitas_bisnis']),
+					htmlspecialchars($_POST['id_user']),
+					htmlspecialchars($_POST['alamat'])
+				);
+				$col=array('id_kategori_customer_list', 'nama', 'jk', 'email', 'phone', 'source', 'nilai_konversi', 'id_komunitas_bisnis', 'id_user', 'alamat');
+				$sistem->registerFlash('s', 'customer list "'.$_POST['judul'].'" sudah di tambahkan');
+				$sistem->registerFlash('s', 'customer list "'.$_POST['judul'].'" sudah di tambahkan');
+				// $sistem->debug = true;
+				$sistem->masukan_data($tbl,$col,$data);
+			break;
+
+		case isset($_POST['updateMateriTulisan']):
+			$sistem->redirect = $_POST['redirect'].'?id='.$_POST['id'];
+			$tbl="tulisan";
+			$data=array(
+				'id_kategori_tulisan="'.htmlspecialchars($_POST['kategori']).'"',
+				'judul="'.htmlspecialchars($_POST['judul']).'"',
+				'text="'.htmlspecialchars($_POST['deskripsi']).'"',
+				'id_komunitas_bisnis="'.htmlspecialchars($_POST['id_komunitas_bisnis']).'"',
+			);
+			$col=array('id_user', 'id_kategori_tulisan', 'judul', 'text', 'id_komunitas_bisnis');
+			$sistem->registerFlash('i', 'Tulisan "'.$_POST['judul'].'" telah di update');
+			$sistem->rubah_data('tulisan', $data, array('id'), array($_POST['id']));
+			break;
+
 		case isset($_POST['submitMateriTulisan']):
 			$sistem->redirect = $_POST['redirect'];
 			$tbl="tulisan";
@@ -423,6 +478,19 @@
 			);
 			$col=array('id_user','nama','id_komunitas_bisnis');
 			$sistem->registerFlash('s', 'Kategori Tulisan "'.$_POST['nama_kategori'].'" sudah di tambahkan');
+			$sistem->masukan_data($tbl,$col,$data);
+			break;
+
+		case isset($_POST['submitCustomerListKategori']):
+			$sistem->redirect = $_POST['redirect'];
+			$tbl="kategori_customer_list";
+			$data=array(
+				strip_tags($_POST['id_user']),
+				strip_tags($_POST['nama_kategori']),
+				strip_tags($_POST['id_komunitas_bisnis']),
+			);
+			$col=array('id_user','nama','id_komunitas_bisnis');
+			$sistem->registerFlash('s', 'Kategori Customer List "'.$_POST['nama_kategori'].'" sudah di tambahkan');
 			$sistem->masukan_data($tbl,$col,$data);
 			break;
 
@@ -809,7 +877,7 @@
 
 			$sistem->eksekusi('UPDATE data_affiliate set total_pesanan_produk=total_pesanan_produk+1 WHERE id_komunitas_bisnis="'.$_POST['id_komunitas_bisnis'].'" and id_user='.$produk['id_user']);
 
-			$sistem->postNotifikasi( $_COOKIE['id_akun_combi'], $produk['id_user'], 'aff_join', 'Pembelian Produk Affiliate', '<b>'.$_POST['nama'].'</b>  akan segera membeli <b>'.$produk['judul'].'</b>, cek sekarang', $produk['id_komunitas_bisnis'] );
+			$sistem->postNotifikasi( $_COOKIE['id_akun_combi'], $produk['id_user'], 'aff_join', 'Pembelian Affiliate Produk', '<b>'.$_POST['nama'].'</b>  akan segera membeli <b>'.$produk['judul'].'</b>, cek sekarang', $produk['id_komunitas_bisnis'] );
 
 			// cd adalah kode affilaite produk
 			header('Location:'.$sistem->primaryLocal.'invoice?owner='.$produk['id_user'].'&cd='.$_POST['cd'].'&user='.$user['id'].'&type=produk&typeProduk='.$produk['type'].'&nilai='.$_POST['nilai']);
@@ -935,9 +1003,9 @@
 
 			);
 			// $sistem->debug = true;
-			$sistem->registerFlash('s', 'Produk Affiliate "'.$_POST['judul'].'" telah di tambahkan');
+			$sistem->registerFlash('s', 'Affiliate Produk "'.$_POST['judul'].'" telah di tambahkan');
 			$col=array('header','judul', 'note', 'harga', 'komisi', 'url', 'type', 'id_komunitas_bisnis', 'id_user', 'fields', 'nilai', 'kode_affiliate_produk', 'is_private');
-			$sistem->postNotifikasi( $_COOKIE['id_akun_combi'], 0, 'new_prod', 'Produk Affilaite Baru', 'Admin menambahkan produk Affiliate baru nih <b>('.$_POST['judul'].')</b>, cek sekarang !', $_SESSION['bisnis_kategori_combi'] );
+			$sistem->postNotifikasi( $_COOKIE['id_akun_combi'], 0, 'new_prod', 'Produk Affilaite Baru', 'Admin menambahkan Affiliate Produk baru nih <b>('.$_POST['judul'].')</b>, cek sekarang !', $_SESSION['bisnis_kategori_combi'] );
 			// $sistem->debug = true;	
 			$sistem->masukan_data($tbl,$col,$data);
 			break;
@@ -986,11 +1054,35 @@
 
 			);
 			// $sistem->debug = true;
-			$sistem->registerFlash('i', 'Produk Affiliate "'.$_POST['judul'].'" telah di update');
+			$sistem->registerFlash('i', 'Affiliate Produk "'.$_POST['judul'].'" telah di update');
 			
 			$clm = array("id");
 			$key = array($_POST['id']);
 			$sistem->rubah_data($tbl,$data,$clm,$key);
+			break;
+
+		case ($_POST['ajaxType'] == 'ajaxReportOrdersAffiliate' || $_POST['ajaxType'] == 'ajaxDownloadReportOrdersAffiliate'):
+			$sistem->downloadReport = false;
+			if ($_POST['ajaxType'] == 'ajaxDownloadReportOrdersAffiliate') {
+				$sistem->downloadReport = true;
+			}
+			$sistem->reportOrdersAffiliate($_POST['dateRange'], $_POST['id_komunitas']);
+			break;
+
+		case ($_POST['ajaxType'] == 'ajaxReportOrdersProdukAffiliate' || $_POST['ajaxType'] == 'ajaxDownloadReportOrdersProdukAffiliate'):
+			$sistem->downloadReport = false;
+			if ($_POST['ajaxType'] == 'ajaxDownloadReportOrdersProdukAffiliate') {
+				$sistem->downloadReport = true;
+			}
+			$sistem->reportOrdersProdukAffiliate($_POST['dateRange'], $_POST['id_komunitas']);
+			break;
+
+		case ($_POST['ajaxType'] == 'ajaxReportOrdersDropship' || $_POST['ajaxType'] == 'ajaxDownloadReportOrdersDropship'):
+			$sistem->downloadReport = false;
+			if ($_POST['ajaxType'] == 'ajaxDownloadReportOrdersDropship') {
+				$sistem->downloadReport = true;
+			}
+			$sistem->reportOrdersDropship($_POST['dateRange'], $_POST['id_komunitas']);
 			break;
 
 		case ($_POST['ajaxType'] == 'removeAtc'):
@@ -1182,10 +1274,11 @@
 					0, 
 					$ownerPrice, 
 					'user', 
-					'cat.png'				
+					'cat.png',
+					$_POST['tahu'],
 				);
 
-				$col=array('nama_lengkap','email','domisili','nowa','perangkat','username','kode_affiliate','password','affiliate', 'status', 'price_join', 'type_user', 'dp');
+				$col=array('nama_lengkap','email','domisili','nowa','perangkat','username','kode_affiliate','password','affiliate', 'status', 'price_join', 'type_user', 'dp', 'tahu');
 				// $sistem->debug = true;
 				$sistem->masukan_data_no_redirect($tbl,$col,$data);
 

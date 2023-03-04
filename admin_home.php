@@ -7,7 +7,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Beranda <?php echo $profileKomunitas['nama_komunitas'] ?></h1>
+          <h1 class="m-0"><?php echo $profileKomunitas['nama_komunitas'] ?></h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -65,7 +65,7 @@
           <div class="info-box">
             <span class="info-box-icon bg-danger"><i class="fa fa-money-bill"></i></span>
             <div class="info-box-content">
-              <h5 class="info-box-text">Penarikan Komisi</h5>
+              <h4 class="info-box-text">Penarikan Komisi</h4>
             </div>
           </div>
         </a>

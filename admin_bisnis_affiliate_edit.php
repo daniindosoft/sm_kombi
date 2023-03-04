@@ -163,7 +163,7 @@
   <!-- /.content -->
 </div>
 <script type="text/javascript">
-	document.title = 'KOMBI | Edit Produk affiliate - <?php echo $namaKomunitas ?>';
+	document.title = 'KOMBI | Edit Affiliate Produk - <?php echo $namaKomunitas ?>';
 
     var menuaddclass = document.getElementById("bisnis");
     menuaddclass.classList.add("active");

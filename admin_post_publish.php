@@ -46,7 +46,6 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Compose</li>
             </ol>
           </div>
           <div class="col-sm-12">
@@ -61,7 +60,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
-            <a href="<?php echo $onMy->primaryLocal; ?>admin/post" class="btn btn-warning btn-block mb-3">Buat Post</a>
+            <a href="<?php echo $onMy->primaryLocal; ?>admin/post" class="btn btn-warning btn-block mb-3">Tambah Post</a>
 
             <div class="card">
               <div class="card-header">

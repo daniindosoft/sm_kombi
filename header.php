@@ -30,7 +30,7 @@
   if ($profile['dp']) {
     $myDp = $onMy->primaryLocal.'dist/img/avatar/'.$profile['dp'];
   }else{
-    $myDp = 'https://duniaundercover.files.wordpress.com/2023/02/ci.png';
+    $myDp = 'https://duniaundercover.files.wordpress.com/2023/02/5-1.png';
   }
 ?>
 <!DOCTYPE html>
@@ -51,8 +51,9 @@
   <meta name="description" content="Sekarang sudah saatnya bisnis tidak bergantung pada iklan terus, buat kolam uangmu sendiri dan biarkan itu bekerja untukmu."/>
   <meta property="description" content="Sekarang sudah saatnya bisnis tidak bergantung pada iklan terus, buat kolam uangmu sendiri dan biarkan itu bekerja untukmu.">
   <meta property="og:url" content="https://www.kombi.remotebisnis.com/">
-  <meta property="og:image" name="og:image" content="https://duniaundercover.files.wordpress.com/2023/02/ci.png">
+  <meta property="og:image" name="og:image" content="<?php echo $myDp; ?>">
   <meta property="og:site_name" content="Kombi.RemoteBisnis.com - Buat Kolam Uangmu Sekarang !">
+  <meta name="keywords" content="komunitas bisnis, jualan online, digital marketing, list building, affiliate marketing, RemoteBisnis, seo, belajar jualan, jualan online, copywriting">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -84,6 +85,9 @@
   <!-- summernote -->
   <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/summernote/summernote-bs4.min.css">
   <style type="text/css">
+    .f-xm{
+      font-size: 12px;
+    }
     .loopRek div{
       padding-bottom: 15px;
     }
@@ -355,10 +359,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="<?php echo $onMy->primaryLocal ?>dist/img/avatar/<?php echo $onMy->thisProfile($_COOKIE['id_akun_combi'])['dp'] ?>" class="img-circle elevation-2" alt="User Image">
+          <img src="<?php echo $onMy->dp($profile['dp']) ?>" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">
+          <a href="<?php echo $onMy->primaryLocal ?>admin/pengaturan#custom-tabs-four-profile-tab" class="d-block">
             <?php 
               if ($profile['type_user'] == 'admin'): 
                 // $diff = date_diff(date_create($profile['expire']), date_create(date('Y-m-d')));

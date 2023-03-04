@@ -98,6 +98,19 @@
             </div>
           </div>
         </div>
+        <div class="input-group mb-3">
+          <select class="form-control" name="tahu" required>
+            <option value="0">Tahu kami dari mana ?</option>
+            <?php foreach ($onMy->selectNormal('tahu') as $value): ?>
+              <option value="<?php echo $value['id'] ?>"><?php echo $value['nama'] ?></option>
+            <?php endforeach ?>
+          </select>
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fa fa-users"></span>
+            </div>
+          </div>
+        </div>
         <div class="row">
           <!-- /.col -->
           <div class="col-12">

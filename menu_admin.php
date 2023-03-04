@@ -4,7 +4,7 @@
       <li class="nav-item bg-danger">
         <a href="<?php echo $onMy->primaryLocal ?>admin/status" class="nav-link">
           <p>
-            Expire <?php echo $hari ?> hari lagi <i data-toggle="tooltip" data-placement="top" title="Segera lakukan perpanjangan paket sebelum masa aktif berakhir" class="fa fa-info-circle"></i>
+            Expire <?php $onMy->ago = true; echo $onMy->time_elapsed_string($profile['expire']); $onMy->ago = false; ?> 
           </p>
         </a>
       </li>
@@ -17,14 +17,7 @@
         </p>
       </a>
     </li>
-    <li class="nav-item">
-      <a href="<?php echo $onMy->primaryLocal ?>admin/ecourse" class="nav-link" id="ecourse">
-        <i class="nav-icon fa fa-desktop"></i>
-        <p>
-          E-Course
-        </p>
-      </a>
-    </li>
+
     <li class="nav-item" id="bisnis-open">
       <a href="#" class="nav-link" id="bisnis">
         <i class="nav-icon fa fa-money-bill"></i>
@@ -43,7 +36,12 @@
           <a href="<?php echo $onMy->primaryLocal ?>admin/bisnis/dropship" class="nav-link" id="dropres">
             <p>Dropship/Reseller</p>
           </a>
-        </li>               
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo $onMy->primaryLocal ?>admin/bisnis/customer_list" class="nav-link" id="customer_list">
+            <p>Customer List</p><?php echo $onMy->mark ?>
+          </a>
+        </li>
         <li class="nav-item">
           <a href="<?php echo $onMy->primaryLocal ?>admin/bisnis/pengajuan_komisi" class="nav-link" id="komisi">
             <p>Pencairan Komisi Affiliate</p>
@@ -61,6 +59,14 @@
         <i class="nav-icon fa fa-users"></i>
         <p>
           Membership
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="<?php echo $onMy->primaryLocal ?>admin/ecourse" class="nav-link" id="ecourse">
+        <i class="nav-icon fa fa-desktop"></i>
+        <p>
+          E-Course
         </p>
       </a>
     </li>
@@ -90,7 +96,7 @@
       </a>
       <ul class="nav nav-treeview">
         <li class="nav-item">
-          <a href="<?php echo $onMy->primaryLocal ?>admin/post" class="nav-link" id="posting">
+          <a href="<?php echo $onMy->primaryLocal ?>admin/post/publish?status=publish" class="nav-link" id="posting">
             <p>Posting</p>
           </a>
         </li>
@@ -101,19 +107,23 @@
         </li>
       </ul>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" id="report-open">
       <a href="#" class="nav-link" id="report">
-        <i class="nav-icon fa fa-file"></i>
+        <i class="nav-icon fas fa-chart-pie"></i>
         <p>
-          Laporan
+          Laporan & Grafik
           <i class="fas fa-angle-left right"></i>
         </p>
       </a>
       <ul class="nav nav-treeview">
         <li class="nav-item">
-          <a href="<?php echo $onMy->primaryLocal ?>admin/report/members" class="nav-link" id="user-grafik">
-            <i class="far fa-circle nav-icon"></i>
+          <a href="<?php echo $onMy->primaryLocal ?>admin/report/members" class="nav-link" id="demografi">
             <p>Demografi</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a title="report bentuk grafic filter dan bisa export csv, isinya pesanan, aff, produk aff" href="<?php echo $onMy->primaryLocal ?>admin/report/orders" class="nav-link" id="orders">
+            <p>Pesanan <?php echo $onMy->mark ?></p>
           </a>
         </li>
       </ul>
@@ -122,28 +132,32 @@
       <a href="<?php echo $onMy->primaryLocal ?>admin/pengaturan" class="nav-link" id="pengaturan">
         <i class="nav-icon fa fa-user-cog"></i>
         <p>
-          Setting & Bisnis
+          Setting & Komunitas
         </p>
       </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" id="combi-open">
       <a href="#" class="nav-link" id="combi">
         <i class="nav-icon fas fa-search"></i>
         <p>
           COMBI
-          <i class="fas fa-angle-left right"></i>
+          <?php echo $onMy->mark ?> <i class="fas fa-angle-left right"></i>
         </p>
       </a>
       <ul class="nav nav-treeview">
         <li class="nav-item">
-          <a href="<?php echo $onMy->primaryLocal ?>admin/report/income" class="nav-link" id="income">
-            <p>Info Update</p>
+          <a href="<?php echo $onMy->primaryLocal ?>admin/combi/info" class="nav-link" id="info_combi">
+            <p>Info Update </p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?php echo $onMy->primaryLocal ?>admin/report/income" class="nav-link" id="income">
-             
+          <a href="<?php echo $onMy->primaryLocal ?>admin/report/income" class="nav-link" id="panduan_combi">
             <p>Panduan COMBI</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo $onMy->primaryLocal ?>admin/status" class="nav-link" id="status">
+            <p>Status Akun</p>
           </a>
         </li>
         <li class="nav-item">

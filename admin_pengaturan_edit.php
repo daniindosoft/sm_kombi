@@ -196,7 +196,7 @@
 			                  			</div>
 			                  			<div class="col-md-4">
 			                  				<b>Header Invoice</b>
-			                  				<p><small>Setelah seseorang daftar ke komunitasmu/masuk ke haaman invoice, maka Code dibawah ini akan terpanggil atau ter-trigger</small></p>
+			                  				<p><small>Setelah seseorang daftar ke komunitasmu/masuk ke halaman invoice, maka Code dibawah ini akan terpanggil atau ter-trigger</small></p>
 			                  				<textarea class="form-control" name="header_invoice" placeholder="insert header"><?php echo base64_decode($getData['header_invoice']) ?></textarea>
 			                  				<br>
 			                  			</div>

@@ -31,6 +31,9 @@
 
  	$domisili = $onMy->tampil_manual("SELECT domisili, count(*) as total FROM `komunitas` as k join users as u on u.id = k.id_user WHERE k.id_komunitas=".$_SESSION['bisnis_kategori_combi']." GROUP by u.domisili");
 
+ 	$traffic = $onMy->trafficComunity($_SESSION['bisnis_kategori_combi']);
+ 	// echo var_dump($traffic[1]).'xxxxxx';
+
 ?>
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -38,7 +41,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0">Demografi  </h1>
+          <h1 class="m-0">Demografi </h1>
         </div><!-- /.col -->
         <div class="col-sm-12">
           <?php $onMy->callFlash() ?>
@@ -55,7 +58,7 @@
 				<section class="col-lg-12">
           <div class="card card-outline card-warning">
             <div class="card-header">
-              <h3 class="card-title"><i class="fas fa-chart-pie mr-1"></i> Grafik Komunitas</h3>
+              <h3 class="card-title"><i class="fas fa-chart-pie mr-1"></i> Grafik Demografi</h3>
 
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -207,6 +210,47 @@
                 <div class="col-md-6">
                   <div class="card card-warning">
                     <div class="card-header">
+                      <h3 class="card-title">Traffic</h3>
+                      <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                    	<div class="table-responsive">
+	                    	<table class="table table-bordered">
+				                  <thead>
+				                    <tr>
+				                      <th style="width: 10px">#</th>
+				                      <th>Traffic</th>
+				                      <th>Persentase</th>
+				                      <th style="width: 40px">Jumlah</th>
+				                    </tr>
+				                  </thead>
+				                  <tbody>
+				                  	<?php $no=1; foreach ($traffic[0] as $vTraffic): ?>
+					                  	<tr>
+					                  		<td><?php echo $no++; ?></td>
+					                  		<td><?php echo $vTraffic['traffic'] ?></td>
+					                  		<td>
+					                  			<div class="progress progress-lg">
+					                          <div class="progress-bar bg-warning" style="width: <?php echo $x=$onMy->cal_percentage($vTraffic['total'], $traffic[1]) ?>%"><?php echo $x ?>%</div>
+					                        </div>
+					                  		</td>
+					                  		<td><?php echo $vTraffic['total'] ?></td>
+					                  	</tr>
+				                  	<?php endforeach; ?>
+				                  </tbody>
+				                </table>
+	                    </div>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="card card-warning">
+                    <div class="card-header">
                       <h3 class="card-title">Domisili</h3>
                       <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -256,8 +300,15 @@
 	</section>
 </div>
 <script type="text/javascript">
-  document.title = "KOMBI | Demografi <?php echo $komunitas['nama_komunitas'] ?>";
-	
+  document.title = "KOMBI | Grafik Demografi <?php echo $komunitas['nama_komunitas'] ?>";
+	var menuaddclass = document.getElementById("report");
+	menuaddclass.classList.add("active");
+
+	var menuaddclass2 = document.getElementById("demografi");
+	menuaddclass2.classList.add("active");
+
+	var menuaddclass3 = document.getElementById("report-open");
+	menuaddclass3.classList.add("menu-open");
 </script>
 <?php
 	require "footer.php";
