@@ -36,7 +36,7 @@
   if ($profile['dp']) {
     $myDp = $onMy->primaryLocal.'dist/img/avatar/'.$profile['dp'];
   }else{
-    $myDp = 'https://duniaundercover.files.wordpress.com/2023/02/ci.png';
+    $myDp = 'https://duniaundercover.files.wordpress.com/2023/02/5-1.png';
   }
 ?>
 <!DOCTYPE html>
@@ -55,8 +55,9 @@
   <meta name="description" content="Gabung komunitas terbaik dan dapatkan cuan"/>
   <meta property="description" content="Gabung komunitas terbaik dan dapatkan cuan">
   <meta property="og:url" content="https://www.kombi.remotebisnis.com/">
-  <meta property="og:image" name="og:image" content="https://duniaundercover.files.wordpress.com/2023/02/ci.png">
+  <meta property="og:image" name="og:image" content="<?php echo $myDp ?>">
   <meta property="og:site_name" content="Kombi.RemoteBisnis.com - Buat Kolam Uangmu Sekarang !">
+  <meta name="keywords" content="komunitas bisnis, jualan online, digital marketing, list building, affiliate marketing, RemoteBisnis, seo, belajar jualan, jualan online, copywriting">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">

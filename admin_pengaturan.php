@@ -49,13 +49,13 @@
 			              <div class="card-header p-0 border-bottom-0">
 			                <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
 			                  <li class="nav-item ">
-			                    <a class="nav-link " id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="false">Komunitas Bisnis</a>
+			                    <a class="nav-link " id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="false">Komunitas Bisnis &nbsp;<?php echo $onMy->mark ?></a>
 			                  </li>
 			                  <li class="nav-item">
-			                    <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">Profile Saya/Lainnya</a>
+			                    <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">Profile Saya/Lainnya &nbsp;<?php echo $onMy->mark ?></a>
 			                  </li>
 			                  <li class="nav-item">
-			                    <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-rek" role="tab" aria-controls="custom-tabs-four-rek" aria-selected="false">Rekening/Invoice</a>
+			                    <a class="nav-link" id="custom-tabs-four-profile-tab1" data-toggle="pill" href="#custom-tabs-four-rek" role="tab" aria-controls="custom-tabs-four-rek" aria-selected="false">Rekening/Invoice &nbsp;<?php echo $onMy->mark ?></a>
 			                  </li>
 			                  <li>
 			                    <a class="nav-link" id="custom-tabs-four-profile-faq" data-toggle="pill" href="#custom-tabs-four-faq" role="tab" aria-controls="custom-tabs-four-faq" aria-selected="false">FAQ</a>
@@ -158,7 +158,7 @@
 								                      <input type="checkbox" class="custom-control-input" id="customSwitch2" name="menu" <?php if ($profile['is_private'] == '1'){ echo 'checked'; } ?>>
 								                      <label class="custom-control-label" for="customSwitch2"></label>
 								                    </div>
-						                        <small><code>*</code> Jika mengaktifkan ini maka menu Member akan ditampilan dan Member akan bisa melihat jumlah member</small>
+						                        <small><code>*</code> Jika mengaktifkan ini maka menu Member akan ditampilkan dan Member akan bisa melihat jumlah member</small>
 						                      </div>
 							                  </div>
 							                  <div class="col-sm-6">
@@ -663,6 +663,7 @@
 		function loopRemove(id){
 			$('.numlooprek'+id).remove();
 		}
+
 	</script>
 <?php
   require('footer.php');

@@ -166,7 +166,7 @@
 	              <!-- /.card-header -->
 	              <div class="card-body">
                   <div class="table-responsive">
-										<table class="table table-striped">
+										<table class="table table-striped dt">
 		                  <thead>
 		                    <tr>
 		                      <th style="width: 10px">#</th>
@@ -197,7 +197,7 @@
 						                      <a class="dropdown-item" onclick="return confirm('Yakin menghapus E-Course Bisnis ini ?, semua yang berhubungan dengan ini akan hilang juga')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('ecourse') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
 						                    </div>
 						                  </div>
-			                      </td>Data E
+			                      </td>
 			                    </tr>
 		                    <?php endforeach ?> 
 		                  </tbody>

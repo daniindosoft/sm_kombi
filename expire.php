@@ -1,5 +1,7 @@
 <?php 
 	error_reporting(0);
+  include_once('env.php');
+	
 	include_once('dist/core/koneksi.php');
 
 	function single($db, $sql){

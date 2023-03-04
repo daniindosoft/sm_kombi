@@ -214,7 +214,7 @@
             <div class="card-header">
               <h3 class="card-title">
                 <i class="ion ion-android-people mr-1"></i>
-                Lead dan Link Affiliate
+                Affiliate
               </h3>
               <div class="card-tools">
                 <ul class="nav nav-pills ml-auto">
@@ -334,7 +334,7 @@
 
                   <div class="card card-warning">
                     <div class="card-header">
-                      <h3 class="card-title">Affiliate Produk/Pesanan</h3>
+                      <h3 class="card-title">Affiliate Produk</h3>
                       <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
                           <i class="fas fa-minus"></i>
@@ -572,7 +572,7 @@
                           <div class="col-md-4">
                             <div class="custom-control custom-switch">
                               <input type="checkbox" class="custom-control-input" id="cprivate" name="cprivate">
-                              <label class="custom-control-label" for="cprivate">Jika diaktifkan produk ini tidak bisa di affiliatekan oleh member komunitas Anda</label>
+                              <small class="custom-control-label" for="cprivate">Jika diaktifkan produk ini tidak bisa di affiliatekan oleh member komunitas Anda, artinya produk/form order produk ini hanya anda yang bisa mengaksesnya</small>
                             </div>
                           </div> 
                           <div class="col-md-6">

@@ -87,11 +87,11 @@
 							              </div>
 														
 							              <div class="card-body" style="">
-							              	<form method="post" action="">
+							              	<form method="post" action="" onsubmit="return confirm('Sudah yakin ?')">
 							      						<?php $onMy->inputRedirectFull() ?>
 							              		<input type="hidden" name="id" value="<?php echo $saldo['id'] ?>">
 							              		<input type="hidden" name="id_user" value="<?php echo $value['idu'] ?>">
-							              		<input type="number" name="nilai" class="form-control input-sm" placeholder="masukan nilai">
+							              		<input type="number" required name="nilai" class="form-control input-sm" placeholder="masukan nilai">
 							              		<div class="btn-group btn-block">
 								              		<button name="submitAddKomisi" class="btn btn-sm btn-warning"><i class="fa fa-plus"></i> Tambah</button>
 								              		<?php if ($saldo['komisi_belum_cair'] != 0): ?>

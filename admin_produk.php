@@ -43,15 +43,15 @@
                 	<div class="card card-warning card-outline card-outline-tabs">
 			              <div class="card-header p-0 border-bottom-0">
 			                <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
-			                  <li class="nav-item active show">
-			                    <a class="nav-link active" id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="false">Atur Produk</a>
+			                  <li class="nav-item  ">
+			                    <a class="nav-link " id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="false">Atur Produk</a>
 			                  </li>
 			                   
 			                </ul>
 			              </div>
 			              <div class="card-body">
 			                <div class="tab-content" id="custom-tabs-four-tabContent">
-			                  <div class="tab-pane fade active show" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
+			                  <div class="tab-pane fade " id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
                           <form action="" method="post">
                             <?php $onMy->inputRedirect() ?>
                             <input required type="hidden" name="id_user" value="<?php echo $_COOKIE['id_akun_combi'] ?>">
@@ -155,27 +155,34 @@ link gambar 2
 
                               <div class="col-md-12">
                                 <hr>
-      				                  <button name="submitProduk" type="submit" class="btn-block btn btn-lg btn-warning">Tambah Produk</button>
+      				                  <button name="submitProduk" type="submit" class="btn-block btn btn-warning">Simpan Produk</button>
                               </div>
                             </div>
                           </form>
 				                  <br>
 				                  <br>
-                          <div class="table-responsive">
-  				                  <table class="table table-striped dt">
-  					                  <thead>
-  					                    <tr>
-  					                      <th style="width: 10px">#</th>
-  					                      <th>Nama Produk</th>
+                          
+                        </div>
+			                   
+			                </div>
+			              </div>
+			              <!-- /.card -->
+			            </div>
+                  <div class="table-responsive">
+                            <table class="table table-striped dt">
+                              <thead>
+                                <tr>
+                                  <th style="width: 10px">#</th>
+                                  <th>Nama Produk</th>
                                   <th>Type</th>
    
-  					                      <th></th>
-  					                    </tr>
-  					                  </thead>
-  					                  <tbody>
+                                  <th></th>
+                                </tr>
+                              </thead>
+                              <tbody>
                                 <?php $no=1; foreach ($onMy->selectWithBussiness('produk', $_SESSION['bisnis_kategori_combi']) as $value): ?>
-    					                    <tr>
-    					                      <td><?php echo $no++; ?></td>
+                                  <tr>
+                                    <td><?php echo $no++; ?></td>
                                     <td><?php echo $value['nama_produk'] ?></td>
                                     <td>
                                       <?php
@@ -186,31 +193,25 @@ link gambar 2
                                         }
                                       ?>  
                                     </td>                              
-    					                      <td>
-    					                      	<div class="btn-group btn-sm">
-    								                    <button type="button" class="btn btn-warning">Action</button>
-    								                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-    								                      <span class="sr-only">Toggle Dropdown</span>
-    								                    </button>
-    								                    <div class="dropdown-menu" role="menu" style="">
+                                    <td>
+                                      <div class="btn-group btn-sm">
+                                        <button type="button" class="btn btn-warning">Action</button>
+                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                          <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <div class="dropdown-menu" role="menu" style="">
                                           <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>admin/produk/edit?id=<?php echo $value['id'] ?>">Edit</a>
-    								                      <div class="dropdown-divider"></div>
-    								                      <a class="dropdown-item" onclick="return confirm('Yakin menghapus produk ini ?')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('produk') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
-    								                    </div>
-    								                  </div>
-    					                      </td>
-    					                    </tr>
+                                          <div class="dropdown-divider"></div>
+                                          <a class="dropdown-item" onclick="return confirm('Yakin menghapus produk ini ?')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('produk') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
+                                        </div>
+                                      </div>
+                                    </td>
+                                  </tr>
                                 <?php endforeach ?>
-  					                     
-  					                  </tbody>
-  					                </table>
-  			                  </div>
-                        </div>
-			                   
-			                </div>
-			              </div>
-			              <!-- /.card -->
-			            </div>
+                                 
+                              </tbody>
+                            </table>
+                          </div>
                 </div>
                 <!-- /.card-body -->
 

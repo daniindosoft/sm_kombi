@@ -51,7 +51,7 @@
                     </div>
                     <div class="card-body">
                       <div class="tab-content" id="custom-tabs-four-tabContent">
-                        <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
+                        <div class="tab-pane fade " id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
                           <form action="" method="post">
                             <?php $onMy->inputRedirect() ?>
                             <input type="hidden" name="id_user" value="<?php echo $_COOKIE['id_akun_combi'] ?>">
@@ -82,46 +82,44 @@
                             <button type="submit" name="submitAsset" class="btn btn-warning">Simpan Asset</button>
                           </form>
                           <br>
-                          <br>
-                          <div class="table-responsive">
-                            <table class="table table-striped dt">
-                              <thead>
-                                <tr>
-                                  <th style="width: 10px">#</th>
-                                  <th>Judul</th>
-                                  <th>Url</th>
-                                  <th></th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <?php $no=1; foreach ($onMy->selectWithBussiness('asset', $_SESSION['bisnis_kategori_combi']) as $value): ?>
-                                  <tr>
-                                    <td><?php echo $no++; ?></td>
-                                    <td><?php echo $value['judul'] ?></td>
-                                    <td><?php echo $value['url'] ?></td>
-                                    <td>
-                                      <div class="btn-group btn-sm">
-                                        <button type="button" class="btn btn-warning">Action</button>
-                                        <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
-                                          <span class="sr-only">Toggle Dropdown</span>
-                                        </button>
-                                        <div class="dropdown-menu" role="menu" style="">
-                                        <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>admin/asset/edit?id=<?php echo $value['id'] ?>">Edit</a>
-                                          <div class="dropdown-divider"></div>
-                                          <a class="dropdown-item" onclick="return confirm('Yakin menghapus Asset ini ?')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('asset') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
-                                        </div>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                <?php endforeach; ?>
-                              </tbody>
-                            </table>
-                          </div>
                         </div>
                       </div>
                     </div>
-                    <!-- /.card -->
 			            </div>
+                  <div class="table-responsive">
+                    <table class="table table-striped dt">
+                      <thead>
+                        <tr>
+                          <th style="width: 10px">#</th>
+                          <th>Judul</th>
+                          <th>Url</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php $no=1; foreach ($onMy->selectWithBussiness('asset', $_SESSION['bisnis_kategori_combi']) as $value): ?>
+                          <tr>
+                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $value['judul'] ?></td>
+                            <td><?php echo $value['url'] ?></td>
+                            <td>
+                              <div class="btn-group btn-sm">
+                                <button type="button" class="btn btn-warning">Action</button>
+                                <button type="button" class="btn btn-warning dropdown-toggle dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                  <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu" role="menu" style="">
+                                <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>admin/asset/edit?id=<?php echo $value['id'] ?>">Edit</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" onclick="return confirm('Yakin menghapus Asset ini ?')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('asset') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        <?php endforeach; ?>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
                 <!-- /.card-body -->
 

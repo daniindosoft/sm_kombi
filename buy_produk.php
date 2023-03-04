@@ -36,6 +36,7 @@
   <link rel="stylesheet" href="//localhost/rebi/dist/css/adminlte.min.css">
   <link rel="stylesheet" href="//localhost/rebi/plugins/select2/css/select2.min.css">
   <link rel="stylesheet" href="//localhost/rebi/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <?php echo base64_decode($produk['header']) ?>
   <style type="text/css">
     .input-group>.select2-container--default:not(:last-child) .select2-selection{
       height: auto !important;

@@ -11,6 +11,8 @@
   $value = $onMy->selectSingleOne('post', 'id', $_GET['id']);
 
   $judul = $onMy->selectSingleOne('komunitas_bisnis', 'id', $value['id_komunitas_bisnis'])['nama_komunitas'];
+
+  $postBy = $onMy->thisProfile($value['id_user']);
 ?>
 <!DOCTYPE html>
 <!--
@@ -21,14 +23,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>COMBI</title>
+  <link rel="shortcut icon" href="https://duniaundercover.files.wordpress.com/2023/02/5-1.png">
+
+  <title>Login ke KOMBI | Solusi Membuat Kolam Uang</title>
+
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KOMBI - Post">
+  <meta property="og:description" content="Yuk baca postingan dari <?php echo $postBy['nama_lengkap'] ?> yang dibagikan ini">
+  <meta name="description" content="Yuk baca postingan dari <?php echo $postBy['nama_lengkap'] ?> yang dibagikan ini"/>
+  <meta property="description" content="Yuk baca postingan dari <?php echo $postBy['nama_lengkap'] ?> yang dibagikan ini">
+  <meta property="og:url" content="https://www.kombi.remotebisnis.com/">
+  <meta property="og:image" name="og:image" content="https://duniaundercover.files.wordpress.com/2023/02/ci.png">
+  <meta property="og:site_name" content="Kombi.RemoteBisnis.com - Buat Kolam Uangmu Sekarang !">
+  
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="//localhost/rebi/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="//localhost/rebi/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition layout-top-nav">
 <div class="wrapper">
@@ -36,9 +51,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
     <div class="container">
-      <a href="//localhost/rebi/index3.html" class="navbar-brand">
-        <img src="https://duniaundercover.files.wordpress.com/2023/01/ss.png" alt="Combi Logo" style="opacity: .8; width: 50px">
-        <span class="brand-text font-weight-light font-weight-bold	">COMBI</span>
+      <a href="<?php echo $onMy->primaryLocal ?>index3.html" class="navbar-brand">
+        <img src="https://duniaundercover.files.wordpress.com/2023/02/combi.png" alt="Combi Logo" style="opacity: .8; width: 50px">
+        <span class="brand-text font-weight-light font-weight-bold	">KOMBI</span>
       </a>
 
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,7 +108,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container">
         <?php 
 	        $no=1; 
-	          $postBy = $onMy->thisProfile($value['id_user']);
+	          
 	      ?>
 	        <div class="card card-widget yellow-border">
 	          <div class="card-header">
@@ -192,10 +207,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="//localhost/rebi/plugins/jquery/jquery.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="//localhost/rebi/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="//localhost/rebi/dist/js/adminlte.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>dist/js/adminlte.min.js"></script>
 </body>
 </html>

@@ -37,8 +37,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Compose</li>
+              <li class="breadcrumb-item"><a href="<?php echo $onMy->primaryLocal ?>/admin/home">Home</a></li>
             </ol>
           </div>
           <div class="col-sm-12">
@@ -54,7 +53,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
-            <a href="<?php echo $onMy->primaryLocal; ?>admin/post" class="btn btn-warning btn-block mb-3">Buat Post</a>
+            <a href="<?php echo $onMy->primaryLocal; ?>admin/post" class="btn btn-warning btn-block mb-3">Tambah Post</a>
 
             <div class="card">
               <div class="card-header">
@@ -131,7 +130,7 @@
               <?php $onMy->inputRedirectFull() ?>
               <div class="card card-warning card-outline">
                 <div class="card-header">
-                  <h3 class="card-title">Tulis Ponstinganmu</h3>
+                  <h3 class="card-title">Tambah Postingan</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">

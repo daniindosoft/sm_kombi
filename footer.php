@@ -15,11 +15,10 @@
       </div>
     </div>
 </div>
-<footer class="main-footer">
-  <strong>Copyright &copy; <?php echo date('Y') ?>; Part of <a href="https://remotebisnis.com">remotebisnis.com</a>.</strong>
-  All rights reserved.
+<footer class="main-footer text-sm">
+  <strong>Copyright &copy; <?php echo date('Y') ?></strong>
   <div class="float-right d-none d-sm-inline-block">
-    <b>Version</b> 3.2.0
+    <b>Version</b> 1.7
   </div>
 </footer>
 
@@ -120,8 +119,7 @@
 <!-- ./wrapper -->
 <!-- jQuery -->
 <script src="<?php echo $onMy->primaryLocal ?>plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="<?php echo $onMy->primaryLocal ?>plugins/jquery-ui/jquery-ui.min.js"></script>
+
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
@@ -130,24 +128,14 @@
 <script src="<?php echo $onMy->primaryLocal ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- ChartJS -->
 <script src="<?php echo $onMy->primaryLocal ?>plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="<?php echo $onMy->primaryLocal ?>plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="<?php echo $onMy->primaryLocal ?>/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="<?php echo $onMy->primaryLocal ?>plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="<?php echo $onMy->primaryLocal ?>plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- select2 -->
 <script src="<?php echo $onMy->primaryLocal ?>plugins/select2/js/select2.full.min.js"></script>
     
 <script src="<?php echo $onMy->primaryLocal ?>plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="<?php echo $onMy->primaryLocal ?>plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="<?php echo $onMy->primaryLocal ?>plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="<?php echo $onMy->primaryLocal ?>plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script src="<?php echo $onMy->primaryLocal ?>plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="<?php echo $onMy->primaryLocal ?>plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="<?php echo $onMy->primaryLocal ?>plugins/jszip/jszip.min.js"></script>
-<script src="<?php echo $onMy->primaryLocal ?>plugins/pdfmake/pdfmake.min.js"></script>
+
 <script src="<?php echo $onMy->primaryLocal ?>plugins/pdfmake/vfs_fonts.js"></script>
 <script src="<?php echo $onMy->primaryLocal ?>plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="<?php echo $onMy->primaryLocal ?>plugins/datatables-buttons/js/buttons.print.min.js"></script>
@@ -174,6 +162,7 @@
 
 
 <script type="text/javascript">
+  var hostServer = '<?php echo $onMy->primaryLocal ?>';
   $(function () { 
     <?php if (!$norek): ?>
       $(document).Toasts('create', {
@@ -183,7 +172,8 @@
           body: 'Silahkan lengkapi <a href="<?php echo $sistem->primaryLocal.$profile['type_user'] ?>/pengaturan#custom-tabs-four-profile">No Rekening & Profile</a> Anda di menu Pengaturan/Setting & Bisnis'
         });
     <?php endif; ?>
-    $('#reservation').daterangepicker()
+    $('#reservation').daterangepicker();
+    $('.drp').daterangepicker();
 
     $('[data-toggle="tooltip"]').tooltip();
     $('#example2').DataTable();
@@ -520,6 +510,9 @@
       });
     }
   $(function () {
+    <?php if($_GET['selection']): ?>
+      $('#<?php echo $_GET['selection'] ?>').addClass('bg-info');
+    <?php endif; ?>
     <?php if ($thisjk == true): ?>
       var jk = {
         labels: [
@@ -546,8 +539,10 @@
       })
     <?php endif ?>
   });
-    
 </script>
+<?php if ($ssReportOrdersAffiliate == true): ?> 
+  <script src="<?php echo $onMy->primaryLocal ?>dist/js/chartjs-report.js"></script>
+<?php endif ?>
 <?php $sistem->removeFlash(); ?>
 </body>
 </html>
