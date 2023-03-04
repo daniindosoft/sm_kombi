@@ -222,13 +222,25 @@
     area.select();
     document.execCommand('copy');
   }
-  
+  function closeFlash() {
+    $.ajax({
+      type: 'POST',
+      url: "<?php echo $onMy->primaryLocal ?>ajax/post",
+      data: {
+        "ajaxType":'closeFlash'
+      },
+      success: function(a) {
+        
+      }
+    });
+  }  
   // document.getElementsByClassName(".btnresi").addEventListener("click", function(e) {
   //   alert();
   // });
   $(function () {
     $(document).ready(function() {
       $('#reservation').daterangepicker();
+
 
        $('#formid').on('keyup keypress', function(e) {
         var keyCode = e.keyCode || e.which;
@@ -543,6 +555,6 @@
 <?php if ($ssReportOrdersAffiliate == true): ?> 
   <script src="<?php echo $onMy->primaryLocal ?>dist/js/chartjs-report.js"></script>
 <?php endif ?>
-<?php //$sistem->removeFlash(); ?>
+
 </body>
 </html>

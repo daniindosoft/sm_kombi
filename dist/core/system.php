@@ -55,7 +55,7 @@ class kontrols{
 		}
 		if (!empty($_SESSION['flashType'])) {
 			echo '<div class="mt-3 alert text-sm '.$alert.' ">
-	              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	              <button type="button" class="close" data-dismiss="alert" aria-hidden="true" onclick="return closeFlash()">×</button>
 	              <label>'.$icon.' '.$_SESSION['flashMessage'].'</label>
 	            </div>';
 		}
