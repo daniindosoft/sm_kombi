@@ -1085,6 +1085,10 @@
 			$sistem->reportOrdersDropship($_POST['dateRange'], $_POST['id_komunitas']);
 			break;
 
+		case ($_POST['ajaxType'] == 'closeFlash'):
+			$sistem->removeFlash();
+			break;
+
 		case ($_POST['ajaxType'] == 'removeAtc'):
             $onMy->tbl = 'cart';
             $onMy->clm = 'id';
