@@ -9,11 +9,7 @@
         <div class="col-sm-6">
           <h1 class="m-0"><?php echo $profileKomunitas['nama_komunitas'] ?></h1>
         </div><!-- /.col -->
-        <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><button type="button" onclick="return gulung()" class="btn-sm btn-default btn">Gulung Post</button></li>
-            </ol>
-          </div><!-- /.col -->
+        
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
   </div>
