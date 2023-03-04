@@ -543,6 +543,6 @@
 <?php if ($ssReportOrdersAffiliate == true): ?> 
   <script src="<?php echo $onMy->primaryLocal ?>dist/js/chartjs-report.js"></script>
 <?php endif ?>
-<?php $sistem->removeFlash(); ?>
+<?php //$sistem->removeFlash(); ?>
 </body>
 </html>
