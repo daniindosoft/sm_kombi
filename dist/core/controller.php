@@ -176,16 +176,18 @@
 				$sistem->priceNama = $_POST['nama_lengkap'];
 				$sistem->priceEmail = $_POST['email'];
 				
+			    // echo 's -';
 				$id = $sistem->masukan_data_no_redirect('users',$col,$data);
 
-				// notif ke pendaftar
+			    // echo 'x -'.$sistem->templateEmail( $sistem->templateDaftarBisnis($_POST['kaf']));
 			    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$_POST['email'],'1 Langkah lagi nih, yuk selesaikan..', $sistem->templateEmail( $sistem->templateDaftarBisnis($_POST['kaf']) ) );
-			    
+			    // echo 'v-';
 			    $sistem->notifAdminRebi($_POST['kaf']);
+			    // echo 'o-';
 
 			    // redirek
-			    echo "<script>window.location.href = '".$sistem->primaryLocal."admin/join/invoice?kaf=".$_POST['kaf']."&id=".$id."'; </script>";
-			    echo " - ".$sistem->primaryLocal."admin/join/invoice?kaf=".$_POST['kaf']."&id=".$id."' - ";
+			    // echo "<script>window.location.href = '".$sistem->primaryLocal."admin/join/invoice?kaf=".$_POST['kaf']."&id=".$id."'; </script>";
+			    // echo " - ".$sistem->primaryLocal."admin/join/invoice?kaf=".$_POST['kaf']."&id=".$id."' - ";
 
 				header('Location:'.$sistem->primaryLocal.'admin/join/invoice?kaf='.$_POST['kaf'].'&id='.$id);
 			}else{
