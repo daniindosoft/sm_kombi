@@ -1448,8 +1448,62 @@ class kontrols{
 			echo json_encode( array('tgl' => $tgltext, 'conv' => $dataConv, 'all' => $dataAll ) );
 		}
 	}
+	public function httpGet($url){
+		$ch = curl_init();  
+		curl_setopt($ch,CURLOPT_URL,$url);
+		curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+		$output=curl_exec($ch);
+		curl_close($ch);
+		return $output;
+	}
+	public function templateDaftarBisnis($kaf){
+		if (empty($kaf) || $kaf == '39587434922' || $kaf == null) {
+			$kaf_new = '39587434922';
+			$nb = '';
+		}else{
+			$kaf_new = $kaf;
+			$nb = '<small>NB : Anda daftar lewat Affiliate, pastikan kontak nomor diatas (Whatsapp) sebelum melakukan transfer. </small>';
+		}
+
+		$aff = 'https://member.remotebisnis.com/setting/function/proses_daftar_api.php?kaf='.$kaf_new;
+		$affiliate = json_decode(self::httpGet($aff));
+		return ' 
+			<td style="padding:0 35px;">
+			    <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:21px;font-family:Rubik,sans-serif;">Tinggal satu langkah lagi</h1>
+			    <br>
+			    <p style="font-size:15px; color:#455056; margin:8px 0 0; line-height:24px;">
+			        Terima kasih telah bergabung dengan KOMBI,<br> sekarang tinggal 1 langkah lagi yaitu konfirmasi pembayaran <br>
+			        <br><strong>Segera konfirmasi pembayaran ke salah satu nomor rekening berikut :</strong>.
+			    </p>
+			    <hr>
+			    <br>
+			    '.$affiliate->note.'
+			    <br>
+			    <span
+			        style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;"></span>
+			    <p
+			        style="color:#455056; font-size:18px;line-height:20px; margin:0; font-weight: 500;">
+			        <strong
+			            style="display: block;font-size: 13px; margin: 0 0 4px; color:rgba(0,0,0,.64); font-weight:normal;">Konfirmasi ke : </strong>
+			        <a href="'.$url.'"> '.self::str_replace_first('0','62',$affiliate->nowa).'</a>
+			        <br>
+			        '.$nb.'
+			    </p>
+			    <br>
+			    <hr>
+			    <a href="'.$this->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>
+			</td>
+
+		';
+	}
+	public function str_replace_first($from, $to, $content)
+	{
+		$from = '/'.preg_quote($from, '/').'/';
+
+		return preg_replace($from, $to, $content, 1);
+	}
 	public function templateLupaPass($token){
-		$url = $this->primaryLocal.'recovery?token'.$token;
+		$url = $this->primaryLocal.'recovery?token='.$token;
 		return ' 
 			<tr>
                 <td style="padding:0 35px;">

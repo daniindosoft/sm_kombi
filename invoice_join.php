@@ -59,26 +59,35 @@
                           ke salah satu rekening ini
         </div>
         <hr style="border: 1px dashed black;">
-        <div class="child-p">
-          
-            <p>
-							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bank_Syariah_Indonesia.svg/2560px-Bank_Syariah_Indonesia.svg.png" width="90px">
-              <br>
-              <b>DANI S</b><br>
-              <span>(451) 9167 2788 80</span>
-            </p> 
-	      </div>
-	      <div class="child-p">
-          
-            <p>
-							<img alt="" src="https://upload.wikimedia.org/wikipedia/id/8/89/Jenius-logo.png" style="width:90px" />
-              <br>
-              <b>DANI S</b><br>
-              <span>(213) 9019 0062 360</span>
-            </p> 
-           
-        <br>
-	      </div>
+        <?php if ($_GET['kaf'] == '39587434922'): ?>
+          <div class="child-p">
+            
+              <p>
+  							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bank_Syariah_Indonesia.svg/2560px-Bank_Syariah_Indonesia.svg.png" width="90px">
+                <br>
+                <b>DANI S</b><br>
+                <span>(451) 9167 2788 80</span>
+              </p> 
+  	      </div>
+  	      <div class="child-p">
+            
+              <p>
+  							<img alt="" src="https://upload.wikimedia.org/wikipedia/id/8/89/Jenius-logo.png" style="width:90px" />
+                <br>
+                <b>DANI S</b><br>
+                <span>(213) 9019 0062 360</span>
+              </p> 
+             
+          <br>
+  	      </div>
+        <?php 
+          else:
+            $aff = 'https://member.remotebisnis.com/setting/function/proses_daftar_api.php?kaf='.$_GET['kaf'];
+            $affiliate = json_decode($onMy->httpGet($aff));
+            echo $affiliate->note;
+        ?>
+
+        <?php endif ?>
 
         <p class="text-center">Hubungi admin di <br>
          

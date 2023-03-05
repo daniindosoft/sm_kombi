@@ -172,7 +172,9 @@
 				$sistem->lastId = true;
 				// $sistem->debug = true;
 				$id = $sistem->masukan_data_no_redirect('users',$col,$data);
-				header('Location:'.$sistem->primaryLocal.'admin/join/invoice?id='.$id);
+
+			    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$_POST['email'],'1 Langkah lagi nih, yuk selesaikan..', $sistem->templateEmail( $sistem->templateDaftarBisnis($_POST['kaf']) ) );
+				header('Location:'.$sistem->primaryLocal.'admin/join/invoice?kaf='.$_POST['kaf'].'&id='.$id);
 			}else{
 				$sistem->registerFlash('d', 'Email sudah terdaftar, silahkan gunakan email lain !');
 			}

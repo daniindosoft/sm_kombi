@@ -58,7 +58,7 @@
     <div class="card-body">
       <?php $sistem->callFlash() ?>
       
-      <p class="login-box-msg pb-0">Buat Komunitas dan bangun kolam uangmu sendiri ! <br><b><?php echo $single['nama_komunitas'] ?></b></p>
+      <p class="login-box-msg pb-0 lead bold">Buat Komunitas dan bangun kolam uangmu sendiri ! <br><b><?php echo $single['nama_komunitas'] ?></b></p>
       <hr>
       <img src="https://duniaundercover.files.wordpress.com/2023/03/pckombi2.jpg" class="w-100">
       <!-- <img src="https://media.tenor.com/49L_4C2_pW8AAAAC/rich-cash.gif" class="w-100"> -->
@@ -67,6 +67,7 @@
         <?php $onMy->inputRedirectFull() ?>
         <input type="hidden" name="cd" value="<?php echo $_GET['cd'] ?>">
         <input type="hidden" name="aff" value="<?php echo @$_GET['aff'] ?>">
+        <input type="hidden" name="kaf" value="<?php echo @$_GET['kaf'] ?>">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_lengkap" required>
           <div class="input-group-append">
@@ -76,20 +77,23 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="email" class="form-control email" onkeyup="return checkEmail()" placeholder="Email Aktif" name="email" required value="@gmail.com">
+          <input type="email" class="form-control email" onkeyup="return checkEmail()" placeholder="Email Aktif" name="email" required value="">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
             </div>
           </div>
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-1">
           <input type="number" class="form-control" name="nowa" placeholder="No Whatsapp/Kontak" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-phone"></span>
             </div>
           </div>
+        </div>
+        <div class="input-group mb-3 text-sm">
+          <code>*</code> Format Wajib 085267xxxx
         </div>
         <div class="input-group mb-3">
           <select id="paketId" class="form-control" onchange="cekpaket()" name="paket" required>
@@ -113,7 +117,7 @@
             <div class="icheck-primary">
               <input type="checkbox" id="agreeTerms" name="terms" value="agree">
               <small for="agreeTerms">
-               By Registering, you agree to our <a href="#">Terms, Privacy Policy and Cookies Policy</a>
+               By Registering, you agree to our <a href="https://www.privacypolicyonline.com/live.php?token=nFdmsffFYfOkOOfLh2cXJ2FDrlCwhE0d" target="_blank">Privacy Policy and Cookies Policy</a>
               </small>
             </div>
           </div>
