@@ -1497,7 +1497,7 @@ class kontrols{
 
 		$aff = 'https://member.remotebisnis.com/setting/function/proses_daftar_api.php?kaf='.$kaf_new;
 		$affiliate = json_decode(self::httpGet($aff));
-
+		
 		return ' 
 			<td style="padding:0 35px;">
 			    <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:21px;font-family:Rubik,sans-serif;">Tinggal satu langkah lagi</h1>
@@ -1517,7 +1517,7 @@ class kontrols{
 			        style="color:#455056; font-size:18px;line-height:20px; margin:0; font-weight: 500;">
 			        <strong
 			            style="display: block;font-size: 13px; margin: 0 0 4px; color:rgba(0,0,0,.64); font-weight:normal;">Konfirmasi ke : </strong>
-			        <a href="https://wa.me/'.$self::str_replace_first('0','62',$affiliate->nowa).'"> '.$affiliate->nowa.'</a>
+			        <a href="https://wa.me/'.self::str_replace_first('0','62',$affiliate->nowa).'"> '.$affiliate->nowa.'</a>
 			        <br>
 			        '.$nb.'
 			    </p>
