@@ -1460,7 +1460,7 @@ class kontrols{
 		curl_close($ch);
 		return $output;
 	}
-	public function templateDaftarBisnis($kaf){
+	public function notifAdminRebi($kaf){
 		if (empty($kaf) || $kaf == '39587434922' || $kaf == null) {
 			$kaf_new = '39587434922';
 			$nb = '';
@@ -1479,11 +1479,24 @@ class kontrols{
 			<p>Ada lead baru yang siap daftar KOMBI lewat affilaite Anda, berikut detailnya :</p>
 			<h4>Emai = '.$this->priceEmail.'</h4>
 			<h4>Nama = '.$this->priceNama.'</h4>
-			<h4>TOTAL = '.self::nf($this->pricePublic).'</h4>
+			<h4>TOTAL = Rp'.self::nf($this->pricePublic).'</h4>
 			<p>Silahkan dicek di <a href="https://member.remotebisnis.com" target="_blank">MemberArea Rebi</a></p>
 		';
 
 	    self::kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$affiliate->username,'Ada yang daftar KOMBI lewat link affiliate Anda nih, cek sekarang', $konten);
+	}
+	public function templateDaftarBisnis($kaf){
+		if (empty($kaf) || $kaf == '39587434922' || $kaf == null) {
+			$kaf_new = '39587434922';
+			$nb = '';
+		}else{
+			$kaf_new = $kaf;
+			$nb = '<small>NB : Anda daftar lewat Affiliate, pastikan kontak nomor diatas (Whatsapp) sebelum melakukan transfer. </small>';
+		}
+
+
+		$aff = 'https://member.remotebisnis.com/setting/function/proses_daftar_api.php?kaf='.$kaf_new;
+		$affiliate = json_decode(self::httpGet($aff));
 
 		return ' 
 			<td style="padding:0 35px;">
