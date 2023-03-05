@@ -9,13 +9,13 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="//localhost/rebi/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="//localhost/rebi/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="//localhost/rebi/dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="//localhost/rebi/plugins/select2/css/select2.min.css">
-  <link rel="stylesheet" href="//localhost/rebi/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 
   <style type="text/css">
     .input-group>.select2-container--default:not(:last-child) .select2-selection{
@@ -57,9 +57,11 @@
     </div>
     <div class="card-body">
       <?php $sistem->callFlash() ?>
-      gambar member area combi
+      
       <p class="login-box-msg pb-0">Buat Komunitas dan bangun kolam uangmu sendiri ! <br><b><?php echo $single['nama_komunitas'] ?></b></p>
-      <img src="https://media.tenor.com/49L_4C2_pW8AAAAC/rich-cash.gif" class="w-100">
+      <hr>
+      <img src="https://duniaundercover.files.wordpress.com/2023/03/pckombi2.jpg" class="w-100">
+      <!-- <img src="https://media.tenor.com/49L_4C2_pW8AAAAC/rich-cash.gif" class="w-100"> -->
       <hr>  
       <form action="" method="post">
         <?php $onMy->inputRedirectFull() ?>
@@ -136,19 +138,19 @@
 <!-- /.register-box -->
  
 <!-- jQuery -->
-<script src="//localhost/rebi/plugins/jquery/jquery.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="//localhost/rebi/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="//localhost/rebi/dist/js/adminlte.min.js"></script>
-<script src="//localhost/rebi/plugins/select2/js/select2.full.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>dist/js/adminlte.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>plugins/select2/js/select2.full.min.js"></script>
 
 <script type="text/javascript">
   function cekpaket(){
     var cpaket = $('#paketId').find(':selected').attr('data-bulanan');
     var harga = $('#paketId').find(':selected').attr('data-harga');
     if (cpaket) {
-      $('#result').html( '<div class="p-2 border-dot" style="    border: 2px dotted #005614; background:#fdde80"><small><b>Rincian : </b></small><br> Pendaftaran <b>Rp'+harga+'</b><br>Biaya langganan cuma <b class="text-success">Rp'+cpaket+ '</b> (<b style="  text-decoration:line-through;">Rp'+harga+'</b>) </div> <hr>' );
+      $('#result').html( '<div class="p-2 border-dot" style="    border: 2px dotted #005614; background:#fdde80"><small><b>Rincian : </b></small><br> Pendaftaran <b>Rp'+harga+'</b><br>Biaya langganan Nantinya cuma <b class="text-success">Rp'+cpaket+ '</b> (<b style="  text-decoration:line-through;">Rp'+harga+'</b>) </div> <hr>' );
     }else{
       $('#result').html( '' );
     }
@@ -159,7 +161,7 @@
     $('button').show();
     $.ajax({
       type: 'POST',
-      url: "//localhost/rebi/ajax/post",
+      url: "<?php echo $onMy->primaryLocal ?>ajax/post",
       data: {
         "ajaxType":'checkEmail',
         "text":$(".email").val()

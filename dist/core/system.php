@@ -20,6 +20,13 @@ class kontrols{
 	public $ago = false;
 	public $status = 3;
 	public $downloadReport = false;
+
+	public $Host = Host;
+	public $SMTPAuth = SMTPAuth;
+	public $Password = Password;
+	public $SMTPSecure = SMTPSecure;
+	public $Port = Port;
+
 	public $mark = '<i class="f-xm float-right text-warning fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Bagian/fitur ini tidak dipengaruhi oleh komunitas yang dipilih di navbar"></i>';
 
 	public function __construct($db){
@@ -1292,7 +1299,9 @@ class kontrols{
 	}
 
 	function kirimEmail($paramNamaPenerima,$emailpengirim,$namapengirim,$emailpenerima,$judulemail,$konten){
-
+		require_once("/home/remotebi/public_html/member/smtp/src/PHPMailer.php");
+		require_once("/home/remotebi/public_html/member/smtp/src/SMTP.php");
+		
 	    $mail = new PHPMailer\PHPMailer\PHPMailer();
 	    // $mail->SMTPDebug = 3;                               
 	    $namaPenerima='';
@@ -1301,12 +1310,12 @@ class kontrols{
 	    }
 
 	    $mail->isSMTP();                                   
-	    $mail->Host = 'mail.remotebisnis.com';
-	    $mail->SMTPAuth = true;
+	    $mail->Host = $this->Host;
+	    $mail->SMTPAuth = $this->SMTPAuth;
 	    $mail->Username = $emailpengirim;
-	    $mail->Password = 'Nckh*0318#';
-	    $mail->SMTPSecure = 'ssl';
-	    $mail->Port = 465;       
+	    $mail->Password = $this->Password;
+	    $mail->SMTPSecure = $this->SMTPSecure;
+	    $mail->Port = $this->Port;
 
 	    $mail->From = $emailpengirim;
 	    $mail->FromName = $namapengirim;
@@ -1438,6 +1447,102 @@ class kontrols{
 			// buat fitur rang tgl sampai 30 aja
 			echo json_encode( array('tgl' => $tgltext, 'conv' => $dataConv, 'all' => $dataAll ) );
 		}
+	}
+	public function templateLupaPass($token){
+		return ' 
+			<tr>
+                <td style="padding:0 35px;">
+                    <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">Lupa Password ?
+                    </h1>
+                    <p style="font-size:15px; color:#455056; margin:8px 0 0; line-height:24px;">
+                        Kamu telah melakukan permintaan perubahan password <br><strong>Berikut link Reset Password, Klik atau salin tautan berikut :</strong>.</p>
+                    <span
+                        style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;"></span>
+                    <p
+                        style="color:#455056; font-size:18px;line-height:20px; margin:0; font-weight: 500;">
+                        <strong
+                            style="display: block;font-size: 13px; margin: 0 0 4px; color:rgba(0,0,0,.64); font-weight:normal;">Klik ini </strong>
+                <a href="'.$token.'">Atur Ulang Password</a>
+                        <strong
+                            style="display: block; font-size: 13px; margin: 24px 0 4px 0; font-weight:normal; color:rgba(0,0,0,.64);">Atau salin tautan ini </strong>
+                <span>'.$token.'</span>
+                    </p><br><hr>
+                    <a href="https://kombi.remotebisnis.com"
+                        style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>
+                </td>
+            </tr>
+		';
+	}
+	public function templateEmail($konten, ){
+		$konten = ' 
+			<!doctype html>
+			<html lang="en-US">
+
+			<head>
+			    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+			    <title>KOMBI</title>
+			    <meta name="description" content="KOMBI">
+			    <style type="text/css">
+			        a:hover {text-decoration: underline !important;}
+			    </style>
+			</head>
+
+			<body marginheight="0" topmargin="0" marginwidth="0" style="margin: 0px; background-color: #f2f3f8;" leftmargin="0">
+			    <!-- 100% body table -->
+			    <table cellspacing="0" border="0" cellpadding="0" width="100%" bgcolor="#f2f3f8"
+			        style="@import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700|Open+Sans:300,400,600,700); font-family: Open Sans, sans-serif;">
+			        <tr>
+			            <td>
+			                <table style="background-color: #f2f3f8; max-width:670px; margin:0 auto;" width="100%" border="0"
+			                    align="center" cellpadding="0" cellspacing="0">	
+			                    <tr>
+			                        <td style="height:80px;">&nbsp;</td>
+			                    </tr>
+			                    <tr>
+			                        <td style="text-align:center;">
+			                            <a href="https://rakeshmandal.com" title="logo" target="_blank">
+			                            <img width="160" src="https://duniaundercover.files.wordpress.com/2023/02/combi.png" title="logo" alt="logo">
+			                          </a>
+			                        </td>
+			                    </tr>
+			                    <tr>
+			                        <td style="height:20px;">&nbsp;</td>
+			                    </tr>
+			                    <tr>
+			                        <td>
+			                            <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0"
+			                                style="max-width:670px; background:#fff; border-radius:3px; text-align:center;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);">
+			                                <tr>
+			                                    <td style="height:40px;">&nbsp;</td>
+			                                </tr>
+			                                '.$konten.'
+			                                <tr>
+			                                    <td style="height:40px;">&nbsp;</td>
+			                                </tr>
+			                            </table>
+			                        </td>
+			                    </tr>
+			                    <tr>
+			                        <td style="height:20px;">&nbsp;</td>
+			                    </tr>
+			                    <tr>
+			                        <td style="text-align:center;">
+			                            <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>https://kombi.remotebisnis.com</strong> </p>
+                                <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>https://remotebisnis.com</strong> </p>
+			                        </td>
+			                    </tr>
+			                    <tr>
+			                        <td style="height:80px;">&nbsp;</td>
+			                    </tr>
+			                </table>
+			            </td>
+			        </tr>
+			    </table>
+			    <!--/100% body table-->
+			</body>
+
+			</html>
+		';
 	}
 
 }

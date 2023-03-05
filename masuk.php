@@ -64,7 +64,7 @@
         <a href="<?php echo $onMy->primaryLocal ?>lupa_password">Saya Lupa Password</a>
       </p>
       <p class="mb-0 text-sm">
-        <a href="<?php echo $onMy->primaryLocal ?>admin/register" class="text-center">Bangun bisnismu sekarang</a>
+        <a href="<?php echo $onMy->primaryLocal ?>lp" class="text-center">Bangun bisnismu sekarang</a>
       </p>
     
     </div>

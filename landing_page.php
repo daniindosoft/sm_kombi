@@ -24,18 +24,12 @@
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <style>
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6{
+      .c-shadow{
       text-shadow: 1px 2px 0px #ffc107;
       font-weight: bold !important;
       }
       .list-group-item h5{
-      	text-shadow: none !important;
-      	font-weight: 100;
+      	
       }
       .text-warning {
       color: #dfa700 !important;
@@ -108,8 +102,8 @@
         <br>
         <br>
         <img class="d-block mx-auto mb-4" src="https://duniaundercover.files.wordpress.com/2023/03/sm3dkombi.png" alt="" width="300">
-        <h1 class="display-5 fw-bold">BUAT KOLAM UANG</h1>
-        <h1 class="display-5 fw-bold">DAN PILIH BISNISMU</h1>
+        <h1 class="display-5 fw-bold c-shadow">BUAT KOLAM UANG</h1>
+        <h1 class="display-5 fw-bold c-shadow">DAN PILIH BISNISMU</h1>
         <div class="col-lg-6 mx-auto">
           <hr>
           <p class="lead mb-4">Sekarang sudah saatnya bisnis <b class="text-warning">tidak bergantung pada iklan terus</b>, buat kolam uangmu sendiri dan biarkan itu bekerja untukmu.</p>
@@ -121,12 +115,12 @@
       <div class="b-example-divider"></div>
       <div class="container col-xxl-8 px-4 py-5">
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-          <div class="col-10 col-sm-8 col-lg-6">
+          <div class="col-sm-12 col-xs-12 col-lg-6">
             <img src="https://duniaundercover.files.wordpress.com/2023/03/sm3dkombi.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" loading="lazy">
           </div>
           <div class="col-lg-6">
-            <h1 class="display-5 fw-bold lh-1 mb-3">Perkenalkan KOMBI</h1>
-            <p class="lead">Baru <i>Launching</i> nih, yaitu KOMBI (Komunitas Bisnis) <br><br>Adalah tempat untuk kamu yang <span class="text-warning">ingin memiliki sistem bisnis sendiri</span> khususnya <span class="text-warning">Sistem Affiliate</span> dan <span class="text-warning">Penjualan Produk Digital</span> dan Memiliki Memberarea. <br><br>KOMBI juga memudahkan kamu untuk membangun <i><span class="text-warning">Customer List (List Building)</span></i> sebagai asset berhargamu</p>
+            <h1 class="display-5 fw-bold lh-1 mb-3 c-shadow">Perkenalkan KOMBI</h1>
+            <p class="lead">Baru <i>Launching</i> nih, yaitu KOMBI (Komunitas Bisnis), <i><small>Namanya emang biasa aja tapi fiturnya <b>Luar Biasa.</b></small></i> <br><br>Adalah tempat untuk kamu yang <span class="text-warning">ingin memiliki sistem bisnis sendiri</span> khususnya <span class="text-warning">Sistem Affiliate</span> dan <span class="text-warning">Berjualan Produk Digital</span> serta memiliki Memberarea. <br><br>KOMBI juga memudahkan kamu untuk membangun <i><span class="text-warning">Customer List (List Building)</span></i> sebagai asset berhargamu.</p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
               <button onclick="return scrollto()" type="button" class="btn btn-warning btn-lg px-4 me-md-2">SAYA MAU !</button>
             </div>
@@ -135,7 +129,7 @@
       </div>
       <div class="b-example-divider"></div>
       <div class="px-4 pt-5 my-5 text-center border-bottom">
-        <h1 class="display-5 fw-bold">KOLAM UANG</h1>
+        <h1 class="display-5 fw-bold c-shadow">KOLAM UANG</h1>
         <div class="col-lg-6 mx-auto">
           <!-- <p class="lead mb-4">Buat Kolah Uangmu dengan KOMBI, dengan sistem KOMBI kamu bisa membangun List Building lalu biarkan </p> -->
           <p class="lead mb-4">Percaya atau tidak, List Building adalah teknik marketing yang <b class="text-warning">SUPER AMPUH</b> untuk membuat Kolam Uang, Pakar Digital Marketing <b class="text-warning">NEIL PATEL</b> mengakui ini juga loo. <br><br> Dan ini alasanya kamu harus membuat Kolam Uang Sendiri : </p>
@@ -168,16 +162,16 @@
       </div>
       <div class="b-example-divider"></div>
       <div class="px-4 pt-5 my-5 text-center border-bottom">
-        <h1 class="display-5 fw-bold">MEMBANGUN KOLAM UANG</h1>
-        <h1 class="display-5 fw-bold">BUTUH SISTEM</h1>
+        <h1 class="display-5 fw-bold c-shadow">MEMBANGUN KOLAM UANG</h1>
+        <h1 class="display-5 fw-bold c-shadow">BUTUH SISTEM</h1>
         <br>
         <div class="col-lg-6 mx-auto">
           <!-- <p class="lead mb-4">Buat Kolah Uangmu dengan KOMBI, dengan sistem KOMBI kamu bisa membangun List Building lalu biarkan </p> -->
           <!-- <p class="lead mb-4">Perlu wadah khusus/sistem untuk membangun kolam uang, apa lagi jika kamu ngaku pebisnis online tapi tidak paham data dan sistem, berarti Kamu hanya pedagang biasa. -->
-          <p class="lead mb-4">Membangun <b class="text-warning">Kolam Uang</b> atau <i>Customer List</i> tidak hanya soal membuat group di Whatsapp, Telegram atau di Facebook. <br><br> Di 3 Platform itu orang <b class="text-warning">bisa dengan mudah keluar masuk</b> dan kita juga tidak punya data mereka.</p>
+          <p class="lead mb-4">Membangun <b class="text-warning">Kolam Uang</b> atau <i>Customer List</i> tidak hanya soal membuat group di Whatsapp, Telegram atau di Facebook. <br><br> Tiga Platform itu, orang <b class="text-warning">bisa dengan mudah keluar masuk</b> dan kita juga tidak punya data mereka.</p>
           <p class="lead mb-4">Perlu wadah khusus/sistem untuk membangun kolam uang, dan <b class="text-warning">KOMBI lah solusinya</b>. <br><br> Dengan KOMBI Kamu <b class="text-warning">lebih mudah mengumpulkan data</b> dan membuat <b class="text-warning">Sistem Bisnis Digital Sendiri</b>.</p>
-          <p class="lead mb-4">Ingat, <b class="text-warning">Asset Digital</b> itu <b class="text-warning">penting sekali</b>, seperti Data-data pelanggan contohnya</p>
-          <p class="lead mb-4"><code>*</code>Jangan Ngaku pebisnis Online jika kamu masih anggap remeh data</p>
+          <p class="lead mb-4">Ingat, <b class="text-warning">Asset Digital</b> itu <b class="text-warning">penting sekali</b>, seperti data-data pelanggan contohnya.</p>
+          <p class="lead mb-4"><code>*</code>Jangan Ngaku pebisnis Online jika kamu masih anggap remeh data.</p>
           <p onclick="return scrollto()" class="lead mb-4">Nah sekarang saya mau tanya-tanya dikit, coba jawab ya :)</p>
         </div>
         <div class="overflow-hidden" style="max-height: 30vh;">
@@ -198,31 +192,31 @@
             <img src="https://duniaundercover.files.wordpress.com/2023/03/6998330.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
           </div>
           <div class="col-lg-8">
-            <h1 class="display-5 fw-bold lh-1 mb-3">Pasti Ini kan Yang kamu Rasakan ?</h1>
+            <h1 class="display-5 fw-bold lh-1 mb-3 c-shadow">Pasti Ini Yang kamu Rasakan !</h1>
             <hr>
             <div class="bd-example-snippet bd-code-snippet">
               <div class="bd-example">
                 <ul class="list-group list-group-flush">
                   <li class="list-group-item">
-                    <h5>😫 Harus <b class="text-danger">BERIKLAN</b> baru dapat cuan ? (Gak Ngiklan Gak Cuan)</h5>
+                    <h5>😫 Harus <b class="text-danger">beriklan</b> baru dapat cuan ? (gak ngiklan gak cuan)</h5>
                   </li>
                   <li class="list-group-item">
-                    <h5>😫 <b class="text-danger">PROFIT HABIS</b> Karena Badget Iklan Terus ?</h5>
+                    <h5>😫 <b class="text-danger">Profit habis</b> karena budget iklan terus ?</h5>
                   </li>
                   <li class="list-group-item">
-                    <h5>🤔 Punya data pelanggan atau pembeli tapi <b class="text-danger">Gak menghasilkan</b> cuan ?</h5>
+                    <h5>🤔 Punya data pelanggan atau pembeli tapi <b class="text-danger">gak menghasilkan</b> cuan ?</h5>
                   </li>
                   <li class="list-group-item">
-                    <h5>😮‍💨 Punya data komunitas/group tapi <b class="text-danger">Tidak di manfaatkan</b> ?</h5>
+                    <h5>😮‍💨 Punya data komunitas/group tapi <b class="text-danger">tidak di manfaatkan</b> ?</h5>
                   </li>
                   <li class="list-group-item">
-                    <h5>☹️ Sudah cukup lama berbisnis <b class="text-danger">Tapi belum punya</b> sistem <i>Semi Auto Pilot</i> ?</h5>
+                    <h5>☹️ Sudah lama berbisnis <b class="text-danger">tapi belum punya</b> sistem <i>Semi Auto Pilot</i> ?</h5>
                   </li>
                   <li class="list-group-item">
-                    <h5>😞 Bisnis/Jualan ngerasa <b class="text-danger">Gitu-gitu aja</b> ?</h5>
+                    <h5>😞 Bisnis/Jualan ngerasa <b class="text-danger">gitu-gitu aja</b> ?</h5>
                   </li>
                   <li class="list-group-item">
-                    <h5>😒 Income Stak dan <b class="text-danger">Bisnis susah</b> grow up ?</h5>
+                    <h5>😒 Income stak dan <b class="text-danger">bisnis susah</b> grow up ?</h5>
                   </li>
                 </ul>
               </div>
@@ -237,7 +231,7 @@
             <img src="https://duniaundercover.files.wordpress.com/2023/03/5397395.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
           </div>
           <div class="col-lg-8">
-            <h1 class="display-5 fw-bold lh-1 mb-3">Jawab Pertanyaan Singkat ini !</h1>
+            <h1 class="display-5 fw-bold lh-1 mb-3 c-shadow">Pasti Kamu Ingin Seperti Ini Kan ?</h1>
             <div class="bd-example-snippet bd-code-snippet">
               <div class="bd-example">
                 <ul class="list-group list-group-flush">
@@ -251,16 +245,16 @@
                     <h5>🤩 Ingin tetap <b class="text-warning">cuan tanpa beriklan</b> terus ? <small class="text-sm">&nbsp;&nbsp;&nbsp;Ya</small></h5>
                   </li>
                   <li class="list-group-item">
-                    <h5>🙂 Mau jalanin bisnis lebih <b class="text-warning">bebas waktu</b> dan <b class="text-warning">peksibel</b> ? <small class="text-sm">&nbsp;&nbsp;&nbsp;Ya</small></h5>
+                    <h5>🙂 Mau jalanin bisnis lebih <b class="text-warning">bebas waktu</b> dan <b class="text-warning">fleksibel</b> ? <small class="text-sm">&nbsp;&nbsp;&nbsp;Ya</small></h5>
                   </li>
                   <li class="list-group-item">
-                    <h5>😲 Ingin <b class="text-warning">Punya penghasilan</b> tanpa mengganggu aktivitas ? <small class="text-sm">&nbsp;&nbsp;&nbsp;Ya</small></h5>
+                    <h5>😲 Ingin <b class="text-warning">punya penghasilan</b> tanpa mengganggu aktivitas ? <small class="text-sm">&nbsp;&nbsp;&nbsp;Ya</small></h5>
                   </li>
                   <li class="list-group-item">
-                    <h5>😁 Ingin <b class="text-warning">Punya sistem bisnis</b> sendiri ? <small class="text-sm">&nbsp;&nbsp;&nbsp;Ya</small></h5>
+                    <h5>😁 Ingin <b class="text-warning">punya sistem bisnis</b> sendiri ? <small class="text-sm">&nbsp;&nbsp;&nbsp;Ya</small></h5>
                   </li>
                   <li class="list-group-item">
-                    <h5>😁 Mau <b class="text-warning">Punya Bisnis Digital</b> sendiri tanpa repot dan ribet soal barang ? <small class="text-sm">&nbsp;&nbsp;&nbsp;Ya</small></h5>
+                    <h5>😁 Mau <b class="text-warning">punya bisnis digital</b> sendiri tanpa repot dan ribet soal barang ? <small class="text-sm">&nbsp;&nbsp;&nbsp;Ya</small></h5>
                   </li>
                 </ul>
               </div>
@@ -273,13 +267,30 @@
       </div>
       <div class="b-example-divider"></div>
       <div class="px-4 py-5 my-5 text-center">
-        <h1 class="display-5 fw-bold">😵‍💫 BAYANGKAN</h1>
+        <h1 class="display-5 fw-bold c-shadow">😵‍💫 BAYANGKAN</h1>
         <div class="col-lg-6 mx-auto">
-          <p class="lead mb-4">Coba bayangkan, <span class="text-warning">jika</span> Facebook, Instagram down, WhatsApp down, Marketplace ada masalah, akun Tiktok diblokir <br><br> Mau gimana ?, mau jualan seperti apa hayooo ?</p>
-          <p class="lead mb-4">Nah disinilah <span class="text-warning">pentingnya Kamu memiliki Kolam</span>(Database Pelanggan dalam 1 wadah yang sepenuhnya bisa kamu kontrol)</p>
-          <p class="lead mb-4">Makanya Apapun yang terjadi kalo kamu sudah punya database <span class="text-warning">maka jualan, edukasi, perkenalan produk</span> itu lebih mudah dan murah</p>
-          <p class="lead mb-4">Singkatnya <span class="text-warning">Jualan apapun bisa-bisa aja</span></p>
-          <p class="lead mb-4">Tujuan Intinya adalah Jualan <i class="fa fa-arrow-right"></i> Kumpulkan Data lalu Ajak <i class="fa fa-arrow-right"></i> Mereka Berbisnis </p>
+          <p class="lead mb-4">Coba bayangkan, <span class="text-warning">jika</span> Facebook, Instagram down, WhatsApp down, Marketplace ada masalah, akun Tiktok diblokir. <br><br> Mau gimana ? mau jualan seperti apa hayooo ?</p>
+          <p class="lead mb-4">Nah disinilah <span class="text-warning">pentingnya kamu memiliki kolam</span>(database pelanggan dalam 1 wadah yang sepenuhnya bisa kamu kontrol).</p>
+          <p class="lead mb-4">Makanya apapun yang terjadi kalau kamu sudah punya database <span class="text-warning">maka jualan, edukasi, perkenalan produk</span> itu lebih mudah dan murah.</p>
+          <p class="lead mb-4">Singkatnya <span class="text-warning">jualan apapun bisa-bisa aja.</span></p>
+          
+          <p class="lead mb-4 alert alert-warning fw-bold">Tujuan Intinya adalah 
+          	<br>
+          	Jualan 
+          	<br>
+          	<i class="fa fa-arrow-down"></i> 
+          	<br>
+          	Kumpulkan data
+          	<br>
+          	<i class="fa fa-arrow-down"></i> 
+          	<br>
+          	Buat Bisnismu
+          	<br>
+          	<i class="fa fa-arrow-down"></i> 
+          	<br>
+	          Lalu ajak mereka berbisnis.
+	        </p>
+
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <button onclick="return scrollto()" type="button" class="btn btn-warning btn-lg px-4 gap-3">SAYA MAU !</button>
           </div>
@@ -289,115 +300,118 @@
       <div class="container px-4 py-5" id="icon-grid">
         <h4 class="warning-notted text-center">Memang Pake KOMBI Bisa apa aja ?</h4>
         <br>
-        <h2 class="pb-2 border-bottom text-center">NAH !!, INI YANG AKAN KAMU DAPATKAN & BISA LAKUKAN :</h2>
+        <h2 class="pb-2 border-bottom text-center c-shadow">NAH !!, INI YANG AKAN KAMU DAPATKAN & BISA LAKUKAN :</h2>
         <br>
         <div class="row">
           <div class="mt-5 col-md-4 d-flex align-items-start">
             <div>
               <div class="feature-icon d-inline-flex align-items-center p-2 justify-content-center text-bg-warning bg-gradient fs-2 mb-3"><i class="fa fa-folder "></i></div>
               <h3 class="fw-bold mb-0 fs-4">E-Course</h3>
-              <p class="warning-notted" style="background-color:white">Kini lebih mudah dan bisa cuan lewat Komunitasmu, E-course, Pelatihan Online, hingga kelas berbayar yang kamu buat</p>
+              <p class="warning-notted" style="background-color:white">Kini lebih mudah dan bisa cuan lewat Komunitasmu, E-course, Pelatihan Online, hingga kelas berbayar yang kamu buat.</p>
             </div>
           </div>
           <div class="mt-5 col-md-4 d-flex align-items-start">
             <div>
               <div class="feature-icon d-inline-flex align-items-center p-2 justify-content-center text-bg-warning bg-gradient fs-2 mb-3"><i class="fa fa-share-alt "></i></div>
               <h3 class="fw-bold mb-0 fs-4">Punya Sistem Affilitate</h3>
-              <p class="warning-notted" style="background-color:white">Bangun Sistem Affiliatemu sendiri dengan mudah tanpa mikirin sistem dan atur sesuka hati</p>
+              <p class="warning-notted" style="background-color:white">Bangun Sistem Affiliatemu sendiri dengan mudah tanpa mikirin sistem dan atur sesuka hati.</p>
             </div>
           </div>
           <div class="mt-5 col-md-4 d-flex align-items-start">
             <div>
               <div class="feature-icon d-inline-flex align-items-center p-2 justify-content-center text-bg-warning bg-gradient fs-2 mb-3"><i class="fa fa-users"></i></div>
               <h3 class="fw-bold mb-0 fs-4">Punya Pasukan Dropship/Reseller</h3>
-              <p class="warning-notted" style="background-color:white">Bangun pasukan Reseller/Dropshiper dengan simple dan bangun income auto pilotmu</p>
+              <p class="warning-notted" style="background-color:white">Bangun pasukan Reseller/Dropshiper dengan simple dan bangun income auto pilotmu.</p>
             </div>
           </div>
           <div class="mt-5 col-md-4 d-flex align-items-start">
             <div>
               <div class="feature-icon d-inline-flex align-items-center p-2 justify-content-center text-bg-warning bg-gradient fs-2 mb-3"><i class="fa fa-users"></i></div>
               <h3 class="fw-bold mb-0 fs-4">Mudah Jualan Produk Digital</h3>
-              <p class="warning-notted" style="background-color:white">KOMBI mempermudah kamu untuk jualan produk digital</p>
+              <p class="warning-notted" style="background-color:white">KOMBI mempermudah kamu untuk jualan produk digital.</p>
             </div>
           </div>
           <div class="mt-5 col-md-4 d-flex align-items-start">
             <div>
               <div class="feature-icon d-inline-flex align-items-center p-2 justify-content-center text-bg-warning bg-gradient fs-2 mb-3"><i class="fa fa-users"></i></div>
               <h3 class="fw-bold mb-0 fs-4">Pixel Tracking</h3>
-              <p class="warning-notted" style="background-color:white">Pantau dan Track semua aktivitas member hinnga penjualanmu dengan Facebook Pixel</p>
+              <p class="warning-notted" style="background-color:white">Pantau dan Track semua aktivitas member hingga penjualanmu dengan Facebook Pixel.</p>
             </div>
           </div>
           <div class="mt-5 col-md-4 d-flex align-items-start">
             <div>
               <div class="feature-icon d-inline-flex align-items-center p-2 justify-content-center text-bg-warning bg-gradient fs-2 mb-3"><i class="fa fa-users"></i></div>
               <h3 class="fw-bold mb-0 fs-4">Dinamic Form Order</h3>
-              <p class="warning-notted" style="background-color:white">Jualan apapun kini makin mudah kamu bisa buat Form Order apapun</p>
+              <p class="warning-notted" style="background-color:white">Jualan apapun kini makin mudah kamu bisa buat Form Order apapun.</p>
             </div>
           </div>
           <div class="mt-5 col-md-4 d-flex align-items-start">
             <div>
               <div class="feature-icon d-inline-flex align-items-center p-2 justify-content-center text-bg-warning bg-gradient fs-2 mb-3"><i class="fa fa-list"></i></div>
               <h3 class="fw-bold mb-0 fs-4">Customer List</h3>
-              <p class="warning-notted" style="background-color:white">Membangun List Building kini makin mudah, kumpulkan data pelanggan, followers hingga subscribers dan bangun kerajaan bisnismu sendiri</p>
+              <p class="warning-notted" style="background-color:white">Membangun List Building kini makin mudah, kumpulkan data pelanggan, followers hingga subscribers dan bangun kerajaan bisnismu sendiri.</p>
             </div>
           </div>
           <div class="mt-5 col-md-4 d-flex align-items-start">
             <div>
               <div class="feature-icon d-inline-flex align-items-center p-2 justify-content-center text-bg-warning bg-gradient fs-2 mb-3"><i class="fa fa-money-check-alt"></i></div>
               <h3 class="fw-bold mb-0 fs-4">Chart/Grafic</h3>
-              <p class="warning-notted" style="background-color:white">Baca Data dan Laporan makin mudah dan cepat ga pake ribet dengan bentuk visual</p>
+              <p class="warning-notted" style="background-color:white">Baca Data dan Laporan makin mudah dan cepat ga pake ribet dengan bentuk visual.</p>
             </div>
           </div>
           <div class="mt-5 col-md-4 d-flex align-items-start">
             <div>
               <div class="feature-icon d-inline-flex align-items-center p-2 justify-content-center text-bg-warning bg-gradient fs-2 mb-3"><i class="fa fa-money-check-alt"></i></div>
               <h3 class="fw-bold mb-0 fs-4">Punya Memberarea Sendiri</h3>
-              <p class="warning-notted" style="background-color:white">Sudah pasti sekarang kamu punya memberarea sendiri untuk para komunitasmu dan bisnismu</p>
+              <p class="warning-notted" style="background-color:white">Sudah pasti sekarang kamu punya memberarea sendiri untuk para komunitasmu dan bisnismu.</p>
             </div>
           </div>
         </div>
+				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+					<button onclick="return scrollto()" type="button" class="btn btn-warning btn-lg px-4 gap-3">SAYA MAU !</button>
+				</div>
       </div>
       <div class="b-example-divider"></div>
       <div class="container px-4 py-5" id="hanging-icons">
-        <h2 class="pb-2 border-bottom text-center">EMANG INI COCOK UNTUK SAYA ?</h2>
+        <h2 class="pb-2 border-bottom text-center c-shadow">EMANG INI COCOK UNTUK SAYA ?</h2>
         <h5 class="text-center lh-base">Tentu!! ini sangat cocok untuk kamu apalagi jika kamu : </h5>
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 justify-content-center">
           <div class="col d-flex align-items-start">
             <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-              <svg class="bi" width="1em" height="1em">
+              <svg class="bi" width="1em" height="0.1em">
                 <use xlink:href="#toggles2"/>
               </svg>
             </div>
             <div>
               <h3 class="fs-2"><i class="fas fa-briefcase"></i> Pebisnis Online</h3>
-              <p>Jadikan Pelangganmu <span class="text-warning">tim penghasil uang</span> dan Dropship/Reseller makin mudah</p>
+              <p>Jadikan Pelangganmu <span class="text-warning">tim penghasil uang</span> dan Dropship/Reseller makin mudah.</p>
             </div>
           </div>
           <div class="col d-flex align-items-start">
             <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-              <svg class="bi" width="1em" height="1em">
+              <svg class="bi" width="1em" height="0.1em">
                 <use xlink:href="#tools"/>
               </svg>
             </div>
             <div>
               <h3 class="fs-2"><i class="fa fa-bullhorn"></i> Affiliate Marketer</h3>
-              <p>Miliki Sistem Affiliate. buat banyak komunitas pasukan affiliate lalu <span class="text-warning">biarlah mereka yang berjualan untukmu</span></p>
+              <p>Miliki Sistem Affiliate, buat banyak komunitas pasukan affiliate lalu <span class="text-warning">biarlah mereka yang berjualan untukmu.</span></p>
             </div>
           </div>
           <div class="col d-flex align-items-start">
             <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-              <svg class="bi" width="1em" height="1em">
+              <svg class="bi" width="1em" height="0.1em">
                 <use xlink:href="#cpu-fill"/>
               </svg>
             </div>
             <div>
               <h3 class="fs-2"><i class="fab fa-black-tie"></i> Owner</h3>
-              <p>Catat semua data pembelimu lebih rapih, lakukan Upsell/Cross Sell hingga <span class="text-warning">buat pelanganmu menjadi partner bisnismu</span></p>
+              <p>Catat semua data pembelimu lebih rapih, lakukan Upsell/Cross Sell hingga <span class="text-warning">buat pelanganmu menjadi partner bisnismu.</span></p>
             </div>
           </div>
           <div class="col d-flex align-items-start">
             <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-              <svg class="bi" width="1em" height="1em">
+              <svg class="bi" width="1em" height="0.1em">
                 <use xlink:href="#cpu-fill"/>
               </svg>
             </div>
@@ -408,13 +422,13 @@
           </div>
           <div class="col d-flex align-items-start">
             <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-              <svg class="bi" width="1em" height="1em">
+              <svg class="bi" width="1em" height="0.1em">
                 <use xlink:href="#tools"/>
               </svg>
             </div>
             <div>
               <h3 class="fs-2"><i class="fa fa-user"></i> Influencer/ Personal Branding</h3>
-              <p>Buat Dirimu lebih dikenal oleh Subscriber atau Followersmu, <span class="text-warning">kumpulkan</span> mereka buat edukasi maka jualan apapun <span class="text-warning">mereka akan percaya padamu</span></p>
+              <p>Buat Dirimu lebih dikenal oleh Subscriber atau Followersmu, <span class="text-warning">kumpulkan</span> mereka buat edukasi maka jualan apapun <span class="text-warning">mereka akan percaya padamu.</span></p>
             </div>
           </div>
         </div>
@@ -423,16 +437,16 @@
       <div class="container my-5">
         <div class="row p-4 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
           <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-            <h1 class="display-4 fw-bold lh-1">Coba Hitung ini</h1>
+            <h1 class="display-4 fw-bold lh-1 c-shadow">Coba Hitung ini</h1>
             <p class="lead">Bayangkan ini, lalu pikirkan apakah ini masih tidak menguntungkan ?  </p>
-            <p class="lead">Itu baru hitung-hitungan dengan estimasi minimal ya, jadi kemungkinan besar <span class="text-warning">kamu bisa lebih dari ini</span> </p>
+            <p class="lead">Itu baru hitung-hitungan dengan estimasi minimal ya, jadi kemungkinan besar <span class="text-warning">kamu bisa lebih dari ini.</span> </p>
             <small>Wow Keren !</small>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
               <button onclick="return scrollto()" type="button" class="btn btn-warning btn-lg px-4 me-md-2 fw-bold">SAYA MAU !</button>
             </div>
           </div>
           <div class="col-lg-4 p-0 overflow-hidden ">
-            <img class="rounded-lg-3 w-100" src="https://duniaundercover.files.wordpress.com/2023/03/price-list-kombi-500px-700px.png">
+            <img class="rounded-lg-3 w-100" src="https://duniaundercover.files.wordpress.com/2023/03/jpeg-image-625-c397-875-pixels-e28094-scaled-67.jpeg">
           </div>
         </div>
       </div>
@@ -455,7 +469,7 @@
           <div class="feature col">
             <img src="https://www.bootstrapdash.com/wp-content/uploads/2020/02/bootstrap-pricing-tables.png" class="w-100 mb-2">
             <h3 class="fs-2">Dinamic Form Order</h3>
-            <p>Kamu punya produk PLR ?, Punya E-Course sendiri ?, Punya pelatihan sendiri ? dan ingin punya memberarea untuk membermu ?, ya KOMBI solusinya</p>
+            <p>Kamu punya produk PLR ? Punya E-Course sendiri ? Punya pelatihan sendiri ? dan ingin punya memberarea untuk membermu ? ya KOMBI solusinya</p>
           </div>
         </div>
       </div>
@@ -466,7 +480,7 @@
             <img src="https://duniaundercover.files.wordpress.com/2023/03/a.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
           </div>
           <div class="col-lg-8">
-            <h1 class="display-5 fw-bold lh-1 mb-3">Kerugian Fatal Jika Tidak Pakai KOMBI</h1>
+            <h1 class="display-5 fw-bold lh-1 mb-3 c-shadow">Kerugian Fatal Jika Tidak Pakai KOMBI</h1>
             <hr>
             <div class="bd-example-snippet bd-code-snippet">
               <div class="bd-example">
@@ -488,50 +502,54 @@
                   </li>
                 </ul>
               </div>
+
             </div>
+          </div>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button onclick="return scrollto()" type="button" class="btn btn-warning btn-lg px-4 gap-3">SAYA MAU !</button>
           </div>
         </div>
       </div>
       <div class="b-example-divider"></div>
       <div class="container px-5 py-5" id="icon-grid">
-        <h2 class="pb-2 border-bottom text-center">KENAPA HARUS PAKE KOMBI ?</h2>
+        <h2 class="pb-2 border-bottom text-center c-shadow">KENAPA HARUS PAKE KOMBI ?</h2>
         <img src="https://duniaundercover.files.wordpress.com/2023/03/4318286.jpg" class="w-100">
         <div class="row justify-content-center g-5 py-5">
           <div class="col-md-4">
             <div>
               <h3 class="fw-bold mb-0 fs-4">✅ Murah</h3>
-              <p>Bayangkan aja dengan harga bulanan seharga uang jajan</p>
+              <p>Bayangkan aja dengan harga bulanan seharga uang jajan.</p>
             </div>
           </div>
           <div class="col-md-4">
             <div>
               <h3 class="fw-bold mb-0 fs-4">✅ Semi Auto Pilot</h3>
-              <p>Kalo sudah berjalan, kerjaanmu bisa hanya lihat mutasi rekening + buka-buka dashboard memberarea</p>
+              <p>Kerjaanmu hanya lihat mutasi rekening dan buka-buka memberarea.</p>
             </div>
           </div>
           <div class="col-md-4">
             <div>
               <h3 class="fw-bold mb-0 fs-4">✅ All in One</h3>
-              <p>Fitur yang keren dan melimpah dalam 1 wadah</p>
+              <p>Fitur yang keren dan melimpah dalam satu wadah.</p>
             </div>
           </div>
           <div class="col-md-4">
             <div>
               <h3 class="fw-bold mb-0 fs-4">✅ Free Update</h3>
-              <p>Update Materi, Fitur/Tools sudah pasti Gratis !</p>
+              <p>Update materi, Fitur/Tools sudah pasti gratis !.</p>
             </div>
           </div>
           <div class="col-md-4">
             <div>
               <h3 class="fw-bold mb-0 fs-4">✅ Chart/Grafik</h3>
-              <p>Baca Data bentuk tulisan kadang pusing ?, Lihat bentuk visual lewat Chart yang kami buat otomatis</p>
+              <p>Suka pusing baca data dalam bentuk tulisan ? Lihat bentuk visual lewat Chart yang kami buat otomatis.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="b-example-divider"></div>
       <div class="container px-4 py-5">
-        <h2 class="pb-2 border-bottom text-center">NAH INI DIA YANG AKAN KAMU RASAKAN</h2>
+        <h2 class="pb-2 border-bottom text-center c-shadow">NAH INI DIA YANG AKAN KAMU RASAKAN</h2>
         <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
           <div class="d-flex flex-column align-items-start gap-2">
             <img src="https://duniaundercover.files.wordpress.com/2023/03/pckombi2.jpg" class="w-100 rounded shadow-lg">
@@ -540,53 +558,57 @@
           </div>
           <div class="row row-cols-1 row-cols-sm-2 g-4">
             <div class="d-flex flex-column gap-2">
+              <h4 class="fw-semibold mb-0">Menghemat Budget Iklan/promosi</h4>
               <div
                 class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-warning bg-gradient fs-4 rounded-3">
-                <svg class="bi" width="1em" height="1em">
+                <svg class="bi" width="1em" height="0.1em">
                   <use xlink:href="#collection" />
                 </svg>
               </div>
-              <h4 class="fw-semibold mb-0">Menghemat Budget Iklan/promosi</h4>
-              <p class="text-muted">Ga perlu iklan terus untuk dapat Cuan, cukup fokus ke member yang kamu buat dan biarkan mereka menjalankan sistem bisnismu</p>
+              <p class="text-muted">Ga perlu iklan terus untuk dapat Cuan, cukup fokus ke member yang kamu buat dan biarkan mereka menjalankan sistem bisnismu.</p>
             </div>
             <div class="d-flex flex-column gap-2">
+              <h4 class="fw-semibold mb-0">Hemat Hingga Belasan Juta</h4>
               <div
                 class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-warning bg-gradient fs-4 rounded-3">
-                <svg class="bi" width="1em" height="1em">
+                <svg class="bi" width="1em" height="0.1em">
                   <use xlink:href="#gear-fill" />
                 </svg>
               </div>
-              <h4 class="fw-semibold mb-0">Hemat Hingga Belasan Juta</h4>
-              <p class="text-muted">Untuk punya website, membuat sistem web aplikasi dan perawatan/perbaikan sudah pasti bukan uang sedikit, tapi di KOMBI kamu tinggal pakai saja</p>
+              <p class="text-muted">Untuk punya website, membuat sistem web aplikasi dan perawatan/perbaikan sudah pasti bukan uang sedikit, tapi di KOMBI kamu tinggal pakai saja.</p>
             </div>
             <div class="d-flex flex-column gap-2">
-              <div
-                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-warning bg-gradient fs-4 rounded-3">
-                <svg class="bi" width="1em" height="1em">
-                  <use xlink:href="#speedometer" />
-                </svg>
-              </div>
               <h4 class="fw-semibold mb-0">Hemat waktu & Tenaga</h4>
-              <p class="text-muted">Ga perlu ribet catat data pembeli, buat form order sendiri(langganan berbayar lagi), kirim produk satu-satu(digital)</p>
-            </div>
-            <div class="d-flex flex-column gap-2">
               <div
                 class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-warning bg-gradient fs-4 rounded-3">
-                <svg class="bi" width="1em" height="1em">
+                <svg class="bi" width="1em" height="0.1em">
                   <use xlink:href="#speedometer" />
                 </svg>
               </div>
+              <p class="text-muted">Ga perlu ribet catat data pembeli, buat form order sendiri (langganan berbayar lagi), kirim produk satu-satu (digital)</p>
+            </div>
+            <div class="d-flex flex-column gap-2">
               <h4 class="fw-semibold mb-0">Punya Banyak Sumber Cuan</h4>
+              <div
+                class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-warning bg-gradient fs-4 rounded-3">
+                <svg class="bi" width="1em" height="0.1em">
+                  <use xlink:href="#speedometer" />
+                </svg>
+              </div>
               <p class="text-muted">Potensi sumber Cuan dari KOMBI : Affiliate, Komunitas/Group Berbayar, Buka Kelas Berbayar, Jualan E-Course hingga Dropship/Reseller, dan itu semua kamu miliki</p>
             </div>
           </div>
         </div>
+                  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button onclick="return scrollto()" type="button" class="btn btn-warning btn-lg px-4 gap-3">SAYA MAU !</button>
+          </div>
       </div>
+
       <div class="b-example-divider"></div>
       <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 justify-content-center">
         <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
           <div class="my-3 p-3">
-            <h3 class="display-6">Tampilan Hp Enak</h3>
+            <h3 class="display-6 fw-bold c-shadow">Tampilan Mobile Enak</h3>
             <p class="lead">Tampilan sangat responsive, <br> pantau bisnismu dimana saja kapan saja</p>
           </div>
           <div class="shadow-sm mx-auto">
@@ -594,9 +616,9 @@
           </div>
         </div>
         <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-          <div class="my-3 py-3">
-            <h3 class="display-6">Di Laptop Apalagii !!</h3>
-            <p class="lead">Sudah pasti tampilan laptop lebih powerfull</p>
+          <div class="my-3 py-3 ">
+            <h3 class="display-6 fw-bold c-shadow">Di Desktop Apalagii !!</h3>
+            <p class="lead">Sudah pasti tampilan Desktop lebih powerfull</p>
           </div>
           <div class="shadow-sm mx-auto">
             <img src="https://duniaundercover.files.wordpress.com/2023/03/combi-ilustration-web-dev-3777134697-e1677663555796.png" class="w-100">
@@ -607,7 +629,7 @@
       <div class="p-3 text-center">
         <h2 class="pb-2 border-bottom ">INI MEMBERAREA SIAP PAKAINYA</h2>
         <p class="lead">Kamu dan membermu kini punya memberarea sendiri <br>
-          <small class="text-muted"><label class="text-danger">*</label> Geser ke kiri/Kanan</small>
+          <small class="text-muted"><label class="text-danger">*</label> Geser ke kiri/kanan</small>
         </p>
       </div>
       <div id="carouselExampleIndicators" class="carousel slide text-center" data-bs-ride="carousel">
@@ -646,7 +668,7 @@
       </div>
       <div class="b-example-divider"></div>
       <div class="container px-4 py-5" id="custom-cards">
-        <h2 class="pb-2 border-bottom text-center">Bebas Pilih & Ambil</h2>
+        <h2 class="pb-2 border-bottom text-center fw-bold c-shadow">Bebas Pilih & Ambil</h2>
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
           <div class="col-lg-4 col-md-4">
             <img src="https://duniaundercover.files.wordpress.com/2023/03/plnew.png" class="w-100">
@@ -659,19 +681,19 @@
           </div>
           <div class="col-lg-12 col-md-12">
             <p class="text-center display-5">
-              Wahhh, Murah banget !!, Paket internet saya aja lebih dari itu, ini <i>worth it</i> banget pokonya
+              Wahhh, Murah banget !! Paket internet saya aja lebih dari itu, ini <i>worth it</i> banget pokonya
             </p>
           </div>
         </div>
       </div>
       <div class="px-4 py-5 text-center">
         <div class="py-5">
-          <h1 class="display-5 fw-bold">FIX INGIN INI ITU SEMUA</h1>
+          <h1 class="display-5 fw-bold fw-bold">FIX INGIN INI ITU SEMUA</h1>
           <div class="col-lg-6 mx-auto">
-            <p class="fs-5 mb-4">Kalo Kamu sudah baca sampai sini berarti KOMBI ini 'Jodohmu' :). <br><br>Yup KOMBI memang sudah ditakdirkan untuk Kamu gunakan, yuk tunggu apa lagi !!</p>
+            <p class="fs-5 mb-4">Kalau Kamu sudah baca sampai sini berarti KOMBI ini 'Jodohmu' :). <br><br>Yup KOMBI memang sudah ditakdirkan untuk Kamu gunakan, yuk tunggu apa lagi !!</p>
             <p class="fs-5 mb-4">Selagi Baru Launching sudah pasti Promo dan Termurah !</p>
             <img src="https://duniaundercover.files.wordpress.com/2023/03/combi-ilustration-web-dev1.gif">
-            <button type="button" class="btn w-100 btn-warning btn-lg px-4 me-sm-3 fw-bold" id="sikat">SIKAT TOMBOL INI</button>
+            <a href="https://kombi.remotebisnis.com/admin/register" class="btn w-100 btn-warning btn-lg px-4 me-sm-3 fw-bold" id="sikat">SIKAT TOMBOL INI</a>
             <small><code>*</code> Watawwww</small>
           </div>
         </div>

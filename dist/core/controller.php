@@ -637,7 +637,10 @@
 				$sistem->registerFlash('d', 'Email tidak terdaftar !');
 			}else{
 				$sistem->disableRedirect = true;
-				$sistem->rubah_data('users', array('token="'.$sistem->getRandStr(45).'"'), array('email'), array($_POST['email']));
+				$tkn = $sistem->getRandStr(45);
+				$sistem->rubah_data('users', array('token="'.$tkn.'"'), array('email'), array($_POST['email']));
+			    $sistem->kirimEmail('','info@remotebisnis.com','RemoteBisnis.com',$_POST['email'],$subject, $sistem->templateEmail( $sistem->templateLupaPass($tkn) ) );
+
 				$sistem->registerFlash('s', 'Link pemulihan password telah dikirim ke E-mail !, silahkan cek di folder spam (jika tidak ada di kotak utama/inbox)');
 			}
 		 
