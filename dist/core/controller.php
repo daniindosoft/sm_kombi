@@ -170,10 +170,21 @@
 				$col = array('perangkat', 'expire','nama_lengkap', 'password', 'email', 'last_package_picked', 'nowa', 'username', 'kode_affiliate', 'price_admin', 'type_user', 'dp', 'is_private');
 				$data = array($perangkat, date('Y-m-d H:i:s', strtotime('+30 days', strtotime(date('Y-m-d H:i:s')))),$_POST['nama_lengkap'], $_POST['nowa'], $_POST['email'], $_POST['paket'], $_POST['nowa'], $username, $randaff, $paket, 'admin', 'cat.png', 1);
 				$sistem->lastId = true;
-				// $sistem->debug = true;
+				
+				// set price public
+				$sistem->pricePublic = $paket;
+				$sistem->priceNama = $_POST['nama_lengkap'];
+				$sistem->priceEmail = $_POST['email'];
+				
 				$id = $sistem->masukan_data_no_redirect('users',$col,$data);
 
+				// notif ke pendaftar
 			    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$_POST['email'],'1 Langkah lagi nih, yuk selesaikan..', $sistem->templateEmail( $sistem->templateDaftarBisnis($_POST['kaf']) ) );
+			    
+
+			    // redirek
+			    echo "<script>window.location.href = '".$sistem->primaryLocal."admin/join/invoice?kaf=".$_POST['kaf']."&id=".$id."'; </script>";
+
 				header('Location:'.$sistem->primaryLocal.'admin/join/invoice?kaf='.$_POST['kaf'].'&id='.$id);
 			}else{
 				$sistem->registerFlash('d', 'Email sudah terdaftar, silahkan gunakan email lain !');
