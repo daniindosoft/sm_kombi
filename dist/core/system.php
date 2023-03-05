@@ -1452,7 +1452,7 @@ class kontrols{
 		return ' 
 			<tr>
                 <td style="padding:0 35px;">
-                    <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">Lupa Password ?
+                    <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:Rubik,sans-serif;">Lupa Password ?
                     </h1>
                     <p style="font-size:15px; color:#455056; margin:8px 0 0; line-height:24px;">
                         Kamu telah melakukan permintaan perubahan password <br><strong>Berikut link Reset Password, Klik atau salin tautan berikut :</strong>.</p>
@@ -1473,8 +1473,8 @@ class kontrols{
             </tr>
 		';
 	}
-	public function templateEmail($konten, ){
-		$konten = ' 
+	public function templateEmail($konten ){
+		return ' 
 			<!doctype html>
 			<html lang="en-US">
 
