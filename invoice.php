@@ -136,6 +136,9 @@
             <?php endif; ?>
           </p>
           <button class="btn btn-sm btn-warning btn-block"><i class="fa fa-download"></i> Unduh Invoice</button>
+          <p>
+            <small><code>*</code> Screenshot atau unduh invoice untuk menyimpan bukti</small>
+          </p>
           <hr style="border: 1px dashed black;">
           <?php
           if (empty($_GET['type'])){

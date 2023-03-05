@@ -49,13 +49,13 @@
 <div class="register-box">
   <div class="card card-outline card-warning">
     <div class="card-header text-center">
-      <img src="https://duniaundercover.files.wordpress.com/2023/02/combi.png" style="width:120px">
+      <!-- <img src="https://duniaundercover.files.wordpress.com/2023/02/combi.png" style="width:120px"> -->
     </div>
     <div class="card-body">
       <p class="login-box-msg pb-0">Form Order<br><b><?php echo $produk['judul'] ?></b></p>
       <p class="text-center">
         <!-- <a href="<?php echo $onMy->noWa($produk['nowa']) ?>">Hubungi Admin (<?php echo $produk['nowa'] ?>)</a> -->
-        <small>Isi dengan lengkap</small>
+        <small>Mohon isi dengan lengkap field-field berikut ini</small>
       </p>
       <hr>
       <form action="" method="post">

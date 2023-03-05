@@ -385,7 +385,11 @@ class kontrols{
 	function approveProdukAff($id, $id_komunitas, $url, $price, $komisi, $aff, $status){
 		// update produk jadi setuju/tolak
 		self::eksekusi('update order_produk set status = '.$status.' where id='.self::removeSpecialChar($id));
+		// get produk data yg di order
 		$produk = self::selectSingleOne('order_produk', 'id', $id);
+
+		// get produk
+		$detailProduk = self::selectSingleOne('affiliate_produk', 'id', $produk['id_produk']);
 
 		// update data affiliate -> produk, update total saldo
 		if ($status == 3) {
@@ -404,7 +408,34 @@ class kontrols{
 
 			self::registerFlash('i', 'Pesanan telah di proses');
 			
+			// if ( ($produk['harga'] == 0 || $detailProduk['nilai'] == 'gratis') && empty($detailProduk['url'])) {
+			if ( empty($detailProduk['url'])) {
+				$konten = '
+					<h3>Pesanan Segera Dikirim/Proses</h3>
+					<p> Pesanan Anda '.$detailProduk['judul'].' segera di proses/dikirim, pastikan E-Mail dan nomor telepon/Whatsapp akitf dan cek secara berkala ya. </p>
+				';
+			    $judul = 'Pesanan '.$detailProduk['judul'].' Segera Dikirim/Diproses';
+			}else{
+				$konten = '
+					<h3>Pesanan telah diproses/dikirim</h3>
+					<p>Pesanan Anda '.$detailProduk['judul'].' telah di proses/dikirim, silahkan klik untuk mengunduh/melihat produk di link berikut : </p>
+					<p>
+					    <a href="'.$detailProduk['url'].'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
 
+					</p>
+					<p>
+						Terima kasih.
+					</p>
+				';
+			    $judul = 'Pesanan '.$detailProduk['judul'].' Telah Dikirim/Diproses';
+			}
+		    self::kirimEmail($produk['nama'],'kombi@remotebisnis.com','Kombi RemoteBisnis',$produk['email'], $judul , $konten);
+
+			// krim email when approve
+				// if harga & 0 / gratis & url kosong , email isinya = thx, pesanan segara di proses mohon tunggu ya 
+				// if berbyar & harga > 0 & url = null : thx terima kasih, admin segera kirim produknya pastikan email dan kntak aktif ya
+				// if berbyar & harga > 0 & url = ada : thx terima kasih telah order, silahkan klik ini untuk melihat/mengunduh csv
+			
 		}else{
 			self::registerFlash('d', 'Pesanan telah anda tolak');
 		}
@@ -443,6 +474,20 @@ class kontrols{
 
 		self::eksekusi('UPDATE data_affiliate set total_pendapatan=total_pendapatan+'.$price.', komisi_lead=komisi_lead+'.$komisi.', komisi_belum_cair=komisi_belum_cair+'.$komisi.' WHERE id_komunitas_bisnis="'.$id_komunitas.'" and id_user='.$owner);
 		self::registerFlash('s', $user['nama_lengkap'].' telah di Approve dan telah menjadi member komunitas Anda');
+
+		// notif email ke member aff itu
+		$konten = '
+			<h3>Selamat Bergabung</h3>
+			<p>Anda kini sudah tergabung dengan komunitas '.$komunitas['nama_komunitas'].', dan berikut aksesnya : </p>
+			<h4>Email = '.$user['email'].'</h4>
+			<h4>Password = '.$user['password'].'</h4>
+		    <b>Silahkan Login ke https://kombi.remotebisnis.com atau</b><br>
+		    <a href="'.$this->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
+
+		';
+	    self::kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$user->email,'Selamat, Akun Anda Telah di Verifikasi', $konten);
+		
+		
 		if ($url != false) {
 			header('Location:'.$this->https.$url.'?info=berhasil');
 		}
@@ -1484,6 +1529,38 @@ class kontrols{
 		';
 
 	    self::kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$affiliate->username,'Ada yang daftar KOMBI lewat link affiliate Anda nih, cek sekarang', $konten);
+	}
+	public function templateDaftarKomunitas($id, $sensor = false){
+		$newUser = self::thisProfile($id);
+		if ($sensor == true) {
+			$email = 'a*******@****';
+			$nama = '0878*****';
+		}else{
+			$email = $newUser['email'];
+			$nama = $newUser['nama_lengkap'];
+		}
+		return ' 
+			<td>
+			    <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0"
+			        style="max-width:670px; background:#fff; border-radius:3px; text-align:center;-webkit-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);-moz-box-shadow:0 6px 18px 0 rgba(0,0,0,.06);box-shadow:0 6px 18px 0 rgba(0,0,0,.06);">
+			<tr>
+			    <td style="height:40px;">&nbsp;</td>
+			</tr>
+			<td style="padding:0 35px;">
+			    <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:21px;font-family:Rubik,sans-serif;">Ada lead baru nih !</h1>
+			    <br>
+			    <p style="font-size:15px; color:#455056; margin:8px 0 0; line-height:24px;">
+			        Berikut nama dan e-mailnya			        
+			    </p>
+			    <br>
+			    <h3>E-Mail : '.$email.'</h3>
+			    <h3>Nama : '.$nama.'</h3>
+			    <p>*Lebih lengkapnya bisa dilihat di Memberarea</p>
+			    <br>
+			    <hr>
+			    <a href="'.$this->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>
+			</td>
+		';
 	}
 	public function templateDaftarBisnis($kaf){
 		if (empty($kaf) || $kaf == '39587434922' || $kaf == null) {
