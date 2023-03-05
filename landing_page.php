@@ -699,7 +699,7 @@
             <p class="fs-5 mb-4">Kalau Kamu sudah baca sampai sini berarti KOMBI ini 'Jodohmu' :). <br><br>Yup KOMBI memang sudah ditakdirkan untuk Kamu gunakan, yuk tunggu apa lagi !!</p>
             <p class="fs-5 mb-4">Selagi Baru Launching sudah pasti Promo dan Termurah !</p>
             <img src="https://duniaundercover.files.wordpress.com/2023/03/combi-ilustration-web-dev1.gif">
-            <a href="https://kombi.remotebisnis.com/admin/register" class="btn w-100 btn-warning btn-lg px-4 me-sm-3 fw-bold" id="sikat">SIKAT TOMBOL INI</a>
+            <a href="https://kombi.remotebisnis.com/admin/register?kaf=<?php echo @$_GET['kaf'] ?>" class="btn w-100 btn-warning btn-lg px-4 me-sm-3 fw-bold" id="sikat">SIKAT TOMBOL INI</a>
             <small><code>*</code> Watawwww</small>
           </div>
         </div>

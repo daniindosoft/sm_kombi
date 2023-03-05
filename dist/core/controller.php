@@ -181,9 +181,11 @@
 				// notif ke pendaftar
 			    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$_POST['email'],'1 Langkah lagi nih, yuk selesaikan..', $sistem->templateEmail( $sistem->templateDaftarBisnis($_POST['kaf']) ) );
 			    
+			    $sistem->notifAdminRebi($_POST['kaf']);
 
 			    // redirek
 			    echo "<script>window.location.href = '".$sistem->primaryLocal."admin/join/invoice?kaf=".$_POST['kaf']."&id=".$id."'; </script>";
+			    echo " - ".$sistem->primaryLocal."admin/join/invoice?kaf=".$_POST['kaf']."&id=".$id."' - ";
 
 				header('Location:'.$sistem->primaryLocal.'admin/join/invoice?kaf='.$_POST['kaf'].'&id='.$id);
 			}else{
