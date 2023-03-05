@@ -120,7 +120,7 @@
             <div class="icheck-primary">
               <input type="checkbox" id="agreeTerms" name="terms" value="agree">
               <small for="agreeTerms">
-               By Registering, you agree to our <a href="#">Terms, Privacy Policy and Cookies Policy</a>
+               By Registering, you agree to our <a href="https://www.privacypolicyonline.com/live.php?token=nFdmsffFYfOkOOfLh2cXJ2FDrlCwhE0d" target="_blank">Privacy Policy and Cookies Policy</a>
               </small>
             </div>
           </div>

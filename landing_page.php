@@ -147,7 +147,13 @@
               <h5><i class="fa fa-check-circle text-warning"></i> Mudah Membangun Kepercayaan Pelanggan</h5>
             </li>
             <li class="list-group-item">
-              <h5><i class="fa fa-check-circle text-warning"></i> Mudah Membangun Trust/Kepercayaan pada pelanggan</h5>
+              <h5><i class="fa fa-check-circle text-warning"></i> Berkurangnya biaya marketing sehingga profit auto naik</h5>
+            </li>
+            <li class="list-group-item">
+              <h5><i class="fa fa-check-circle text-warning"></i> Pelangan menjadi lebih loyal</h5>
+            </li>
+            <li class="list-group-item">
+              <h5><i class="fa fa-check-circle text-warning"></i> Konversi meningkat</h5>
             </li>
           </ul>
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
