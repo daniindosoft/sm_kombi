@@ -27,6 +27,10 @@ class kontrols{
 	public $SMTPSecure = SMTPSecure;
 	public $Port = Port;
 
+	public $pricePublic = 0;
+	public $priceEmail = '';
+	public $priceNama = '';
+
 	public $mark = '<i class="f-xm float-right text-warning fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Bagian/fitur ini tidak dipengaruhi oleh komunitas yang dipilih di navbar"></i>';
 
 	public function __construct($db){
@@ -1465,14 +1469,29 @@ class kontrols{
 			$nb = '<small>NB : Anda daftar lewat Affiliate, pastikan kontak nomor diatas (Whatsapp) sebelum melakukan transfer. </small>';
 		}
 
+
 		$aff = 'https://member.remotebisnis.com/setting/function/proses_daftar_api.php?kaf='.$kaf_new;
 		$affiliate = json_decode(self::httpGet($aff));
+
+		// tf ke affiliate /admin rebi
+		$konten = ' 
+			<h3>Selamat ! </h3>
+			<p>Ada lead baru yang siap daftar KOMBI lewat affilaite Anda, berikut detailnya :</p>
+			<h4>Emai = '.$this->priceEmail.'</h4>
+			<h4>Nama = '.$this->priceNama.'</h4>
+			<h4>TOTAL = '.self::nf($this->pricePublic).'</h4>
+			<p>Silahkan dicek di <a href="https://member.remotebisnis.com" target="_blank">MemberArea Rebi</a></p>
+		';
+
+	    self::kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$affiliate->username,'Ada yang daftar KOMBI lewat link affiliate Anda nih, cek sekarang', $konten);
+
 		return ' 
 			<td style="padding:0 35px;">
 			    <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:21px;font-family:Rubik,sans-serif;">Tinggal satu langkah lagi</h1>
 			    <br>
 			    <p style="font-size:15px; color:#455056; margin:8px 0 0; line-height:24px;">
-			        Terima kasih telah bergabung dengan KOMBI,<br> sekarang tinggal 1 langkah lagi yaitu konfirmasi pembayaran <br>
+			        Terima kasih telah bergabung dengan KOMBI,<br> sekarang tinggal 1 langkah lagi yaitu konfirmasi pembayaran senilai <br><br>
+			        <h2>Rp'.self::nf($this->pricePublic).'</h2>
 			        <br><strong>Segera konfirmasi pembayaran ke salah satu nomor rekening berikut :</strong>.
 			    </p>
 			    <hr>
@@ -1485,7 +1504,7 @@ class kontrols{
 			        style="color:#455056; font-size:18px;line-height:20px; margin:0; font-weight: 500;">
 			        <strong
 			            style="display: block;font-size: 13px; margin: 0 0 4px; color:rgba(0,0,0,.64); font-weight:normal;">Konfirmasi ke : </strong>
-			        <a href="'.$url.'"> '.self::str_replace_first('0','62',$affiliate->nowa).'</a>
+			        <a href="https://wa.me/'.$self::str_replace_first('0','62',$affiliate->nowa).'"> '.$affiliate->nowa.'</a>
 			        <br>
 			        '.$nb.'
 			    </p>
