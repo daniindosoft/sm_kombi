@@ -1449,6 +1449,7 @@ class kontrols{
 		}
 	}
 	public function templateLupaPass($token){
+		$url = $this->primaryLocal.'recovery?token'.$token;
 		return ' 
 			<tr>
                 <td style="padding:0 35px;">
@@ -1462,10 +1463,10 @@ class kontrols{
                         style="color:#455056; font-size:18px;line-height:20px; margin:0; font-weight: 500;">
                         <strong
                             style="display: block;font-size: 13px; margin: 0 0 4px; color:rgba(0,0,0,.64); font-weight:normal;">Klik ini </strong>
-                <a href="'.$token.'">Atur Ulang Password</a>
+                <a href="'.$url.'">Atur Ulang Password</a>
                         <strong
                             style="display: block; font-size: 13px; margin: 24px 0 4px 0; font-weight:normal; color:rgba(0,0,0,.64);">Atau salin tautan ini </strong>
-                <span>'.$token.'</span>
+                <span>'.$url.'</span>
                     </p><br><hr>
                     <a href="https://kombi.remotebisnis.com"
                         style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>

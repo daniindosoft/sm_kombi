@@ -639,7 +639,7 @@
 				$sistem->disableRedirect = true;
 				$tkn = $sistem->getRandStr(45);
 				$sistem->rubah_data('users', array('token="'.$tkn.'"'), array('email'), array($_POST['email']));
-			    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi.RemoteBisnis.com',$_POST['email'],'Lupa Password Akun KOMBI', $sistem->templateEmail( $sistem->templateLupaPass($tkn) ) );
+			    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$_POST['email'],'Lupa Password Akun KOMBI', $sistem->templateEmail( $sistem->templateLupaPass($tkn) ) );
 
 				$sistem->registerFlash('s', 'Link pemulihan password telah dikirim ke E-mail !, silahkan cek di folder spam (jika tidak ada di kotak utama/inbox)');
 			}
