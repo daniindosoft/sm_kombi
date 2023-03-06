@@ -179,7 +179,7 @@
 			    // echo 's -';
 				$id = $sistem->masukan_data_no_redirect('users',$col,$data);
 
-			    echo "window.location.href = '".$sistem->primaryLocal."admin/join/invoice?kaf=".$_POST['kaf']."&id=".$id."';";
+			    // echo "window.location.href = '".$sistem->primaryLocal."admin/join/invoice?kaf=".$_POST['kaf']."&id=".$id."';";
 			    // echo 'x -'.$sistem->templateEmail( $sistem->templateDaftarBisnis($_POST['kaf']));
 			    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$_POST['email'],'1 Langkah lagi nih, yuk selesaikan..', $sistem->templateEmail( $sistem->templateDaftarBisnis($_POST['kaf']) ) );
 			    // echo 'v-';
@@ -189,7 +189,7 @@
 
 			    // redirek
 			    echo "<script>window.location.href = '".$sistem->primaryLocal."admin/join/invoice?kaf=".$_POST['kaf']."&id=".$id."'; </script>";
-			    
+
 			    // echo " - ".$sistem->primaryLocal."admin/join/invoice?kaf=".$_POST['kaf']."&id=".$id."' - ";
 
 				// header('Location:'.$sistem->primaryLocal.'admin/join/invoice?kaf='.$_POST['kaf'].'&id='.$id);
@@ -902,6 +902,29 @@
 
 			$sistem->postNotifikasi( $_COOKIE['id_akun_combi'], $produk['id_user'], 'aff_join', 'Pembelian Affiliate Produk', '<b>'.$_POST['nama'].'</b>  akan segera membeli <b>'.$produk['judul'].'</b>, cek sekarang', $produk['id_komunitas_bisnis'] );
 
+			// get komnitas
+			$kom = $sistem->selectSingleOne('komunitas_bisnis', id, $produk['id_komunitas_bisnis']);
+
+			// alur
+			// pembeli order
+			// pembeli tf
+			// admin approve {
+			// (if is produk digital, url ada)cek jika url ada maka kirim prodk di email = thx ini produknya, 
+			// jika tdk maka admin harus kirim manual = thx admin segera kirm produk, mohon di tunggu ya, pastikan email dan no wa aktif dan periksa secara berkala ya
+
+
+			// kirim ke email owner
+			$konten = '
+				<h3>Pembelian Affiliate Produk</h3>
+				<b>'.$_POST['nama'].'</b> akan segera membeli <b>'.$produk['judul'].'</b>, cek sekarang
+				<br>
+				<br>
+			    <b>Silahkan Login ke https://kombi.remotebisnis.com atau</b><br>
+			    <a href="'.$this->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
+			 ';
+		    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$gaf['email'],'Pembelian Affiliate Produk '.$kom['nama_komunitas'], $konten);
+			
+
 			// cd adalah kode affilaite produk
 			header('Location:'.$sistem->primaryLocal.'invoice?owner='.$produk['id_user'].'&cd='.$_POST['cd'].'&user='.$user['id'].'&type=produk&typeProduk='.$produk['type'].'&nilai='.$_POST['nilai']);
 
@@ -1276,7 +1299,7 @@
 				}
 
 				// dapatkan data owner user komunitas
-				$owner = $sistem->eksekusiShow('select u.id, kb.id as idk, kb.harga , kb.komisi_affiliate_join as kaj from komunitas_bisnis as kb join users as u on kb.id_user = u.id where kb.code_komunitas='.$_POST['cd']);
+				$owner = $sistem->eksekusiShow('select u.id, u.email, kb.id as idk, kb.harga , kb.komisi_affiliate_join as kaj from komunitas_bisnis as kb join users as u on kb.id_user = u.id where kb.code_komunitas='.$_POST['cd']);
 
 				//harga kurangi random number 999
 				$ownerPrice = $owner['harga']-rand(1,999);
@@ -1335,8 +1358,9 @@
 					$sistem->eksekusi('UPDATE data_affiliate set total_lead=total_lead+1 WHERE id_komunitas_bisnis="'.$id_komunitas['id'].'" and id_user='.$gaff['id']);
 					
 					$sistem->postNotifikasi( 0, $gaff['id'], 'aff_join', 'Affiliate/Member Baru', '<b>'.$_POST['nama_lengkap'].'</b>  telah daftar komunitas <b>'.$id_komunitas['nama_komunitas'].'</b> lewat link affiliate Anda', $owner['idk'] );
-	 
+	 				$sensor = true;
 				}else{
+	 				$sensor = false;
 					//masukan ke catatan menu lead
 					$col = array('id_user', 'id_affiliate', 'id_komunitas_bisnis', 'price_join', 'type', 'komisi');
 					$data = array($user, $owner['id'], $owner['idk'], $ownerPrice, 1, $owner['kaj']);
@@ -1346,6 +1370,10 @@
 				$sistem->postNotifikasi( 0, $owner['id'], 'aff_join', 'Affiliate/Member Baru', '<b>'.$_POST['nama_lengkap'].'</b> telah mendaftar komunitas <b>'.$id_komunitas['nama_komunitas'].'</b>', $owner['idk'] );
 
 				$sistem->eksekusi('UPDATE data_affiliate set total_lead=total_lead+1 WHERE id_komunitas_bisnis="'.$id_komunitas['id'].'" and id_user='.$owner['id']);
+				
+				// notif email ke owner
+
+			    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$owner['email'],'Affiliate/Member Baru '.$id_komunitas['nama_komunitas'], $sistem->templateEmail( $sistem->templateDaftarKomunitas($user, $sensor) ) );
 
 				header('Location:'.$sistem->primaryLocal.'invoice?owner='.$owner['id'].'&cd='.$_POST['cd'].'&nilai=berbayar&user='.$user);
 			}else{

@@ -9,11 +9,11 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="//localhost/rebi/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="//localhost/rebi/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="//localhost/rebi/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>dist/css/adminlte.min.css">
   <style type="text/css">
     .child-p p{
       border: 1px solid #a5a5a5;
@@ -96,7 +96,8 @@
         </p>
         <button class="btn btn-sm btn-warning btn-block"><i class="fa fa-download"></i> Unduh Invoice</button>
         <hr style="border: 1px dashed black;">
-       
+        <small><code>*</code> Kami juga mengirimkan email kepada anda, mohon periksa di folder spam jika di kotak utama tidak ditemukan</small>
+        <br>
         <small><a href="<?php echo $onMy->primaryLocal ?>" class="text-center">Saya Sudah Punya Akun !</a></small>
          
         <hr>
@@ -109,11 +110,11 @@
 </div>
 
 <!-- jQuery -->
-<script src="//localhost/rebi/plugins/jquery/jquery.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="//localhost/rebi/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="//localhost/rebi/dist/js/adminlte.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>dist/js/adminlte.min.js"></script>
 
 <script type="text/javascript">
   $(function () {
