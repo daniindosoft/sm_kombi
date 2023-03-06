@@ -7,10 +7,7 @@
   include_once('env.php');
 
 	include_once('dist/core/koneksi.php');
-	include_once('dist/core/system.php');
-  $a = new koneksi();
-  $db = $a->hubungkan();
-  $onMy = new kontrols($db);
+ 
 
 	function single($db, $sql, $type = 'single'){
 		$a = new koneksi();
@@ -26,6 +23,42 @@
 
 		return $data;
 	}
+
+function kirimEmail($paramNamaPenerima,$emailpengirim,$namapengirim,$emailpenerima,$judulemail,$konten){
+		if (email_send == true) {
+			require_once("/home/remotebi/public_html/member/smtp/src/PHPMailer.php");
+			require_once("/home/remotebi/public_html/member/smtp/src/SMTP.php");
+			
+		    $mail = new PHPMailer\PHPMailer\PHPMailer();
+		    // $mail->SMTPDebug = 3;                               
+		    $namaPenerima='';
+		    if (!empty($paramNamaPenerima)) {
+		      $namaPenerima = $_POST['namaPenerima'];
+		    }
+
+		    $mail->isSMTP();                                   
+		    $mail->Host = Host;
+		    $mail->SMTPAuth = SMTPAuth;
+		    $mail->Username = $emailpengirim;
+		    $mail->Password = Password;
+		    $mail->SMTPSecure = SMTPSecure;
+		    $mail->Port = Port;
+
+		    $mail->From = $emailpengirim;
+		    $mail->FromName = $namapengirim;
+		    
+		    $mail->addAddress($emailpenerima, $namaPenerima);
+		    $mail->isHTML(true);
+		    $mail->Subject = $judulemail;
+		    $mail->Body = $konten;
+
+		    if(!$mail->send()) {
+		        echo "Opps, terdapat kesalahan, mohon hubungi admin !";
+		        // echo "Mailer Error: " . $mail->ErrorInfo;
+		    }
+		}
+	}
+
 	function convertDate($string, $date){
 		$date = new DateTime($date);
     return $date->format($string);
@@ -50,7 +83,7 @@
  				<hr>
 		    <a href="https://kombi.remotebisnis.com/" style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>
  			';
-	    $onMy->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$userSingle['email'],'Masa Aktif Akun KOMBI Anda telah diperpanjang', $konten);
+	    $judul = 'Masa Aktif Akun KOMBI Anda telah diperpanjang';
  		}else{
  			$konten = ' 
  				<h3>Selamat bergabung </h3>
@@ -61,9 +94,10 @@
  				<hr>
 		    <a href="https://kombi.remotebisnis.com/" style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>
  			';
-	    $onMy->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$userSingle['email'],'Selamat datang dan selamat bergabung di KOMBI', $konten);
+	    $judul = 'Selamat datang dan selamat bergabung di KOMBI';
  			// info aktivasi
  		}
+    kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$userSingle['email'],'Selamat datang dan selamat bergabung di KOMBI', $konten);
 		single(1, 'update users set `expire`="'.convertDate('Y-m-d H:i:s', $_POST['masa_aktif']).'", status=1 where id='.$_POST['id'], 'execute');
  
 	}
