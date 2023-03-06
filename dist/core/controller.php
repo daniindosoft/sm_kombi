@@ -703,9 +703,9 @@
 			}
 			if ($_POST['recover'] != '1') {
 				if ($user['type_user'] =='user') {
-					header('Location: '.$sistem->https.$sistem->primaryLocal.'user/pengaturan');
+					header('Location: '.$sistem->primaryLocal.'user/pengaturan');
 				}else{
-					header('Location: '.$sistem->https.$sistem->primaryLocal.'admin/pengaturan');
+					header('Location: '.$sistem->primaryLocal.'admin/pengaturan');
 				}
 			}
 			break;
