@@ -29,13 +29,13 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="//localhost/rebi/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/fontawesome-free/css/all.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="//localhost/rebi/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="//localhost/rebi/dist/css/adminlte.min.css">
-  <link rel="stylesheet" href="//localhost/rebi/plugins/select2/css/select2.min.css">
-  <link rel="stylesheet" href="//localhost/rebi/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
   <?php echo base64_decode($produk['header']) ?>
   <style type="text/css">
     .input-group>.select2-container--default:not(:last-child) .select2-selection{
@@ -179,12 +179,12 @@
 <!-- /.register-box -->
  
 <!-- jQuery -->
-<script src="//localhost/rebi/plugins/jquery/jquery.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="//localhost/rebi/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="//localhost/rebi/dist/js/adminlte.min.js"></script>
-<script src="//localhost/rebi/plugins/select2/js/select2.full.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>dist/js/adminlte.min.js"></script>
+<script src="<?php echo $onMy->primaryLocal ?>plugins/select2/js/select2.full.min.js"></script>
 
 <script type="text/javascript">
   function checkEmail(){  
