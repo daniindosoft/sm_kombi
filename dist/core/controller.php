@@ -920,7 +920,7 @@
 				<br>
 				<br>
 			    <b>Silahkan Login ke https://kombi.remotebisnis.com atau</b><br>
-			    <a href="'.$this->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
+			    <a href="'.$sistem->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
 			 ';
 		    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$gaf['email'],'Pembelian Affiliate Produk '.$kom['nama_komunitas'], $konten);
 			
