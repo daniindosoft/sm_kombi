@@ -1,5 +1,9 @@
 <?php 
 	error_reporting(0);
+	   //  ini_set('display_errors', 1);
+    // ini_set('display_startup_errors', 1);
+    // error_reporting(E_ALL);
+
   include_once('env.php');
 
 	include_once('dist/core/koneksi.php');
@@ -36,12 +40,13 @@
 	}
 
 	if (isset($_POST['submitUpdateMasaAktif'])) {
- 		$userSingle = single('select * from users where id='.$_POST['id'], 'single');
+ 		$userSingle = single($db,'select * from users where id='.$_POST['id'], 'single');
+ 		
  		if ($userSingle['status'] == '1') {
  			// info perpanjang
  			$konten = ' 
  				<h3>Perpanjangan Akun</h3>
- 				<p>Masa aktif akun Anda telah diperpanjang selamat <b>'.$_POST['expireplus'].' Hari</b> kedepan, lebih jelasnya bisa lihat di memberarea.</p>
+ 				<p>Selamat !!, Masa aktif akun Anda telah diperpanjang. Info detailnya bisa lihat di memberarea.</p>
  				<hr>
 		    <a href="https://kombi.remotebisnis.com/" style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>
  			';
