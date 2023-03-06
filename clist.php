@@ -26,6 +26,7 @@
 
 function kirimEmail($paramNamaPenerima,$emailpengirim,$namapengirim,$emailpenerima,$judulemail,$konten){
 		if (email_send == true) {
+
 			require_once("/home/remotebi/public_html/member/smtp/src/PHPMailer.php");
 			require_once("/home/remotebi/public_html/member/smtp/src/SMTP.php");
 			
@@ -51,10 +52,10 @@ function kirimEmail($paramNamaPenerima,$emailpengirim,$namapengirim,$emailpeneri
 		    $mail->isHTML(true);
 		    $mail->Subject = $judulemail;
 		    $mail->Body = $konten;
-
+		    
 		    if(!$mail->send()) {
 		        echo "Opps, terdapat kesalahan, mohon hubungi admin !";
-		        // echo "Mailer Error: " . $mail->ErrorInfo;
+		        echo "Mailer Error: " . $mail->ErrorInfo;
 		    }
 		}
 	}
@@ -75,7 +76,7 @@ function kirimEmail($paramNamaPenerima,$emailpengirim,$namapengirim,$emailpeneri
 	if (isset($_POST['submitUpdateMasaAktif'])) {
  		$userSingle = single($db,'select * from users where id='.$_POST['id'], 'single');
  		
- 		if ($userSingle['status'] == '1') {
+ 		if ($userSingle[0]['status'] == '1') {
  			// info perpanjang
  			$konten = ' 
  				<h3>Perpanjangan Akun</h3>
@@ -88,8 +89,8 @@ function kirimEmail($paramNamaPenerima,$emailpengirim,$namapengirim,$emailpeneri
  			$konten = ' 
  				<h3>Selamat bergabung </h3>
  				<p>Anda kini telah bergabung di KOMBI, dan selamat membangun kolam uang, berikut akses untuk masuk ke memberarea KOMBI :</p>
- 				<h4>Email : '.$userSingle['email'].'</h4>
- 				<h4>Password : '.$userSingle['password'].'</h4>
+ 				<h4>Email : '.$userSingle[0]['email'].'</h4>
+ 				<h4>Password : '.$userSingle[0]['password'].'</h4>
  				<small><code>*</code>Demi keamanan, Mohon untuk mengubah password setelah Anda berhasil Login</small>
  				<hr>
 		    <a href="https://kombi.remotebisnis.com/" style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>
@@ -97,7 +98,7 @@ function kirimEmail($paramNamaPenerima,$emailpengirim,$namapengirim,$emailpeneri
 	    $judul = 'Selamat datang dan selamat bergabung di KOMBI';
  			// info aktivasi
  		}
-    kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$userSingle['email'],'Selamat datang dan selamat bergabung di KOMBI', $konten);
+    kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$userSingle[0]['email'],'Selamat datang dan selamat bergabung di KOMBI', $konten);
 		single(1, 'update users set `expire`="'.convertDate('Y-m-d H:i:s', $_POST['masa_aktif']).'", status=1 where id='.$_POST['id'], 'execute');
  
 	}
