@@ -247,6 +247,10 @@
             require "user_invoice.php";
             break;
 
+        case $me.'/user/faq/kombi' :
+            require "user_combi.php";
+            break;
+
         case $me.'/users/membership' :
             require "users_membership.php";
             break;

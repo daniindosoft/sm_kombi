@@ -31,7 +31,7 @@
       <img src="https://duniaundercover.files.wordpress.com/2023/02/combi.png" style="width:120px">
     </div>
     <div class="card-body">
-      <?php echo $sistem->callFlash() ?>
+      
       <form action="" method="post">
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email" name="email" maxlength="100">

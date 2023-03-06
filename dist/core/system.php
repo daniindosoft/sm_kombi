@@ -412,7 +412,7 @@ class kontrols{
 			self::registerFlash('i', 'Pesanan telah di proses');
 			
 			// if ( ($produk['harga'] == 0 || $detailProduk['nilai'] == 'gratis') && empty($detailProduk['url'])) {
-			if ( empty($detailProduk['url'])) {
+			if ( $detailProduk['type'] == 'fisik') {
 				$konten = '
 					<h3>Pesanan Segera Dikirim/Proses</h3>
 					<p> Pesanan Anda '.$detailProduk['judul'].' segera di proses/dikirim, pastikan E-Mail dan nomor telepon/Whatsapp akitf dan cek secara berkala ya. </p>
@@ -423,7 +423,7 @@ class kontrols{
 					<h3>Pesanan telah diproses/dikirim</h3>
 					<p>Pesanan Anda '.$detailProduk['judul'].' telah di proses/dikirim, silahkan klik untuk mengunduh/melihat produk di link berikut : </p>
 					<p>
-					    <a href="'.$detailProduk['url'].'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
+					    <a href="'.$detailProduk['url'].'"style="background:#ffa902;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
 
 					</p>
 					<p>
@@ -485,7 +485,7 @@ class kontrols{
 			<h4>Email = '.$user['email'].'</h4>
 			<h4>Password = '.$user['password'].'</h4>
 		    <b>Silahkan Login ke https://kombi.remotebisnis.com atau</b><br>
-		    <a href="'.$this->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
+		    <a href="'.$this->primaryLocal.'"style="background:#ffa902;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
 
 		';
 	    self::kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$user['email'],'Selamat, Akun Anda Telah di Verifikasi', $konten);
@@ -1554,7 +1554,6 @@ class kontrols{
 		$konten = ' 
 			<h3>Selamat ! </h3>
 			<p>Ada lead baru yang siap daftar KOMBI lewat affilaite Anda, berikut detailnya :</p>
-			<h4>Emai = '.$this->priceEmail.'</h4>
 			<h4>Nama = '.$this->priceNama.'</h4>
 			<h4>TOTAL = Rp'.self::nf($this->pricePublic).'</h4>
 			<p>Silahkan dicek di <a href="https://member.remotebisnis.com" target="_blank">MemberArea Rebi</a></p>
@@ -1590,7 +1589,7 @@ class kontrols{
 			    <p>*Lebih lengkapnya bisa dilihat di Memberarea</p>
 			    <br>
 			    <hr>
-			    <a href="'.$this->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>
+			    <a href="'.$this->primaryLocal.'"style="background:#ffa902;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>
 			</td>
 		';
 	}
@@ -1632,7 +1631,7 @@ class kontrols{
 			    </p>
 			    <br>
 			    <hr>
-			    <a href="'.$this->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>
+			    <a href="'.$this->primaryLocal.'"style="background:#ffa902;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>
 			</td>
 
 		';
@@ -1664,7 +1663,7 @@ class kontrols{
                 <span>'.$url.'</span>
                     </p><br><hr>
                     <a href="https://kombi.remotebisnis.com"
-                        style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>
+                        style="background:#ffa902;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Login ke MemberArea</a>
                 </td>
             </tr>
 		';
