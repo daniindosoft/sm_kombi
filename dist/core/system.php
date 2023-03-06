@@ -833,7 +833,7 @@ class kontrols{
 
 		$sql=($key);
 
-		$masuk=$this->kon->prepare($sql);	
+		$masuk=$this->kon->prepare($this->timezone.' '.$sql);	
 
 		$masuk->execute();
 
@@ -1108,7 +1108,7 @@ class kontrols{
 			echo $sql;
 			die;
 		}
-		$masuk=$this->kon->prepare($sql);
+		$masuk=$this->kon->prepare($this->timezone.' '.$sql);
 
 		
 
@@ -1176,7 +1176,7 @@ class kontrols{
 
 		// echo $sql;
 
-		$masuk=$this->kon->prepare($sql);
+		$masuk=$this->kon->prepare($this->timezone.' '.$sql);
 
 		
 

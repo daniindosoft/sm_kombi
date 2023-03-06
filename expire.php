@@ -30,9 +30,9 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="//localhost/rebi/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo primaryLocal ?>plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="//localhost/rebi/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?php echo primaryLocal ?>dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition lockscreen">
 <!-- Automatic element centering -->
@@ -94,8 +94,8 @@
 <!-- /.center -->
 
 <!-- jQuery -->
-<script src="//localhost/rebi/plugins/jquery/jquery.min.js"></script>
+<script src="<?php echo primaryLocal ?>plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="//localhost/rebi/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="<?php echo primaryLocal ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
