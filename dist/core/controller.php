@@ -858,6 +858,18 @@
 
 			$sistem->postNotifikasi( $_COOKIE['id_akun_combi'], $owner['idu'], 'dsre_order', 'Pesanan Produk Baru', '<b>'.$user['nama_lengkap'].'</b> telah memesan produk di komunitas '.$owner['nama_komunitas'].' dengan <b>no invoice #'.$inv.'</b>, mohon periksa sekarang', $_SESSION['bisnis_kategori_combi'] );
 			$sistem->registerFlash('s', 'pesanan sudah di buat');
+		    
+		    $konten = '
+				<h3>Ada Pesanan Baru '.$owner['nama_komunitas'].'</h3>
+				<p>Ada pesanan baru dengan no invoice #'.$inv.', silahkan di proses dan cek di memberarea sekarang</p>
+				<br>
+				<br>
+			    <b>Silahkan Login ke '.$sistem->primaryLocal.' atau</b><br>
+			    <a href="'.$sistem->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
+			 ';
+
+		    self::kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis', $owner['email'], 'Pesanan Baru dari Dropship/Reseller', $konten);
+
 			header('Location:'.$sistem->primaryLocal.'user/invoice?id='.$id);
 
 			break;
@@ -928,7 +940,7 @@
 			    <a href="'.$sistem->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
 			 ';
  
-		    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$gaff['email'],'Pembelian Affiliate Produk '.$kom['nama_komunitas'], $konten);
+		    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$gaff['email'],'Pembelian Affiliate Produk di '.$kom['nama_komunitas'], $konten);
 
 			// cd adalah kode affilaite produk
 			header('Location:'.$sistem->primaryLocal.'invoice?owner='.$produk['id_user'].'&cd='.$_POST['cd'].'&user='.$user['id'].'&type=produk&typeProduk='.$produk['type'].'&nilai='.$_POST['nilai']);
