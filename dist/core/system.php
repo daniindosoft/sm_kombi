@@ -20,7 +20,7 @@ class kontrols{
 	public $ago = false;
 	public $status = 3;
 	public $downloadReport = false;
-
+	public $lastId = false;
 	public $Host = Host;
 	public $SMTPAuth = SMTPAuth;
 	public $Password = Password;
@@ -1031,14 +1031,19 @@ class kontrols{
 		$sql=("insert into ".$tbl." (".$listCutCol.")
 
 					values(".$listCut.")
-
 		");
+		$sql2 = $sql;
 		if ($this->debug == true) {
 			echo $sql;
 			die;
 		}
+
+		if ($this->lastId == false) {
+			$sql = $this->timezone.' '.$sql2;
+		}
+
 		
-		$masuk=$this->kon->prepare($this->timezone.' '.$sql);
+		$masuk=$this->kon->prepare($sql);
 
 		
 		if ($this->debugSql == false) {
@@ -1350,37 +1355,39 @@ class kontrols{
 	}
 
 	function kirimEmail($paramNamaPenerima,$emailpengirim,$namapengirim,$emailpenerima,$judulemail,$konten){
-		require_once("/home/remotebi/public_html/member/smtp/src/PHPMailer.php");
-		require_once("/home/remotebi/public_html/member/smtp/src/SMTP.php");
-		
-	    $mail = new PHPMailer\PHPMailer\PHPMailer();
-	    // $mail->SMTPDebug = 3;                               
-	    $namaPenerima='';
-	    if (!empty($paramNamaPenerima)) {
-	      $namaPenerima = $_POST['namaPenerima'];
-	    }
+		if (email_send == true) {
+			require_once("/home/remotebi/public_html/member/smtp/src/PHPMailer.php");
+			require_once("/home/remotebi/public_html/member/smtp/src/SMTP.php");
+			
+		    $mail = new PHPMailer\PHPMailer\PHPMailer();
+		    // $mail->SMTPDebug = 3;                               
+		    $namaPenerima='';
+		    if (!empty($paramNamaPenerima)) {
+		      $namaPenerima = $_POST['namaPenerima'];
+		    }
 
-	    $mail->isSMTP();                                   
-	    $mail->Host = $this->Host;
-	    $mail->SMTPAuth = $this->SMTPAuth;
-	    $mail->Username = $emailpengirim;
-	    $mail->Password = $this->Password;
-	    $mail->SMTPSecure = $this->SMTPSecure;
-	    $mail->Port = $this->Port;
+		    $mail->isSMTP();                                   
+		    $mail->Host = $this->Host;
+		    $mail->SMTPAuth = $this->SMTPAuth;
+		    $mail->Username = $emailpengirim;
+		    $mail->Password = $this->Password;
+		    $mail->SMTPSecure = $this->SMTPSecure;
+		    $mail->Port = $this->Port;
 
-	    $mail->From = $emailpengirim;
-	    $mail->FromName = $namapengirim;
-	    
-	    $mail->addAddress($emailpenerima, $namaPenerima);
-	    $mail->isHTML(true);
-	    $mail->Subject = $judulemail;
-	    $mail->Body = $konten;
-	    // $mail->AltBody = "This is the plain text version of the email content";
+		    $mail->From = $emailpengirim;
+		    $mail->FromName = $namapengirim;
+		    
+		    $mail->addAddress($emailpenerima, $namaPenerima);
+		    $mail->isHTML(true);
+		    $mail->Subject = $judulemail;
+		    $mail->Body = $konten;
+		    // $mail->AltBody = "This is the plain text version of the email content";
 
-	    if(!$mail->send()) {
-	        echo "Opps, terdapat kesalahan, mohon hubungi admain !";
-	        // echo "Mailer Error: " . $mail->ErrorInfo;
-	    }
+		    if(!$mail->send()) {
+		        echo "Opps, terdapat kesalahan, mohon hubungi admain !";
+		        // echo "Mailer Error: " . $mail->ErrorInfo;
+		    }
+		}
 	}
 	function trafficComunity($id_komunitas){
 		$sql = "SELECT t.nama as traffic, count(*) as total from users as u join komunitas as k on k.id_user = u.id join tahu as t on t.id = u.tahu WHERE k.id_komunitas=".$id_komunitas." group by u.tahu;";
@@ -1431,7 +1438,9 @@ class kontrols{
 		$cdate2 = self::convertDate("Y-m-d", $date[1]);
 		if ($this->downloadReport == true) {
 			// download report
-
+			// 
+			// setiap data kalo datang dari aff statusnya beluk ok(1 atau 3 sesuai type masing)
+			// maka harus di sensor
 			header("Content-Disposition: attachment; filename=\"$filename\"");
 			header("Content-Type: application/vnd.ms-excel");
 			if ($tbl == 'komunitas') {

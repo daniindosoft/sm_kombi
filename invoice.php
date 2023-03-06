@@ -70,7 +70,7 @@
     </div>
 
     <?php 
-      // echo $userPrice;
+      echo $userPrice;
       if ($_GET['nilai'] == 'berbayar' && $userPrice > 0 ): 
     ?>
       <?php if (empty($_GET['free'])): ?>

@@ -166,9 +166,9 @@
 				$harga = $sistem->getPackagePrice($_POST['paket']);
 				// echo var_dump($harga); die;
 				$paket = $harga - rand(1,999);
-
-				$col = array('perangkat', 'expire','nama_lengkap', 'password', 'email', 'last_package_picked', 'nowa', 'username', 'kode_affiliate', 'price_admin', 'type_user', 'dp', 'is_private');
-				$data = array($perangkat, date('Y-m-d H:i:s', strtotime('+30 days', strtotime(date('Y-m-d H:i:s')))),$_POST['nama_lengkap'], $_POST['nowa'], $_POST['email'], $_POST['paket'], $_POST['nowa'], $username, $randaff, $paket, 'admin', 'cat.png', 1);
+				$datenow = date('Y-m-d H:i:s');
+				$col = array('tgl_daftar', 'perangkat', 'expire','nama_lengkap', 'password', 'email', 'last_package_picked', 'nowa', 'username', 'kode_affiliate', 'price_admin', 'type_user', 'dp', 'is_private');
+				$data = array($datenow, $perangkat, date('Y-m-d H:i:s', strtotime('+30 days', strtotime(date('Y-m-d H:i:s')))),$_POST['nama_lengkap'], $_POST['nowa'], $_POST['email'], $_POST['paket'], $_POST['nowa'], $username, $randaff, $paket, 'admin', 'cat.png', 1);
 				$sistem->lastId = true;
 				
 				// set price public
@@ -877,9 +877,11 @@
 
 			//get profile affiliate by kode affilaite
 			$gaff = $sistem->single('users', $_POST['id_aff']);
+			
+			$datenow = date('Y-m-d H:i:s');
 
-			$clm = array('nama', 'nowa', 'email','alamat','domisili','kode_pos','jk','rentang_usia','catatan','id_komunitas_bisnis','id_aff', 'id_produk', 'komisi', 'harga');
-			$data = array($_POST['nama'], $_POST['nowa'], $_POST['email'], $_POST['alamat'], $_POST['domisili'], $_POST['kode_pos'], $_POST['jk'], $_POST['rentang_usia'], $_POST['catatan'], $_POST['id_komunitas_bisnis'], $_POST['id_aff'], $_POST['id_produk'], $produk['komisi'], $price);
+			$clm = array('created_at', 'nama', 'nowa', 'email','alamat','domisili','kode_pos','jk','rentang_usia','catatan','id_komunitas_bisnis','id_aff', 'id_produk', 'komisi', 'harga');
+			$data = array($datenow, $_POST['nama'], $_POST['nowa'], $_POST['email'], $_POST['alamat'], $_POST['domisili'], $_POST['kode_pos'], $_POST['jk'], $_POST['rentang_usia'], $_POST['catatan'], $_POST['id_komunitas_bisnis'], $_POST['id_aff'], $_POST['id_produk'], $produk['komisi'], $price);
 			// $sistem->debug = true;
 
 			$sistem->lastId = true;
@@ -889,6 +891,9 @@
 			$lastId = $sistem->masukan_data_no_redirect('order_produk', $clm, $data);
 
 			// get data order baru
+			 
+			
+			 
 			$user = $sistem->single('order_produk', $lastId);
  
 			if ($produk['id_user'] != $_POST['id_aff']) {
@@ -922,8 +927,8 @@
 			    <b>Silahkan Login ke https://kombi.remotebisnis.com atau</b><br>
 			    <a href="'.$sistem->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
 			 ';
+ 
 		    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$gaff['email'],'Pembelian Affiliate Produk '.$kom['nama_komunitas'], $konten);
-			
 
 			// cd adalah kode affilaite produk
 			header('Location:'.$sistem->primaryLocal.'invoice?owner='.$produk['id_user'].'&cd='.$_POST['cd'].'&user='.$user['id'].'&type=produk&typeProduk='.$produk['type'].'&nilai='.$_POST['nilai']);
