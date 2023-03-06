@@ -231,7 +231,7 @@
 
         case $me.'/produk/acc':
             $onMy->actionProduk($_GET['id'],$_GET['status']);
-            header("Location: ".$onMy->https.$_GET['url']);
+            header("Location: ".$_GET['url']);
             break;
         
         case $me.'/view/user/kick':

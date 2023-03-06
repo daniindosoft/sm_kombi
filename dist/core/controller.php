@@ -346,7 +346,7 @@
 			}else{
 				$stok = $_POST['single_stok'];
 			}
-
+			$datenow = date('Y-m-d H:i:s');
 			$data=array(
 				strip_tags($_POST['id_user']),
 				strip_tags($_POST['type']),
@@ -355,9 +355,10 @@
 				strip_tags($harga),
 				strip_tags($stok),
 				strip_tags($_POST['id_komunitas_bisnis']),
-				strip_tags($_POST['gambar'])
+				strip_tags($_POST['gambar']),
+				$datenow
 			);
-			$col=array('id_user', 'type', 'nama_produk', 'deskripsi', 'harga', 'stok', 'id_komunitas_bisnis', 'dp');
+			$col=array('id_user', 'type', 'nama_produk', 'deskripsi', 'harga', 'stok', 'id_komunitas_bisnis', 'dp', 'created_at');
 			$sistem->lastId = true;
 			// $sistem->debug = true;
 			$id = $sistem->masukan_data_no_redirect($tbl,$col,$data);
@@ -775,8 +776,9 @@
 			break;
 
 		case isset($_POST['submitOrderDropRes']):
-			$clm = array('id_user', 'id_komunitas_bisnis', 'nama_lengkap', 'email', 'nowa', 'provinsi', 'kecamatan', 'alamat','note','status', 'invoice');
+			$clm = array('id_user', 'id_komunitas_bisnis', 'nama_lengkap', 'email', 'nowa', 'provinsi', 'kecamatan', 'alamat','note','status', 'invoice', 'created_at');
 			$inv = date('dmy').rand(10,999999);
+			$datenow = date('Y-m-d H:i:s');
 			$data = array(
 				$_COOKIE['id_akun_combi'],
 				$_SESSION['bisnis_kategori_combi'],
@@ -787,7 +789,7 @@
 				$_POST['kecamatan'],
 				$_POST['alamat_lengkap'],
 				$_POST['note'],
-				1,$inv
+				1,$inv,$datenow
 				
 			);
 
@@ -868,7 +870,7 @@
 			    <a href="'.$sistem->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
 			 ';
 
-		    self::kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis', $owner['email'], 'Pesanan Baru dari Dropship/Reseller', $konten);
+		    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis', $owner['email'], 'Pesanan Baru dari Dropship/Reseller', $konten);
 
 			header('Location:'.$sistem->primaryLocal.'user/invoice?id='.$id);
 
