@@ -5,7 +5,7 @@
 
   $orderToday = $onMy->singleByUserByCommunity("pesanan", $_COOKIE['id_akun_combi'], $_SESSION['bisnis_kategori_combi'], "single", " and created_at like '%".date('Y-m-d')."%'")['total'];
   
-  $valueTransactionToday = $onMy->eksekusiShow( 'SELECT sum(qty*harga) as total FROM `pesanan` as p join pesanan_line as pl on pl.id_pesanan = p.id WHERE p.id_user='.$_COOKIE['id_akun_combi'].' and p.id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'].' and p.created_at like "%'.date('Y-m-d').'%"' );
+  $valueTransactionToday = $onMy->eksekusiShow( 'SELECT sum(qty*harga) as total FROM `pesanan` as p join pesanan_line as pl on pl.id_pesanan = p.id WHERE p.id_user='.$_COOKIE['id_akun_combi'].' and p.id_komunitas_bisnis='.$_SESSION['bisnis_kategori_combi'].' and p.status=3 and p.created_at like "%'.date('Y-m-d').'%"' );
 ?>
 <div class="content-wrapper" style="min-height: 1172.56px;">
   <!-- Content Header (Page header) -->
