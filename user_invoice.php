@@ -107,7 +107,7 @@
                   <strong><?php echo $show['nama_lengkap'] ?></strong><br>
                   <?php echo $show['provinsi'].', '.$show['kecamatan'] ?><br>
                   <?php echo $show['alamat'] ?><br>
-                  <?php if ($show['status'] == 3 || $profile['type_user'] == 'admin'): ?>
+                  <?php if ($show['status'] == 3 || $profile['type_user'] == 'user'): ?>
                     Phone: <?php echo $show['nowa'] ?><br>
                     Email: <?php echo $show['email'] ?>
                   <?php else: ?>

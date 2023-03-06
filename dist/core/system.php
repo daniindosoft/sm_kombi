@@ -38,7 +38,8 @@ class kontrols{
 	public function __construct($db){
 
 		$this->kon=$db;
-		$user = self::thisProfile($_COOKIE['id_akun_combi']);
+		$user = self::eksekusiShow('select * from users where username="'.$_COOKIE['username_akun_combi'].'" and id="'.$_COOKIE['id_akun_combi'].'"');
+
 		if( empty($user['id']) ){
 			self::removeCookies();
 		}
@@ -1464,14 +1465,14 @@ class kontrols{
 			header("Content-Disposition: attachment; filename=\"$filename\"");
 			header("Content-Type: application/vnd.ms-excel");
 			if ($tbl == 'komunitas') {
-				$header = array('Nama Lengkap', 'E-Mail', 'Jenis Kelamin', 'No HP', 'domisili', 'Perangkat', 'Status (1 = konversi, 0 = Lead)' , 'Tanggal', 'Tahu dari');
+				$header = array('Nama Lengkap', 'E-Mail', 'Jenis Kelamin', 'No HP', 'domisili', 'Perangkat', 'Tanggal', 'Tahu dari');
 				if ($cdate2 == $cdate) {
 					$where = " and k.created_at like '%".$cdate."%' ";
 				}else{
 					$where = " and k.created_at BETWEEN '".$cdate."' and '".$cdate2."'";
 				}
 				
-				$sql = 'select u.nama_lengkap, u.email, u.jk, u.nowa, u.domisili, u.perangkat, k.status, k.created_at, t.nama from komunitas as k join users as u on u.id = k.id_user left join tahu as t on t.id = u.tahu where k.'.$clm_id_komunitas.'='.$id_komunitas.' '.$where;
+				$sql = 'select u.nama_lengkap, u.email, u.jk, u.nowa, u.domisili, u.perangkat, k.created_at, t.nama from komunitas as k join users as u on u.id = k.id_user left join tahu as t on t.id = u.tahu where k.status=1 and k.'.$clm_id_komunitas.'='.$id_komunitas.' '.$where;
 			}elseif($tbl == 'pesanan'){
 				if ($cdate2 == $cdate) {
 					$where = " and u.created_at like '%".$cdate."%' ";
@@ -1479,8 +1480,8 @@ class kontrols{
 					$where = " and u.created_at BETWEEN '".$cdate."' and '".$cdate2."'";
 				}
 				
-				$sql = 'select u.invoice, u.nama_lengkap, u.email, u.nowa, u.provinsi, u.kecamatan, u.alamat, u.status, u.created_at from pesanan as u where u.'.$clm_id_komunitas.'='.$id_komunitas.' '.$where;
-				$header = array('Nama Lengkap', 'E-Mail', 'Jenis Kelamin', 'No HP', 'domisili', 'Perangkat', 'Status (1 = diajukan, 2 = ditolak, 3 = diproses/selesai)' , 'Tanggal', 'Tahu dari');
+				$sql = 'select u.invoice, u.nama_lengkap, u.email, u.nowa, u.provinsi, u.kecamatan, u.alamat, u.created_at from pesanan as u where u.status =3 and u.'.$clm_id_komunitas.'='.$id_komunitas.' '.$where;
+				$header = array('Nama Lengkap', 'E-Mail', 'Jenis Kelamin', 'No HP', 'domisili', 'Perangkat', 'Tanggal', 'Tahu dari');
 			}elseif($tbl == 'order_produk'){
 				if ($cdate2 == $cdate) {
 					$where = " and u.created_at like '%".$cdate."%' ";
@@ -1488,9 +1489,9 @@ class kontrols{
 					$where = " and u.created_at BETWEEN '".$cdate."' and '".$cdate2."'";
 				}
 				
-				$header = array('Nama Lengkap', 'E-Mail', 'Jenis Kelamin', 'No HP', 'domisili', 'alamat', 'Perangkat', 'Status (1 = diajukan, 2 = ditolak, 3 = diproses/selesai)' , 'Tanggal');
+				$header = array('Nama Lengkap', 'E-Mail', 'Jenis Kelamin', 'No HP', 'domisili', 'alamat', 'Perangkat' , 'Tanggal');
 				
-				$sql = 'select u.nama, u.email, u.jk, u.nowa, u.domisili, u.alamat, u.perangkat, u.status, u.created_at from order_produk as u where u.'.$clm_id_komunitas.'='.$id_komunitas.' '.$where;
+				$sql = 'select u.nama, u.email, u.jk, u.nowa, u.domisili, u.alamat, u.perangkat, u.created_at from order_produk as u where u.status=3 and u.'.$clm_id_komunitas.'='.$id_komunitas.' '.$where;
 			}
 
 			$result = self::tampil_manual($sql);
