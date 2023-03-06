@@ -200,7 +200,7 @@ link gambar 2
                                           <span class="sr-only">Toggle Dropdown</span>
                                         </button>
                                         <div class="dropdown-menu" role="menu" style="">
-                                          <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>admin/produk/edit?id=<?php echo $value['id'] ?>">Edit</a>
+                                          <a class="dropdown-item" href="<?php echo $onMy->primaryLocal ?>admin/produk/edit?id=<?php echo $value['id'] ?>">Edit/View</a>
                                           <div class="dropdown-divider"></div>
                                           <a class="dropdown-item" onclick="return confirm('Yakin menghapus produk ini ?')" href="<?php echo $onMy->primaryLocal ?>admin/hapus?id=<?php echo $value['id'] ?>&table=<?php echo base64_encode('produk') ?>&url=<?php echo parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>">Hapus</a>
                                         </div>

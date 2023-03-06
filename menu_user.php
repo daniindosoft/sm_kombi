@@ -65,11 +65,6 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="<?php echo $onMy->primaryLocal ?>user/faq" class="nav-link" id="faq">
-            <p>FAQ Komunitas</p>
-          </a>
-        </li>
-        <li class="nav-item">
           <a href="<?php echo $onMy->primaryLocal ?>user/rule" class="nav-link" id="rule">
             <p>Ketentuan & Rule</p>
           </a>
@@ -77,6 +72,16 @@
         <li class="nav-item">
           <a href="<?php echo $onMy->primaryLocal ?>user/rule" class="nav-link" id="rule" data-toggle="modal" data-target="#modalInfoBisnis">
             <p>Info/Profile Komunitas</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo $onMy->primaryLocal ?>user/faq" class="nav-link" id="faq">
+            <p>FAQ Komunitas</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo $onMy->primaryLocal ?>user/faq/kombi" class="nav-link" id="faq_kombi">
+            <p>FAQ KOMBI</p>
           </a>
         </li>
       </ul>

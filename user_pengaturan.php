@@ -198,16 +198,17 @@
 			                  		<?php $onMy->inputRedirectFull() ?>
 			                  		<div class="row child-p2">
 			                  			<div class="col-md-12">
-			                  				<small><code>*</code> Nomor rekening ini akan dijadikan metode pencairan komisi, pastikan nomor rekening benar</small>
+			                  				<p><small><code>*</code> Nomor rekening ini akan dijadikan metode pencairan komisi, pastikan nomor rekening benar.</small></p>
 			                  			</div>
+			                  			<hr>
 			                  			<div class="col-md-2"><b>PAYMENT METHOD</b><br>
-			                  				<p>Masukan Nama/keterangan Payment Method seperti Trasfer Bank, E-Wallet(Shopeepay, DANA, OVO dll) atau lainnya</p></div>
+			                  				<p>Masukan nama/keterangan Payment Method seperti Trasfer Bank, E-Wallet(Shopeepay, DANA, OVO dll) atau lainnya</p></div>
 			                  			<div class="col-md-2"><b>KODE</b><br>
 			                  				<p>Masukan Kode tambahan seperti Kode Bank jika menggunakan bank transfer tau lainnya sesuai kebutuhan</p></div>
 			                  			<div class="col-md-3"><b>NO REKENING/NOMOR LAINNYA</b><br>
 			                  				<p>Masukan Nomor Rekening atau nomor lainnya yang digunakan nantinya untuk transfer</p></div>
 			                  			<div class="col-md-3"><b>NAMA PEMILIK</b><br>
-			                  				<p>Masukan nama pemilik nomor rekening atau nama pemilik e-waller</p></div>
+			                  				<p>Masukan nama pemilik nomor rekening atau nama pemilik E-wallet</p></div>
 			                  		</div>
 			                  		<div class="row loopRek">
 			                  			<?php $no=0; foreach ($onMy->select('norek', $_COOKIE['id_akun_combi']) as $val): $no++; ?>

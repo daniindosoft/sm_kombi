@@ -112,7 +112,8 @@
 						<input type="number" id="jumlah_penarikan" onkeyup="return cekNilai()" required class="form-control-lg form-control text-center" name="nilai" placeholder="Masukan jumlah penarikan">
 						<br>
 						<button type="submit" name="submitAjukanKomisi" id="submitAjukanKomisi" class="btn btn-warning btn-lg btn-block">	Ajukan Penarikan</button>
-						<small><code>*</code> Penarikan yang sudah di ajukan tidak bisa di batalkan, kecuali admin yang membatalkan</small>
+						<small><code>*</code> Penarikan yang sudah di ajukan tidak bisa di batalkan, kecuali admin yang membatalkan</small><br>
+						<small><code>*</code> Pastikan nomor rekening sudah benar</small><br>
 					<?php else: ?>
 						<div class="alert alert-info">
 						<i class="fa fa-info-circle"></i> Anda belum bisa mengajukan penarikan komisi

@@ -112,7 +112,7 @@
     }
     .img-circle{
       object-fit: cover;
-      height: 100%;
+      /*height: 100%;*/
     }
     .select2-selection.select2-selection--single{
       height: auto;

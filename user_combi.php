@@ -1,5 +1,5 @@
 <?php
-	include_once('header.php');
+	include_once('header_user.php');
 ?>
  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -35,7 +35,7 @@
           </div>
           <!-- /.card-header -->
           <div class="card-body">
-            <?php echo $onMy->eksekusiShow('select * from combi')['faq_term'] ?>
+            <?php echo $onMy->eksekusiShow('select * from combi')['faq_term_user'] ?>
           </div>
           <!-- /.card-body -->
         </div>
@@ -43,16 +43,16 @@
 	  </section>
 	</div>
 <script type="text/javascript">
-    document.title = "COMBI FAQ & TERM <?php echo $namaKomunitas ?>";
-    
-    var menuaddclass = document.getElementById("combi");
+  document.title = "KOMBI | FAQ <?php echo $komunitas['nama_komunitas'] ?>";
+        var menuaddclass = document.getElementById("infos");
     menuaddclass.classList.add("active");
 
-        var menuaddclassx = document.getElementById("faq");
+        var menuaddclassx = document.getElementById("faq_kombi");
     menuaddclassx.classList.add("active");
 
-        var menuaddclass3 = document.getElementById("combi-open");
+        var menuaddclass3 = document.getElementById("info");
     menuaddclass3.classList.add("menu-open");
+
 </script>
 <?php
 	include_once('footer.php');

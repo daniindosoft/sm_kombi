@@ -139,7 +139,7 @@
 							                  </div>
 						                  </div>
 				                  		<div class="col-md-12">
-							                  <button type="submit" name="submitEcourse" class="btn btn-warning">Simpan</button>
+							                  <button type="submit" name="submitEcourse" class="btn btn-warning">Simpan E-Course</button>
 					                  	</div>
 				                  	</div>
 			                  	</form>
