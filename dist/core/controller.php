@@ -690,10 +690,10 @@
 				if ($_POST['new_pass'] == $_POST['new_pass2']) {
 					$sistem->disableRedirect = true;
 					$sistem->rubah_data('users', array('password="'.$_POST['new_pass'].'"', 'token=""'), array('id'), array($param));
-					
+				    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis', $user['email'], 'Password Berhasil diubah', '<h3>Password Berhasil di ubah</h3>');
+
 					if ($_POST['recover'] != '1') {
 						$sistem->registerFlash('s', 'Password berhasil di ubah !');
-						echo "<script>alert('Password Berhasil di ubah')</script>";
 					}else{
 						$sistem->registerFlash('s', 'Password berhasil di ubah, silahkan login !');
 					}
