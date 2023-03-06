@@ -695,6 +695,8 @@
 					}
 					$sistem->disableRedirect = true;
 					$sistem->rubah_data('users', array('password="'.$_POST['new_pass'].'"', 'token=""'), array('id'), array($param));
+					header('Location: '.$sistem->primaryLocal);
+
 				}else{
 					$sistem->registerFlash('d', 'Gagal Di ubah!, Pastikan Password dan ulangi password benar ');
 				}
