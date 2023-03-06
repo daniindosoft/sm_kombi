@@ -1,4 +1,6 @@
 <?php 
+date_default_timezone_set('Asia/Jakarta');
+
 	error_reporting(0);
 	   //  ini_set('display_errors', 1);
     // ini_set('display_startup_errors', 1);
@@ -55,7 +57,7 @@ function kirimEmail($paramNamaPenerima,$emailpengirim,$namapengirim,$emailpeneri
 		    
 		    if(!$mail->send()) {
 		        echo "Opps, terdapat kesalahan, mohon hubungi admin !";
-		        echo "Mailer Error: " . $mail->ErrorInfo;
+
 		    }
 		}
 	}
@@ -98,7 +100,7 @@ function kirimEmail($paramNamaPenerima,$emailpengirim,$namapengirim,$emailpeneri
 	    $judul = 'Selamat datang dan selamat bergabung di KOMBI';
  			// info aktivasi
  		}
-    kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$userSingle[0]['email'],'Selamat datang dan selamat bergabung di KOMBI', $konten);
+    kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$userSingle[0]['email'],$judul, $konten);
 		single(1, 'update users set `expire`="'.convertDate('Y-m-d H:i:s', $_POST['masa_aktif']).'", status=1 where id='.$_POST['id'], 'execute');
  
 	}
@@ -126,7 +128,7 @@ function kirimEmail($paramNamaPenerima,$emailpengirim,$namapengirim,$emailpeneri
 <!-- Automatic element centering -->
 <div class="mt-5">
   <div class="lockscreen-logo">
-    <a href="<?php echo primaryLocal ?>index2.html"><b>COM</b>BI</a>
+    <a href="<?php echo primaryLocal ?>"><b>COM</b>BI</a>
     <?php echo convertDate('d F Y', date('Y-m-d')) ?>
   </div>
 	<div>
