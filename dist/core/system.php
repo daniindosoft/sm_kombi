@@ -45,6 +45,8 @@ class kontrols{
 	        header("Location: ".$this->primaryLocal."expire.php");
 		}
 
+		self::eksekusiShow('SET time_zone = "+07:00"; SET @@session.time_zone = "+07:00";');
+
 	}
 	public function registerFlash($type, $message){
 		$_SESSION['flashType'] = $type;
@@ -485,11 +487,11 @@ class kontrols{
 		    <a href="'.$this->primaryLocal.'"style="background:#20e277;text-decoration:none !important; display:inline-block; font-weight:500; margin-top:24px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;">Klik disini</a>
 
 		';
-	    self::kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$user->email,'Selamat, Akun Anda Telah di Verifikasi', $konten);
+	    self::kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$user['email'],'Selamat, Akun Anda Telah di Verifikasi', $konten);
 		
 		
 		if ($url != false) {
-			header('Location:'.$this->https.$url.'?info=berhasil');
+			header('Location:'.$this->primaryLocal.'admin/bisnis/affiliate?info=berhasil');
 		}
 
 	}
