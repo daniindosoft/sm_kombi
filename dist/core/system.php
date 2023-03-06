@@ -33,6 +33,8 @@ class kontrols{
 
 	public $mark = '<i class="f-xm float-right text-warning fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Bagian/fitur ini tidak dipengaruhi oleh komunitas yang dipilih di navbar"></i>';
 
+	public $timezone = 'SET time_zone = "+07:00"; SET @@session.time_zone = "+07:00";';
+
 	public function __construct($db){
 
 		$this->kon=$db;
@@ -44,8 +46,6 @@ class kontrols{
 		if (new DateTime() > new DateTime($user['expire']) && $user['type_user'] == 'admin') {
 	        header("Location: ".$this->primaryLocal."expire.php");
 		}
-
-		self::eksekusiShow('SET time_zone = "+07:00"; SET @@session.time_zone = "+07:00";');
 
 	}
 	public function registerFlash($type, $message){
@@ -1038,7 +1038,7 @@ class kontrols{
 			die;
 		}
 		
-		$masuk=$this->kon->prepare($sql);
+		$masuk=$this->kon->prepare($this->timezone.' '.$sql);
 
 		
 		if ($this->debugSql == false) {
