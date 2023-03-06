@@ -1,3 +1,22 @@
+<?php
+  error_reporting(0);
+  include_once('dist/core/koneksi.php');
+  include_once('dist/core/system.php');
+
+  $a = new koneksi();
+  $db = $a->hubungkan();
+  $onMy = new kontrols($db);
+
+  require('dist/core/controller.php');
+
+  $profile = $onMy->eksekusiShow('select * from users where token="'.$_GET['token'].'"');
+
+  if (empty($profile['id'])) {
+    header('Location:'.$onMy->primaryLocal);
+  }
+    
+ 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,25 +43,7 @@
   </style>
 </head>
 <body class="hold-transition register-page">
-<?php
-  error_reporting(0);
-  include_once('dist/core/koneksi.php');
-  include_once('dist/core/system.php');
 
-  $a = new koneksi();
-  $db = $a->hubungkan();
-  $onMy = new kontrols($db);
-
-  require('dist/core/controller.php');
-
-  $profile = $onMy->eksekusiShow('select * from users where token="'.$_GET['token'].'"');
-
-  if (!$profile['id']) {
-    header('Location:'.$onMy->https.$onMy->primaryLocal);
-  }
-    
- 
-?>
 <div class="login-box">
   <div class="card card-outline card-warning">
     <div class="card-header text-center">
