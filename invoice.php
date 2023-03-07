@@ -128,11 +128,11 @@
           </div>
           <br>
 
-          <p class="text-center">Hubungi admin untuk <br>
+          <p class="text-center">Konfirmasi ke Admin <br>
             <?php if (empty($_GET['type'])): ?>
               <a href="<?php echo $onMy->noWa($noAdminKomunitas) ?>?text=<?php echo urlencode( str_replace('{rp}', 'Rp'.$price, $single['wa_template']) ) ?>">Konfirmasi Pembayaran di sini (<?php echo $noAdminKomunitas ?>)</a>
             <?php else: ?>
-              <a href="<?php echo $onMy->noWa($noAdminKomunitas) ?>">Konfirmasi ke Admin (<?php echo $noAdminKomunitas ?>)</a>
+              <a href="<?php echo $onMy->noWa($noAdminKomunitas) ?>">Klik Disini (<?php echo $noAdminKomunitas ?>)</a>
             <?php endif; ?>
           </p>
           <button class="btn btn-sm btn-warning btn-block"><i class="fa fa-download"></i> Unduh Invoice</button>

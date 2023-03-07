@@ -66,11 +66,11 @@
   <!-- iCheck -->
   <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- JQVMap -->
-  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/jqvmap/jqvmap.min.css">
+  <!-- <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/jqvmap/jqvmap.min.css"> -->
   <!-- Theme style -->
   <!-- DataTables -->
   <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/datatables-responsive/css/responsive.bootstrap4.min.css"> -->
   <link rel="stylesheet" href="<?php echo $onMy->primaryLocal ?>plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
   <!-- select2 -->
@@ -100,7 +100,7 @@
     }
     .img-circle{
       object-fit: cover;
-      height: 100%;
+      /* height: 100%; */
     }
     .select2-selection.select2-selection--single{
       height: auto;
@@ -350,7 +350,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="" class="brand-link">
-      <img src="https://duniaundercover.files.wordpress.com/2023/02/5-1.png" style="border-radius:0px" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="https://duniaundercover.files.wordpress.com/2023/02/5-1.png" style="border-radius:0px" class="brand-image img-circle" style="opacity: .8">
       <span class="brand-text font-weight-light"><b>KOMBI</b></span>
     </a>
 

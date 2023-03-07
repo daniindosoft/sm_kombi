@@ -1605,8 +1605,8 @@ class kontrols{
 
 		$aff = 'https://member.remotebisnis.com/setting/function/proses_daftar_api.php?kaf='.$kaf_new;
 		$affiliate = json_decode(self::httpGet($aff));
-		
-		return ' 
+
+		return '
 			<td style="padding:0 35px;">
 			    <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:21px;font-family:Rubik,sans-serif;">Tinggal satu langkah lagi</h1>
 			    <br>

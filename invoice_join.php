@@ -37,9 +37,9 @@
   require('dist/core/controller.php');
  
   $single = $onMy->eksekusiShow('select * from users where id='. $_GET['id']);
- 
 
   $owner = $onMy->single('mcdani', 1);
+  $nowa = owner['nowa'];
 ?>
 <div class="register-box">
   <div class="card card-outline card-warning">
@@ -59,7 +59,7 @@
                           ke salah satu rekening ini
         </div>
         <hr style="border: 1px dashed black;">
-        <?php if ($_GET['kaf'] == '39587434922'): ?>
+        <?php if ($_GET['kaf'] == '39587434922' || empty($_GET['kaf'])): ?>
           <div class="child-p">
             
               <p>
@@ -84,19 +84,20 @@
           else:
             $aff = 'https://member.remotebisnis.com/setting/function/proses_daftar_api.php?kaf='.$_GET['kaf'];
             $affiliate = json_decode($onMy->httpGet($aff));
-            echo $affiliate->note;
+            $nowa = $affiliate->nowa;
+            echo '<div class="text-center">'.$affiliate->note.'</div>';
         ?>
 
         <?php endif ?>
 
         <p class="text-center">Hubungi admin di <br>
          
-        <a href="<?php echo $onMy->noWa($owner['nowa']) ?>?text=Halo%20kak%2C%20saya%20sudah%20daftar%20COMBI%20dan%20ini%20E-Mail%20saya%20<?php echo $single['email'] ?>%0ATunggu%20transfer%20dari%20saya%20senilai%20%3A%0A%0A*Rp<?php echo $price ?>*%0A%0ATerima%20kasih.">Konfirmasi ke Admin (<?php echo $owner['nowa'] ?>)</a>	
+        <a href="<?php echo $onMy->noWa($nowa) ?>?text=Halo%20kak%2C%20saya%20sudah%20daftar%20COMBI%20dan%20ini%20E-Mail%20saya%20<?php echo $single['email'] ?>%0ATunggu%20transfer%20dari%20saya%20senilai%20%3A%0A%0A*Rp<?php echo $price ?>*%0A%0ATerima%20kasih.">Konfirmasi ke Admin (<?php echo $owner['nowa'] ?>)</a>	
          
         </p>
         <button class="btn btn-sm btn-warning btn-block"><i class="fa fa-download"></i> Unduh Invoice</button>
         <hr style="border: 1px dashed black;">
-        <small><code>*</code> Kami juga mengirimkan email kepada anda, mohon periksa di folder spam jika di kotak utama tidak ditemukan</small>
+        <p style="line-height: 1;"><small><code>*</code> Kami juga mengirimkan email kepada anda, mohon periksa di folder spam jika di kotak utama tidak ditemukan</small></p>
         <br>
         <small><a href="<?php echo $onMy->primaryLocal ?>" class="text-center">Saya Sudah Punya Akun !</a></small>
          
