@@ -16,10 +16,7 @@
     </div>
 </div>
 <footer class="main-footer text-sm">
-  <strong>Copyright &copy; <?php echo date('Y') ?></strong>
-  <div class="float-right d-none d-sm-inline-block">
-    <b>Version</b> 1.7
-  </div>
+  <strong>&copy; <?php echo date('Y') ?> KOMBI | <b>Version</b> 1.7</strong>
 </footer>
 
 <div class="modal fade" id="modal-add-komunitas">
@@ -122,7 +119,7 @@
 
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button)
+  // $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script src="<?php echo $onMy->primaryLocal ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -136,7 +133,7 @@
 <script src="<?php echo $onMy->primaryLocal ?>plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="<?php echo $onMy->primaryLocal ?>plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
 
-<script src="<?php echo $onMy->primaryLocal ?>plugins/pdfmake/vfs_fonts.js"></script>
+
 <script src="<?php echo $onMy->primaryLocal ?>plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="<?php echo $onMy->primaryLocal ?>plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?php echo $onMy->primaryLocal ?>plugins/datatables-buttons/js/buttons.colVis.min.js"></script>

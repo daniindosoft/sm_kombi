@@ -8,8 +8,10 @@
 
 	$a=new koneksi();
 	$db=$a->hubungkan();
-	$sistem=new kontrols($db);
-	$mdetect = new MobileDetect(); 
+
+	$sistem = new kontrols($db);
+
+	$mdetect = new MobileDetect();
 
 	if(isset($_POST['login'])) {
 		$sistem->masuk($_POST['email'], $_POST['password']);
@@ -139,21 +141,21 @@
 	switch (isset($_POST)) {
 		case isset($_POST['submitBisnis']):
 			if ( empty($sistem->eksekusiShow('select * from users where email="'.$_POST['email'].'"')['id']) ){
-				if($mdetect->isMobile()){ 
-			    // Detect mobile/tablet  
-				    if($mdetect->isTablet()){ 
-				        $perangkat = 'Tablet'; 
-				    }else{ 
-				        $perangkat = 'Mobile'; 
+				if($mdetect->isMobile()){
+			    // Detect mobile/tablet
+				    if($mdetect->isTablet()){
+				        $perangkat = 'Tablet';
+				    }else{
+				        $perangkat = 'Mobile';
 				    }
-				     
-				    // Detect platform 
-				    if($mdetect->isiOS()){ 
-				        $perangkat .= ' - IOS'; 
-				    }elseif($mdetect->isAndroidOS()){ 
-				        $perangkat .= ' - ANDROID'; 
-				    } 
-				}else{ 
+
+				    // Detect platform
+				    if($mdetect->isiOS()){
+				        $perangkat .= ' - IOS';
+				    }elseif($mdetect->isAndroidOS()){
+				        $perangkat .= ' - ANDROID';
+				    }
+				}else{
 				    $perangkat = 'Desktop';
 				}
 				$username = strtolower( str_replace(' ','',$_POST['nama_lengkap']).rand(1,9999) );
@@ -165,27 +167,41 @@
 				// get package
 				$harga = $sistem->getPackagePrice($_POST['paket']);
 				// echo var_dump($harga); die;
-				$paket = $harga - rand(1,999);
+				$randNumber = rand(1,999);
+				$paket = $harga - $randNumber;
 				$datenow = date('Y-m-d H:i:s');
 				$col = array('tgl_daftar', 'perangkat', 'expire','nama_lengkap', 'password', 'email', 'last_package_picked', 'nowa', 'username', 'kode_affiliate', 'price_admin', 'type_user', 'dp', 'is_private');
 				$data = array($datenow, $perangkat, date('Y-m-d H:i:s', strtotime('+30 days', strtotime(date('Y-m-d H:i:s')))),$_POST['nama_lengkap'], $_POST['nowa'], $_POST['email'], $_POST['paket'], $_POST['nowa'], $username, $randaff, $paket, 'admin', 'cat.png', 1);
 				$sistem->lastId = true;
-				
+
 				// set price public
 				$sistem->pricePublic = $paket;
 				$sistem->priceNama = $_POST['nama_lengkap'];
 				$sistem->priceEmail = $_POST['email'];
-				
-			    // echo 's -';
-				$id = $sistem->masukan_data_no_redirect('users',$col,$data);
 
-			    // echo "window.location.href = '".$sistem->primaryLocal."admin/join/invoice?kaf=".$_POST['kaf']."&id=".$id."';";
-			    // echo 'x -'.$sistem->templateEmail( $sistem->templateDaftarBisnis($_POST['kaf']));
+				$id = $sistem->masukan_data_no_redirect('users',$col,$data);
+				
+				// input ke tabel rebi
+				$db2=$a->hubungkanRebi();
+				$sistemRebi = new kontrols($db2);
+				$sistemRebi->masukan_data_no_redirect('kombi',
+					array('email', 'nama', 'nowa', 'created_at', 'note', 'kaf', 'status', 'id_paket', 'kode_unik' ),
+					array($_POST['email'],
+						$_POST['nama_lengkap'],
+						$_POST['nowa'],
+						$_POST['nowa'],
+						'',
+						$datenow,
+						1,
+						$_POST['paket'],
+						$randNumber,
+					)
+				);
+
 			    $sistem->kirimEmail('','kombi@remotebisnis.com','Kombi RemoteBisnis',$_POST['email'],'1 Langkah lagi nih, yuk selesaikan..', $sistem->templateEmail( $sistem->templateDaftarBisnis($_POST['kaf']) ) );
-			    // echo 'v-';
-			    // notif ke admin
+
+				// notif ke admin
 			    $sistem->notifAdminRebi($_POST['kaf']);
-			    // echo 'o-';
 
 			    // redirek
 			    echo "<script>window.location.href = '".$sistem->primaryLocal."admin/join/invoice?kaf=".$_POST['kaf']."&id=".$id."'; </script>";

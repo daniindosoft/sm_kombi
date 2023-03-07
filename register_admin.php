@@ -64,9 +64,6 @@
       <!-- <img src="https://media.tenor.com/49L_4C2_pW8AAAAC/rich-cash.gif" class="w-100"> -->
       <hr>  
       <form action="" method="post">
-        <?php $onMy->inputRedirectFull() ?>
-        <input type="hidden" name="cd" value="<?php echo $_GET['cd'] ?>">
-        <input type="hidden" name="aff" value="<?php echo @$_GET['aff'] ?>">
         <input type="hidden" name="kaf" value="<?php echo @$_GET['kaf'] ?>">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Nama Lengkap" name="nama_lengkap" required>

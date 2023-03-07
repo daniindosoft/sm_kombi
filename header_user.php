@@ -278,7 +278,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="" class="brand-link">
-      <img src="https://duniaundercover.files.wordpress.com/2023/02/5-1.png" style="border-radius:0px" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="https://duniaundercover.files.wordpress.com/2023/02/5-1.png" style="border-radius:0px" class="brand-image img-circle" style="opacity: .8">
       <span class="brand-text font-weight-light"><b>KOMBI</b></span>
     </a>
 

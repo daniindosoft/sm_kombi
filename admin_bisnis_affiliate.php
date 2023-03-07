@@ -510,7 +510,6 @@
                               <textarea name="note" class="form-control"></textarea maxlength="200">
                             </div>
                           </div>
-                         
                           <div class="col-md-3">
                             <div class="form-group">
                               <label>Type Produk</label>
@@ -572,7 +571,7 @@
                           <div class="col-md-4">
                             <div class="custom-control custom-switch">
                               <input type="checkbox" class="custom-control-input" id="cprivate" name="cprivate">
-                              <small class="custom-control-label" for="cprivate">Jika diaktifkan produk ini tidak bisa di affiliatekan oleh member komunitas Anda, artinya produk/form order produk ini hanya anda yang bisa mengaksesnya</small>
+                              <label class="custom-control-label text-sm" for="cprivate">Jika diaktifkan produk ini tidak bisa di affiliatekan oleh member komunitas Anda, artinya produk/form order produk ini hanya anda yang bisa mengaksesnya</label>
                             </div>
                           </div> 
                           <div class="col-md-6">
