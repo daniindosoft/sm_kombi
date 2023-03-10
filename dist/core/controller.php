@@ -85,6 +85,8 @@
 		}else{
 			$sistem->registerFlash('d', 'Kuota Komunitas yang bisa kamu buat telah mencapai batas, silahkan Upgrade Paket untuk mendapatkan tambahan kuota');
 			header('Location:'.$this->https.$this->primaryLocal.'admin/pengaturan');
+			// header('Location:'.$this->https.$this->primaryLocal.'admin/pengaturan');
+			// ini yg ada dua
 
 		}
 

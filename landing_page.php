@@ -102,8 +102,8 @@
         <br>
         <br>
         <img class="d-block mx-auto mb-4" src="https://duniaundercover.files.wordpress.com/2023/03/sm3dkombi.png" alt="" width="300">
-        <h1 class="display-5 fw-bold c-shadow">BUAT KOLAM UANG</h1>
-        <h1 class="display-5 fw-bold c-shadow">DAN PILIH BISNISMU</h1>
+        <h1 class="display-5 fw-bold c-shadow">BANGUN BISNIS</h1>
+        <h1 class="display-5 fw-bold c-shadow">SEMI AUTO PILOTMU</h1>
         <div class="col-lg-6 mx-auto">
           <hr>
           <p class="lead mb-4">Sekarang sudah saatnya bisnis <b class="text-warning">tidak bergantung pada iklan terus</b>, buat kolam uangmu sendiri dan biarkan itu bekerja untukmu.</p>
@@ -674,13 +674,19 @@
         <h2 class="pb-2 border-bottom text-center fw-bold c-shadow">Bebas Pilih & Ambil</h2>
         <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
           <div class="col-lg-4 col-md-4">
-            <img src="https://duniaundercover.files.wordpress.com/2023/03/plnew.png" class="w-100">
+            <a href="#sikat" onclick="return scrollto()">
+              <img src="https://duniaundercover.files.wordpress.com/2023/03/plnew.png" class="w-100">
+            </a>
           </div>
           <div class="col-lg-4 col-md-4">
-            <img src="https://duniaundercover.files.wordpress.com/2023/03/plnew2.png" class="w-100">
+            <a href="#sikat" onclick="return scrollto()">
+              <img src="https://duniaundercover.files.wordpress.com/2023/03/plnew2.png" class="w-100">
+            </a>
           </div>
           <div class="col-lg-4 col-md-4">
-            <img src="https://duniaundercover.files.wordpress.com/2023/03/plnew3.png" class="w-100">
+            <a href="#sikat" onclick="return scrollto()">
+              <img src="https://duniaundercover.files.wordpress.com/2023/03/plnew3.png" class="w-100">
+            </a>
           </div>
           <div class="col-lg-12 col-md-12">
             <p class="text-center display-5">
