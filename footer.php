@@ -1,6 +1,6 @@
 <?php
   $bisnisInfo = $onMy->selectSingleOne('komunitas_bisnis', 'id', $_SESSION['bisnis_kategori_combi']);
-
+  $adminRebi = $onMy->option();
   $norek = $onMy->selectSingleOne('norek', 'id_user', $_COOKIE['id_akun_combi']);
 
 ?>
@@ -10,7 +10,11 @@
         <span class="sr-only"></span>
       </button>
       <div class="dropdown-menu" role="menu">
-        <a class="dropdown-item" href="<?php echo $onMy->noWa($bisnisInfo['nowa']) ?>" target="_blank"><i class="fab fa-whatsapp"></i> Hubungi Admin</a>
+        <?php if ($profile['type_user'] == 'user'): ?>
+          <a class="dropdown-item" href="<?php echo $onMy->noWa($bisnisInfo['nowa']) ?>" target="_blank"><i class="fab fa-whatsapp"></i> Hubungi Admin</a>
+        <?php else: ?>
+          <a class="dropdown-item" href="<?php echo $onMy->noWa($adminRebi['nowa']) ?>" target="_blank"><i class="fab fa-whatsapp"></i> Hubungi Admin</a>
+        <?php endif ?>
         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalInfoBisnis"><i class="fa fa-info-circle"></i> Info Bisnis</a>
       </div>
     </div>

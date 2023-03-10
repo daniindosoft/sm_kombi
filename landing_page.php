@@ -301,7 +301,7 @@
       </div>
       <div class="b-example-divider"></div>
       <div class="container px-4 py-5" id="icon-grid">
-        <h4 class="warning-notted text-center">Memang Pake KOMBI Bisa apa aja ?</h4>
+        <h4 class="warning-notted text-center">Memang KOMBI Bisa Apa Aja ?</h4>
         <br>
         <h2 class="pb-2 border-bottom text-center c-shadow">NAH !!, INI YANG AKAN KAMU DAPATKAN & BISA LAKUKAN :</h2>
         <br>
@@ -344,8 +344,8 @@
           <div class="mt-5 col-md-4 d-flex align-items-start">
             <div>
               <div class="feature-icon d-inline-flex align-items-center p-2 justify-content-center text-bg-warning bg-gradient fs-2 mb-3"><i class="fa fa-users"></i></div>
-              <h3 class="fw-bold mb-0 fs-4">Dinamic Form Order</h3>
-              <p class="warning-notted" style="background-color:white">Jualan apapun kini makin mudah kamu bisa buat Form Order apapun.</p>
+              <h3 class="fw-bold mb-0 fs-4">Custom Form Order</h3>
+              <p class="warning-notted" style="background-color:white">Jualan apapun kini makin mudah kamu bisa buat Form Ordernya dengan cepat disini.</p>
             </div>
           </div>
           <div class="mt-5 col-md-4 d-flex align-items-start">
@@ -645,16 +645,16 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="https://duniaundercover.files.wordpress.com/2023/03/screenshot-from-2023-03-01-15-57-16.png" class="d-block w-100" alt="...">
+            <img src="https://duniaundercover.files.wordpress.com/2023/03/screenshot-from-2023-03-01-15-57-16-336117830-e1678491527590.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="https://duniaundercover.files.wordpress.com/2023/03/screenshot-from-2023-03-01-15-59-17.png" class="d-block w-100" alt="...">
+            <img src="https://duniaundercover.files.wordpress.com/2023/03/screenshot-from-2023-03-01-15-59-17-2211481571-e1678491597395.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
             <img src="https://duniaundercover.files.wordpress.com/2023/03/pckombi3.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="https://duniaundercover.files.wordpress.com/2023/03/screenshot-from-2023-03-01-15-37-17.png" class="d-block w-100" alt="...">
+            <img src="https://duniaundercover.files.wordpress.com/2023/03/screenshot-from-2023-03-01-15-37-17-3964601712-e1678491629250.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
             <img src="https://duniaundercover.files.wordpress.com/2023/03/pckombi.jpg" class="d-block w-100" alt="...">
@@ -695,7 +695,7 @@
           </div>
         </div>
       </div>
-      <div class="px-4 py-5 text-center">
+     <div class="px-4 py-5 text-center">
         <div class="py-5">
           <h1 class="display-5 fw-bold fw-bold">FIX INGIN INI ITU SEMUA</h1>
           <div class="col-lg-6 mx-auto">
@@ -706,6 +706,14 @@
             <small><code>*</code> Watawwww</small>
           </div>
         </div>
+        <div class="py-5">
+          <div class="alert alert-danger">
+            <h3><i class="fa fa-triangle-exclamation"></i> GARANSI</h3>
+            <p>Jika semua fitur yang kami janjikan tidak ada atau kamu tidak dapatkan maka Uang Kembali, dan Kamu tetap dapat akses ke KOMBI.</p>
+          </div>
+        </div>
+        <p><small>Transaksi & Metode</small></p>
+        <img src="https://duniaundercover.files.wordpress.com/2023/03/secure-footer-copy.png" alt="">
       </div>
       <div class="b-example-divider mb-0"></div>
     </main>

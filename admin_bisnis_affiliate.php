@@ -493,7 +493,8 @@
                       </div>
                     </div>
                     <div class="card-body border" style="display:none;">
-                      <b>Buat Produkmu yang ingin di Affiliatekan</b>
+                      <b>Buat Produkmu disini</b>
+                      <p><code>*</code> Mau di Affiliatekan atau tidak mau produk fisik atau digital, buat form ordermu disini !</p>
                       <hr>
                       <form action="" method="post">
                         <?php $onMy->inputRedirectFull() ?>
@@ -571,7 +572,7 @@
                           <div class="col-md-4">
                             <div class="custom-control custom-switch">
                               <input type="checkbox" class="custom-control-input" id="cprivate" name="cprivate">
-                              <label class="custom-control-label text-sm" for="cprivate">Jika diaktifkan produk ini tidak bisa di affiliatekan oleh member komunitas Anda, artinya produk/form order produk ini hanya anda yang bisa mengaksesnya</label>
+                              <label class="custom-control-label text-sm" for="cprivate">Jika diaktifkan produk ini tidak bisa di Affiliatekan oleh member komunitas Anda, artinya produk/form order produk ini hanya anda yang bisa mengaksesnya</label>
                             </div>
                           </div> 
                           <div class="col-md-6">
