@@ -189,9 +189,9 @@
 					array($_POST['email'],
 						$_POST['nama_lengkap'],
 						$_POST['nowa'],
-						$_POST['nowa'],
-						'',
 						$datenow,
+						'',
+						$_POST['kaf'],
 						1,
 						$_POST['paket'],
 						$randNumber,
@@ -232,7 +232,7 @@
 
 			break;
 		
-		case isset($_POST['submitCustomerList']):
+		case isset($_POST['submitCustomerListxxx']):
 			$sistem->redirect = $_POST['redirect'].'?id='.$_POST['id'];
 			$ubah = array(
 				'id_kategori_customer_list ="'.htmlspecialchars($_POST['kategori']).'"',
@@ -246,7 +246,7 @@
 				'alamat ="'.htmlspecialchars($_POST['alamat']).'"',
 			);
 			$sistem->registerFlash('i', 'Customer list "'.$_POST['nama_lengkap'].'" berhasil di ubah');
-			// $sistem->debug = true;
+			$sistem->debug = true;
 			$sistem->rubah_data('customer_list',$ubah,array('id'),array($_POST['id']));
 
 			break;
@@ -267,7 +267,6 @@
 					htmlspecialchars($_POST['alamat'])
 				);
 				$col=array('id_kategori_customer_list', 'nama', 'jk', 'email', 'phone', 'source', 'nilai_konversi', 'id_komunitas_bisnis', 'id_user', 'alamat');
-				$sistem->registerFlash('s', 'customer list "'.$_POST['judul'].'" sudah di tambahkan');
 				$sistem->registerFlash('s', 'customer list "'.$_POST['judul'].'" sudah di tambahkan');
 				// $sistem->debug = true;
 				$sistem->masukan_data($tbl,$col,$data);

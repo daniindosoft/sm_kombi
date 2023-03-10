@@ -66,7 +66,7 @@
       <a href="<?php echo $onMy->primaryLocal ?>admin/ecourse" class="nav-link" id="ecourse">
         <i class="nav-icon fa fa-desktop"></i>
         <p>
-          E-Course
+          E-Course/Video
         </p>
       </a>
     </li>
@@ -140,7 +140,7 @@
       <a href="#" class="nav-link" id="combi">
         <i class="nav-icon fas fa-search"></i>
         <p>
-          COMBI
+          KOMBI
           <?php echo $onMy->mark ?> <i class="fas fa-angle-left right"></i>
         </p>
       </a>
@@ -152,7 +152,7 @@
         </li>
         <li class="nav-item">
           <a href="<?php echo $onMy->primaryLocal ?>admin/report/income" class="nav-link" id="panduan_combi">
-            <p>Panduan COMBI</p>
+            <p>Panduan KOMBI</p>
           </a>
         </li>
         <li class="nav-item">

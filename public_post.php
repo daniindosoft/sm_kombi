@@ -25,7 +25,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="https://duniaundercover.files.wordpress.com/2023/02/5-1.png">
 
-  <title>Login ke KOMBI | Solusi Membuat Kolam Uang</title>
+  <title><?php echo $value['judul'] ?> - KOMBI | Solusi Membuat Kolam Uang</title>
 
   <meta property="og:locale" content="id_ID">
   <meta property="og:type" content="website">
