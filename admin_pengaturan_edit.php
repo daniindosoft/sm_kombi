@@ -94,21 +94,21 @@
 					                      <!-- text input -->
 					                      <div class="form-group">
 					                        <label>Website</label>
-					                        <input required name="website" type="text" class="form-control" placeholder="Masukan Website"value="<?php echo $getData['website'] ?>">
+					                        <input   name="website" type="text" class="form-control" placeholder="Masukan Website"value="<?php echo $getData['website'] ?>">
 					                      </div>
 					                    </div>
 					                    <div class="col-sm-3">
 					                      <!-- text input -->
 					                      <div class="form-group">
 					                        <label>Instagram</label>
-					                        <input required name="instagram" type="text" class="form-control" placeholder="Masukan Instagram" value="<?php echo $getData['ig'] ?>">
+					                        <input name="instagram" type="text" class="form-control" placeholder="Masukan Instagram" value="<?php echo $getData['ig'] ?>">
 					                      </div>
 					                    </div>
 					                    <div class="col-sm-3">
 					                      <!-- text input -->
 					                      <div class="form-group">
 					                        <label>Tiktok</label>
-					                        <input required name="tiktok" value="<?php echo $getData['tiktok'] ?>" type="text" class="form-control" placeholder="Masukan Tiktok">
+					                        <input name="tiktok" value="<?php echo $getData['tiktok'] ?>" type="text" class="form-control" placeholder="Masukan Tiktok">
 					                      </div>
 					                    </div>
 					                    <div class="col-sm-3">
@@ -168,7 +168,7 @@
 						                  <div class="col-sm-12">
 						                  	<label class="mb-0">Note Affiliate</label><br>
 					                      <small><i>Ini akan muncul dihalaman affiliate user</small></i></small>
-						                  	<textarea id="compose-textarea" class="form-control" name="text" style="height: 300px" required><?php echo $getData['note'] ?></textarea>
+						                  	<textarea id="compose-textarea" class="form-control" name="text" style="height: 300px"  ><?php echo $getData['note'] ?></textarea>
 						                  </div>
 			                  			<div class="col-md-12">
 			                  				<b>Template WhatsApp</b><br>

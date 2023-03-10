@@ -194,7 +194,7 @@
 					                      <div class="col-sm-12">
 							                  	<label class="mb-0">Note Affiliate</label><br>
 						                      <small><i>Ini akan muncul dihalaman affiliate user</small></i></small>
-							                  	<textarea id="compose-textarea" class="form-control" name="text" style="height: 300px" required></textarea>
+							                  	<textarea id="compose-textarea" class="form-control" name="text" style="height: 300px"  ></textarea>
 							                  </div>
 				                  			<div class="col-md-12">
 				                  				<b>Template WhatsApp</b><br>

@@ -210,7 +210,7 @@ class kontrols{
 
 		self::eksekusi('update manage_komisi set status='.$status.' where id='.$id);
 		self::registerFlash('s', '');
-		header('Location: '.$this->https.$this->primaryLocal.'user/bisnis/penarikan');
+		header('Location: '.$this->primaryLocal.'user/bisnis/penarikan');
  	}
  	public function toInt($int){
  		return preg_replace('/[^0-9]/', '', $int);

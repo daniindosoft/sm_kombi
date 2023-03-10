@@ -160,11 +160,8 @@
             <button onclick="return scrollto()" type="button" class="btn btn-warning btn-lg px-4 me-sm-3">SAYA MAU !</button> 
           </div>
         </div>
-        <div class="overflow-hidden" style="max-height: 30vh;">
-          <div class="container px-5">
-            <img src="https://duniaundercover.files.wordpress.com/2023/03/combi-ilustration-web-dev-3777134697-e1677663555796.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
-          </div>
-        </div>
+        
+        <img src="https://duniaundercover.files.wordpress.com/2023/03/ezgif.com-resize.gif" alt="">
       </div>
       <div class="b-example-divider"></div>
       <div class="px-4 pt-5 my-5 text-center border-bottom">

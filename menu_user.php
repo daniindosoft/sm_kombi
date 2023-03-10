@@ -12,7 +12,7 @@
       <a href="<?php echo $onMy->primaryLocal ?>user/ecourse" class="nav-link" id="ecourse">
         <i class="nav-icon fa fa-desktop"></i>
         <p>
-          E-Course
+          E-Course/Video
         </p>
       </a>
     </li>
@@ -82,6 +82,11 @@
         <li class="nav-item">
           <a href="<?php echo $onMy->primaryLocal ?>user/faq/kombi" class="nav-link" id="faq_kombi">
             <p>FAQ KOMBI</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo $onMy->primaryLocal ?>user/faq/kombi" class="nav-link" id="faq_kombi">
+            <p>Panduan KOMBI</p>
           </a>
         </li>
       </ul>

@@ -180,13 +180,14 @@
 				                  		<div class="col-md-7">
 						                  	<div class="form-group">
 							                    <label for="">Nama Lengkap</label>
-							                    <input type="text" maxlength="100" required class="form-control" name="nama_lengkap" placeholder="masukan nama lengkap">
+							                    <input type="text" maxlength="100"   class="form-control" name="nama_lengkap" placeholder="masukan nama lengkap">
 							                  </div>
 				                  		</div>
 				                  		<div class="col-md-7">
 						                  	<div class="form-group">
 							                    <label for="">Jenis Kelamin</label>
 							                    <select name="jk" class="form-control">
+							                    	<option value="">Pilih</option>
 							                    	<option value="L">L</option>
 							                    	<option value="P">P</option>
 							                    </select>
