@@ -177,7 +177,7 @@
             break;
 
         case $me.'/admin/report/income' :
-            require "admin_report_income.php";
+            require "admin_panduan_kombi.php";
             break;
 
         case $me.'/admin/pengaturan' :

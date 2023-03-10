@@ -152,6 +152,7 @@ class kontrols{
 	       	// echo 'ok';
 	    } else {
 	        self::registerFlash('d', '<small>Maaf, username/email atau password salah, atau mungkin akun Anda belum aktif</small>');
+	        $_SESSION['email'] = $email;
 	        // header("Location: ".$this->primaryLocal."");
 	        self::callFlash();
 
@@ -199,17 +200,18 @@ class kontrols{
 			$stt = 'Selamat !, Saldo berhasil ditambahkan';
 			$title = $dataPengajuan['operator'].self::nf($dataPengajuan['nilai']).' Disetujui';
 			self::postNotifikasi( $_COOKIE['id_akun_combi'], $komunitas['id_user'], 'acc_komisi', $title, '<b>'.$user['nama_lengkap'].'</b> telah MENYETUJUI '.$ops.' komisi/saldo dari Anda.', $dataPengajuan['id_komunitas_bisnis'] );
+			$infotext = 'Yee, komisi kini bertambah !';
 
 		}else{
 			$title = $dataPengajuan['operator'].self::nf($dataPengajuan['nilai']).' Titolak';
 			$stt = 'Proses Penolakan berhasil !, mohon hubungi admin untuk infokan pada Admin';
 			self::postNotifikasi( $_COOKIE['id_akun_combi'], $komunitas['id_user'], 'acc_komisi', $title, '<b>'.$user['nama_lengkap'].'</b> telah MENOLAK '.$ops.' komisi/saldo dari Anda.', $dataPengajuan['id_komunitas_bisnis'] );
 			// notif ke admn jika di tolak
-
+			$infotext = 'Penolakan berhasil';
 		}
 
 		self::eksekusi('update manage_komisi set status='.$status.' where id='.$id);
-		self::registerFlash('s', '');
+		self::registerFlash('i', $infotext);
 		header('Location: '.$this->primaryLocal.'user/bisnis/penarikan');
  	}
  	public function toInt($int){

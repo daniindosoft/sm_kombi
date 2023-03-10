@@ -80,15 +80,15 @@
 	</section>
 </div>
 <script type="text/javascript">
-	document.title = "KOMBI | Halaman Pengajuan Komisi dari <?php echo $namaKomunitas ?>";
-	    var menuaddclass = document.getElementById("bisnis");
-  menuaddclass.classList.add("active");
+  document.title = "KOMBI | Papan informasi <?php echo $komunitas['nama_komunitas'] ?>";
+            var menuaddclass = document.getElementById("combi");
+    menuaddclass.classList.add("active");
 
-      var menuaddclassx = document.getElementById("komisi");
-  menuaddclassx.classList.add("active");
+        var menuaddclassx = document.getElementById("status");
+    menuaddclassx.classList.add("active");
 
-      var menuaddclass3 = document.getElementById("bisnis-open");
-  menuaddclass3.classList.add("menu-open");
+        var menuaddclass3 = document.getElementById("combi-open");
+    menuaddclass3.classList.add("menu-open");
 
 </script>
 <?php
