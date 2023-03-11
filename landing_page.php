@@ -92,7 +92,7 @@
     <!-- Custom styles for this template -->
     <link href="heroes.css" rel="stylesheet">
   </head>
-  <body>
+  <body style="overflow-x: hidden;">
     <main>
       <h1 class="visually-hidden">Heroes examples</h1>
       <div class="px-4 py-4 my-5 text-center">
@@ -257,7 +257,7 @@
                     <h5>😁 Ingin <b class="text-warning">punya sistem bisnis</b> sendiri ? <small class="text-sm">&nbsp;&nbsp;&nbsp;Ya</small></h5>
                   </li>
                   <li class="list-group-item">
-                    <h5>😁 Mau <b class="text-warning">punya bisnis digital</b> sendiri tanpa repot dan ribet soal barang ? <small class="text-sm">&nbsp;&nbsp;&nbsp;Ya</small></h5>
+                    <h5>🤩 Ingin <b class="text-warning">punya passive income</b> sendiri ? <small class="text-sm">&nbsp;&nbsp;&nbsp;Ya</small></h5>
                   </li>
                 </ul>
               </div>
@@ -305,7 +305,7 @@
         <br>
         <h2 class="pb-2 border-bottom text-center c-shadow">NAH !!, INI YANG AKAN KAMU DAPATKAN & BISA LAKUKAN :</h2>
         <br>
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="mt-5 col-md-4 d-flex align-items-start">
             <div>
               <div class="feature-icon d-inline-flex align-items-center p-2 justify-content-center text-bg-warning bg-gradient fs-2 mb-3"><i class="fa fa-folder "></i></div>
@@ -369,6 +369,13 @@
               <p class="warning-notted" style="background-color:white">Sudah pasti sekarang kamu punya memberarea sendiri untuk para komunitasmu dan bisnismu.</p>
             </div>
           </div>
+          <div class="mt-5 col-md-4 d-flex align-items-start">
+            <div>
+              <div class="feature-icon d-inline-flex align-items-center p-2 justify-content-center text-bg-warning bg-gradient fs-2 mb-3"><i class="fa fa-eye"></i></div>
+              <h3 class="fw-bold mb-0 fs-4">Lebih Akurat</h3>
+              <p class="warning-notted" style="background-color:white">Perangkat apa yang dipakai, domisili, usia, jenis kelamin hingga traffic dari mana saja itu bisa kamu ketahui sekarang</p>
+            </div>
+          </div>
         </div>
 				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
 					<button onclick="return scrollto()" type="button" class="btn btn-warning btn-lg px-4 gap-3">SAYA MAU !</button>
@@ -380,55 +387,35 @@
         <h5 class="text-center lh-base">Tentu!! ini sangat cocok untuk kamu apalagi jika kamu : </h5>
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 justify-content-center">
           <div class="col d-flex align-items-start">
-            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-              <svg class="bi" width="1em" height="0.1em">
-                <use xlink:href="#toggles2"/>
-              </svg>
-            </div>
+            
             <div>
               <h3 class="fs-2"><i class="fas fa-briefcase"></i> Pebisnis Online</h3>
               <p>Jadikan Pelangganmu <span class="text-warning">tim penghasil uang</span> dan Dropship/Reseller makin mudah.</p>
             </div>
           </div>
           <div class="col d-flex align-items-start">
-            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-              <svg class="bi" width="1em" height="0.1em">
-                <use xlink:href="#tools"/>
-              </svg>
-            </div>
+            
             <div>
               <h3 class="fs-2"><i class="fa fa-bullhorn"></i> Affiliate Marketer</h3>
               <p>Miliki Sistem Affiliate, buat banyak komunitas pasukan affiliate lalu <span class="text-warning">biarlah mereka yang berjualan untukmu.</span></p>
             </div>
           </div>
           <div class="col d-flex align-items-start">
-            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-              <svg class="bi" width="1em" height="0.1em">
-                <use xlink:href="#cpu-fill"/>
-              </svg>
-            </div>
+            
             <div>
               <h3 class="fs-2"><i class="fab fa-black-tie"></i> Owner</h3>
               <p>Catat semua data pembelimu lebih rapih, lakukan Upsell/Cross Sell hingga <span class="text-warning">buat pelanganmu menjadi partner bisnismu.</span></p>
             </div>
           </div>
           <div class="col d-flex align-items-start">
-            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-              <svg class="bi" width="1em" height="0.1em">
-                <use xlink:href="#cpu-fill"/>
-              </svg>
-            </div>
+            
             <div>
               <h3 class="fs-2"><i class="fa fa-video-camera"></i> Konten Kreator</h3>
               <p>Bentuk Ikatan dengan <span class="text-warning">Subscriber</span> atau <span class="text-warning">Followersmu</span> menjadi Lebih Eksklusif dengan membuat Komunitas/Konten Premium dan <span class="text-warning">dapatkan cuan</span> dari itu.</p>
             </div>
           </div>
           <div class="col d-flex align-items-start">
-            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-              <svg class="bi" width="1em" height="0.1em">
-                <use xlink:href="#tools"/>
-              </svg>
-            </div>
+            
             <div>
               <h3 class="fs-2"><i class="fa fa-user"></i> Influencer/ Personal Branding</h3>
               <p>Buat Dirimu lebih dikenal oleh Subscriber atau Followersmu, <span class="text-warning">kumpulkan</span> mereka buat edukasi maka jualan apapun <span class="text-warning">mereka akan percaya padamu.</span></p>
@@ -503,6 +490,15 @@
                   <li class="list-group-item">
                     <h5>❌ Hilangnya potensi Growup Bisnismu</h5>
                   </li>
+                  <li class="list-group-item">
+                    <h5>❌ Pekerjaan serba manual</h5>
+                  </li>
+                  <li class="list-group-item">
+                    <h5>❌ Ga bisa ninggalin bisnis</h5>
+                  </li>
+                  <li class="list-group-item">
+                    <h5>❌ Tidak punya passive income</h5>
+                  </li>
                 </ul>
               </div>
 
@@ -520,8 +516,8 @@
         <div class="row justify-content-center g-5 py-5">
           <div class="col-md-4">
             <div>
-              <h3 class="fw-bold mb-0 fs-4">✅ Murah</h3>
-              <p>Bayangkan aja dengan harga bulanan seharga uang jajan.</p>
+              <h3 class="fw-bold mb-0 fs-4">✅ Mudah dan Murah</h3>
+              <p>Bayangkan aja dengan harga bulanan seharga uang jajan kamu bisa punya Passive Income dan sistem.</p>
             </div>
           </div>
           <div class="col-md-4">
@@ -713,7 +709,11 @@
           </div>
         </div>
         <p><small>Transaksi & Metode</small></p>
-        <img src="https://duniaundercover.files.wordpress.com/2023/03/secure-footer-copy.png" alt="">
+        <div class="row justify-content-center">
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <img src="https://duniaundercover.files.wordpress.com/2023/03/secure-footer-copy.png" alt="transaksi" width="100%">
+          </div>
+        </div>
       </div>
       <div class="b-example-divider mb-0"></div>
     </main>
