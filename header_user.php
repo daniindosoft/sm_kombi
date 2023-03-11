@@ -135,7 +135,7 @@
   </style>
   <?php 
     if ($komunitas['header']):
-      echo $komunitas['header'];
+      echo base64_decode($komunitas['header']);
     endif;
   ?>
 </head>

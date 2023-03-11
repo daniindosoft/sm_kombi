@@ -11,13 +11,13 @@
   // ?cd=23&user=22
     if (empty($_GET['type'])){
       $single = $onMy->eksekusiShow('select * from komunitas_bisnis where code_komunitas='. $_GET['cd']);
-      $kom = $single['header_invoice'];
+      $kom = base64_decode($single['header_invoice']);
       $userPrice = $onMy->single('users',$_GET['user'])['price_join'];
       $noAdminKomunitas = $single['nowa'];
     }else{
       $single = $onMy->selectSingleOne('affiliate_produk', 'kode_affiliate_produk', $_GET['cd']);
       $k = $onMy->eksekusiShow('select * from komunitas_bisnis where id='. $single['id_komunitas_bisnis']);
-      $kom = $k['header_invoice'];
+      $kom = base64_decode($k['header_invoice']);
 
       $u = $onMy->selectSingleOne('order_produk', 'id', $_GET['user']);
       $userPrice = $u['harga'];
