@@ -37,7 +37,7 @@
   </style>
   <?php
     if (!empty($single['id'])) {
-      echo $single['header_form'];
+      echo base64_decode($single['header_form']);
     }
   ?>
 </head>
