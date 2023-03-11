@@ -164,7 +164,7 @@
           <a href="<?php echo $onMy->primaryLocal ?>admin/combi" class="nav-link" id="faq">
             
             <p>
-              Term & FAQ Komunitas
+              Term & FAQ KOMBI
             </p>
           </a>
         </li>
