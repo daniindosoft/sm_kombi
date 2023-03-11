@@ -20,7 +20,9 @@
               <li class="breadcrumb-item active">E-Course</li>
             </ol>
           </div><!-- /.col -->
-          <?php $onMy->callFlash() ?>
+          <div class="col-sm-12">
+	          <?php $onMy->callFlash() ?>
+          </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
