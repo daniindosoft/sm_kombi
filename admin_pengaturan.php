@@ -210,21 +210,21 @@
 				                  			</div>
 				                  			<div class="col-md-4">
 				                  				<b>Header Komunitas</b>
-				                  				<p><small>Ketika Member membuka/mengunjungi memberarea komunitasmu</small></p>
+				                  				<p><small>Ketika Member membuka/mengunjungi memberarea komunitasmu. <a href="#jscode" data-toggle="modal" data-target="#mdlPixel">Lihat contoh</a></small></p>
 				                  				<textarea class="form-control" name="header" placeholder="insert header"></textarea>
 				                  				<small><i>Javascript code</i></small>
 				                  				<br>
 				                  			</div>
 				                  			<div class="col-md-4">
 				                  				<b>Header Register Form</b>
-				                  				<p><small>Ketika Form Pendaftaran Dikunjungi oleh pendaftar maka Code dibawah ini akan terpanggil</small></p>
+				                  				<p><small>Ketika Form Pendaftaran Dikunjungi oleh pendaftar maka Code dibawah ini akan terpanggil. <a href="#jscode" data-toggle="modal" data-target="#mdlPixel">Lihat contoh</a></small></p>
 				                  				<textarea class="form-control" name="header_form" placeholder="insert header"></textarea>
 				                  				<small><i>Javascript code</i></small>
 				                  				<br>
 				                  			</div>
 				                  			<div class="col-md-4">
 				                  				<b>Header Invoice</b>
-				                  				<p><small>Setelah seseorang daftar ke komunitasmu/masuk ke haaman invoice, maka Code dibawah ini akan terpanggil atau ter-trigger</small></p>
+				                  				<p><small>Setelah seseorang daftar ke komunitasmu/masuk ke haaman invoice, maka Code dibawah ini akan terpanggil atau ter-trigger <a href="#jscode" data-toggle="modal" data-target="#mdlPixel">Lihat contoh</a></small></p>
 				                  				<textarea class="form-control" name="header_invoice" placeholder="insert header"></textarea>
 				                  				<small><i>Javascript code</i></small>
 				                  				<br>
