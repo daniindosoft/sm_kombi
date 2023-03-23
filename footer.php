@@ -190,7 +190,7 @@
           class: 'bg-warning',
           title: 'PENTING',
           subtitle: 'Profile',
-          body: 'Silahkan lengkapi <a href="<?php echo $sistem->primaryLocal.$profile['type_user'] ?>/pengaturan#custom-tabs-four-profile">No Rekening & Profile</a> Anda di menu Pengaturan/Setting & Bisnis'
+          body: 'Silahkan lengkapi <a href="<?php echo $sistem->primaryLocal.$profile['type_user'] ?>/pengaturan#custom-tabs-four-profile">No Rekening & Profile</a> Anda di menu Pengaturan/Setting & Komunitas'
         });
     <?php endif; ?>
     $('#reservation').daterangepicker();
