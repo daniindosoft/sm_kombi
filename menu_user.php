@@ -84,11 +84,6 @@
             <p>FAQ KOMBI</p>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="<?php echo $onMy->primaryLocal ?>user/faq/kombi" class="nav-link" id="faq_kombi">
-            <p>Panduan KOMBI</p>
-          </a>
-        </li>
       </ul>
     </li>
     <?php if ($onMy->single('komunitas_bisnis', $_SESSION['bisnis_kategori_combi'])['member_show'] == '1'): ?>

@@ -51,6 +51,9 @@
   </section>
   <!-- /.content -->
 </div> 
+  <script>
+    document.title = "KOMBI | Opps, Halaman tidak ditemukan !";
+  </script>
 <?php
   require('footer.php');
 ?>

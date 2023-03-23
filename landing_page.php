@@ -7,7 +7,7 @@
     <title>KOMBI - Bangun Kolam Uangmu sekarang</title>
     
     <meta name="author" content="McDani Saputra, RemoteBisnis.com, member.remotebisnis.com">
-    <link rel="shortcut icon" href="https://duniaundercover.files.wordpress.com/2023/02/5-1.png">
+    <link rel="shortcut icon" href="https://duniaundercover.files.wordpress.com/2023/02/combi.png">
     <meta property="og:locale" content="id_ID">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kombi - Bangun Kolam Uangmu Sekarang">
@@ -15,7 +15,7 @@
     <meta name="description" content="Sekarang sudah saatnya bisnis tidak bergantung pada iklan terus, buat kolam uangmu sendiri dan biarkan itu bekerja untukmu."/>
     <meta property="description" content="Sekarang sudah saatnya bisnis tidak bergantung pada iklan terus, buat kolam uangmu sendiri dan biarkan itu bekerja untukmu.">
     <meta property="og:url" content="https://www.kombi.remotebisnis.com/">
-    <meta property="og:image" name="og:image" content="https://duniaundercover.files.wordpress.com/2023/02/5-1.png">
+    <meta property="og:image" name="og:image" content="https://duniaundercover.files.wordpress.com/2023/02/combi.png">
 
     <meta property="og:site_name" content="Kombi.RemoteBisnis.com - Buat Kolam Uangmu Sekarang !">
     <meta name="keywords" content="komunitas bisnis, jualan online, digital marketing, list building, affiliate marketing, RemoteBisnis, seo, belajar jualan, jualan online, copywriting">
@@ -132,7 +132,7 @@
         <h1 class="display-5 fw-bold c-shadow">KOLAM UANG</h1>
         <div class="col-lg-6 mx-auto">
           <!-- <p class="lead mb-4">Buat Kolah Uangmu dengan KOMBI, dengan sistem KOMBI kamu bisa membangun List Building lalu biarkan </p> -->
-          <p class="lead mb-4">Percaya atau tidak, List Building adalah teknik marketing yang <b class="text-warning">SUPER AMPUH</b> untuk membuat Kolam Uang, Pakar Digital Marketing <b class="text-warning">NEIL PATEL</b> mengakui ini juga loo. <br><br> Dan ini alasanya kamu harus membuat Kolam Uang Sendiri : </p>
+          <p class="lead mb-4">Percaya atau tidak, List Building adalah teknik marketing yang <b class="text-warning">SUPER AMPUH</b> untuk membuat Kolam Uang, Pakar Digital Marketing <b class="text-warning">NEIL PATEL</b> mengakui ini juga loo. <br><br> Dan ini alasannya kamu harus membuat Kolam Uang Sendiri : </p>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <h5><i class="fa fa-check-circle text-warning"></i> Tidak bergantung pada Iklan melulu</h5>
@@ -150,7 +150,7 @@
               <h5><i class="fa fa-check-circle text-warning"></i> Berkurangnya biaya marketing sehingga profit auto naik</h5>
             </li>
             <li class="list-group-item">
-              <h5><i class="fa fa-check-circle text-warning"></i> Pelangan menjadi lebih loyal</h5>
+              <h5><i class="fa fa-check-circle text-warning"></i> Pelanggan menjadi lebih loyal</h5>
             </li>
             <li class="list-group-item">
               <h5><i class="fa fa-check-circle text-warning"></i> Konversi meningkat</h5>
@@ -210,7 +210,7 @@
                     <h5>🤔 Punya data pelanggan atau pembeli tapi <b class="text-danger">gak menghasilkan</b> cuan ?</h5>
                   </li>
                   <li class="list-group-item">
-                    <h5>😮‍💨 Punya data komunitas/group tapi <b class="text-danger">tidak di manfaatkan</b> ?</h5>
+                    <h5>😮‍💨 Punya data komunitas/group tapi <b class="text-danger">tidak dimanfaatkan</b> ?</h5>
                   </li>
                   <li class="list-group-item">
                     <h5>☹️ Sudah lama berbisnis <b class="text-danger">tapi belum punya</b> sistem <i>Semi Auto Pilot</i> ?</h5>

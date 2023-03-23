@@ -579,7 +579,7 @@
                             <div class="form-group">
                               <label>Header</label>
                               <textarea name="header" class="form-control" placeholder="..."></textarea>
-                              <small>Ketika Member membuka/mengunjungi memberarea komunitasmu, kode/pixel ini akan tertrigger</small>
+                              <small>Ketika Member membuka/mengunjungi memberarea komunitasmu, kode/pixel ini akan tertrigger. <a href="#jscode" data-toggle="modal" data-target="#mdlPixel">Lihat contoh</a></small>
                             </div>
                           </div>
 
