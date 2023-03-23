@@ -502,6 +502,7 @@
 					                      <div class="form-group">
 					                        <label>Username</label>
 					                        <input required type="text" disabled class="form-control" value="<?php echo $user['username'] ?>">
+					                        <small>Userame & E-Mail tidak bisa di ubah</small>
 					                      </div>
 					                    </div>
 					                    <div class="col-sm-6">
@@ -509,7 +510,6 @@
 					                      <div class="form-group">
 					                        <label>Email</label>
 					                        <input required type="text" disabled class="form-control" value="<?php echo $user['email'] ?>">
-					                        <small>E-Mail tidak bisa di ubah</small>
 					                      </div>
 					                    </div>
 					                    <div class="col-sm-6">
