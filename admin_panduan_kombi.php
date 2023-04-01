@@ -30,6 +30,9 @@
         <!-- /.card-header -->
         <div class="card-body">
           <div class="row">
+            <div class="col-md-12">
+              <p>Jika terdapat video yang tidak tersedia, silahkan download/lihat videonya di link berikut <a href="https://drive.google.com/drive/folders/1mngMawJpYZw7sem4dQIhrYUzvbZl0DdO?usp=share_link" target="_blank">Klik disini</a></p>
+            </div>
             <?php $nom=0; foreach ($onMy->selectNormal('panduan') as $asset): $nom++; $no++; ?>
               <div class="col-md-6">
                 <div class="card">
