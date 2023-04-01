@@ -170,20 +170,20 @@
 		                  <thead>
 		                    <tr>
 		                      <th style="width: 10px">#</th>
-		                      <th>Judul</th>
-		                      <th>Kategori</th>
-		                      <th>Deskripsi</th>
-		                      <th>URL</th>
-		                      <th></th>
+		                      <th>Detail</th>
+		                      <th style="width: 60px">URL</th>
+		                      <th style="width: 20px"></th>
 		                    </tr>
 		                  </thead>
 		                  <tbody>
 		                  	<?php $no=1; foreach ($onMy->selectWithBussiness('ecourse', $_SESSION['bisnis_kategori_combi']) as $value): ?>
 			                    <tr>
 			                      <td><?php echo $no++; ?></td>
-			                      <td><?php echo $value['judul'] ?></td>
-			                      <td><?php echo $onMy->single('ecourse_kategori',$value['id_kategori'])['nama_kategori'] ?></td>
-			                      <td><?php echo substr($value['deskripsi'], 0, 30); ?>...</td>
+			                      <td>
+			                      	<?php echo $value['judul'] ?><br>
+				                      <?php echo $onMy->single('ecourse_kategori',$value['id_kategori'])['nama_kategori'] ?>
+				                      <p><?php echo substr($value['deskripsi'], 0, 30); ?>...</p>
+			                      </td>
 			                      <td><a href="<?php echo $value['link'] ?>" target="_blank"><?php echo $value['link'] ?></a></td>
 			                      <td>
 			                      	<div class="btn-group btn-sm dropup">
