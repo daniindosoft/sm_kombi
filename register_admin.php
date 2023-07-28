@@ -168,7 +168,7 @@
         "text":$(".email").val()
       },
       success: function(a) {
-        if(a){
+        if(a.length >3){
           $('button').hide();
           $(document).Toasts('create', {
             class: 'bg-danger',
